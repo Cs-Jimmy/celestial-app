@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  /* Space Theme Colors */
+  --space-deep: hsl(230, 75%, 10%);
+  --space-blue: hsl(230, 75%, 30%);
+  --space-purple: hsl(260, 60%, 25%);
+  --space-nebula: hsl(330, 85%, 70%);
+  --space-stellar: hsl(45, 100%, 50%);
+  --space-asteroid: hsl(0, 0%, 55%);
+  --space-cosmic: hsl(260, 75%, 35%);
+
+  /* Mood Colors */
+  --mood-joy: hsl(45, 100%, 50%);
+  --mood-calm: hsl(210, 85%, 55%);
+  --mood-energy: hsl(0, 85%, 55%);
+  --mood-love: hsl(330, 85%, 70%);
+  --mood-peace: hsl(150, 70%, 50%);
+  --mood-creative: hsl(270, 75%, 65%);
+  --mood-focused: hsl(35, 85%, 55%);
+  --mood-sad: hsl(0, 0%, 45%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background: linear-gradient(135deg, var(--space-deep) 0%, var(--space-purple) 50%, var(--space-blue) 100%);
+    color: white;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .cosmic-bg {
+    background: linear-gradient(135deg, var(--space-deep) 0%, var(--space-purple) 50%, var(--space-blue) 100%);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .planet-shadow {
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.2);
+  }
+
+  .stars {
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, white, transparent),
+      radial-gradient(2px 2px at 40px 70px, white, transparent),
+      radial-gradient(1px 1px at 90px 40px, white, transparent),
+      radial-gradient(1px 1px at 130px 80px, white, transparent),
+      radial-gradient(2px 2px at 160px 30px, white, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+  }
+
+  .mood-joy {
+    background: linear-gradient(135deg, var(--mood-joy), hsl(40, 100%, 40%));
+  }
+
+  .mood-calm {
+    background: linear-gradient(135deg, var(--mood-calm), hsl(210, 85%, 35%));
+  }
+
+  .mood-energy {
+    background: linear-gradient(135deg, var(--mood-energy), hsl(0, 85%, 35%));
+  }
+
+  .mood-love {
+    background: linear-gradient(135deg, var(--mood-love), hsl(330, 85%, 50%));
+  }
+
+  .mood-peace {
+    background: linear-gradient(135deg, var(--mood-peace), hsl(150, 70%, 30%));
+  }
+
+  .mood-creative {
+    background: linear-gradient(135deg, var(--mood-creative), hsl(270, 75%, 45%));
+  }
+
+  .mood-focused {
+    background: linear-gradient(135deg, var(--mood-focused), hsl(35, 85%, 35%));
+  }
+
+  .mood-sad {
+    background: linear-gradient(135deg, var(--mood-sad), hsl(0, 0%, 25%));
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-orbit {
+    animation: orbit 20s linear infinite;
+  }
+
+  .animate-twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+  to { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
