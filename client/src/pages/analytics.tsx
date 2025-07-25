@@ -17,14 +17,14 @@ interface Analytics {
 }
 
 const moodColors: Record<string, string> = {
-  "pegasi-b": "bg-yellow-400",
-  "proxima-b": "bg-red-400", 
-  "kepler-452b": "bg-green-400",
-  "trappist-1e": "bg-blue-400",
-  "kepler-186f": "bg-purple-400",
-  "hd-209458b": "bg-cyan-400",
-  "gliese-667cc": "bg-orange-400",
-  "psr-b1257": "bg-gray-400",
+  "pegasi-b": "bg-yellow-300",
+  "proxima-b": "bg-pink-400", 
+  "kepler-452b": "bg-emerald-300",
+  "trappist-1e": "bg-purple-300",
+  "kepler-186f": "bg-violet-400",
+  "hd-209458b": "bg-cyan-300",
+  "gliese-667cc": "bg-orange-300",
+  "psr-b1257": "bg-rose-300",
 };
 
 const moodLabels: Record<string, string> = {
@@ -73,8 +73,8 @@ export default function Analytics() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-400 font-mono">EXOPLANET.ANALYTICS</h2>
-        <p className="text-cyan-300 font-mono">&gt; ANALYZING EMOTIONAL_PATTERNS.DAT</p>
+        <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 font-serif">✨ cosmic insights ✨</h2>
+        <p className="text-pink-300 font-serif italic">&gt; reading your celestial energy patterns...</p>
       </div>
 
       {/* Analytics Grid */}

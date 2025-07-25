@@ -40,12 +40,12 @@ export default function Dashboard() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Hero Section */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-400">WELCOME BACK, EXPLORER</h2>
-        <p className="text-xl text-cyan-300 mb-8 font-mono">&gt; INITIALIZING EMOTIONAL.SCAN...</p>
+        <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400">WELCOME BACK, EXPLORER ✨</h2>
+        <p className="text-xl text-pink-300 mb-8 font-serif italic">&gt; scanning your cosmic energy signature...</p>
         
         {/* Quick Mood Check */}
         <div className="cyber-panel rounded-2xl p-8 mb-8">
-          <h3 className="text-2xl font-semibold mb-6 text-cyan-300 font-mono">&gt; SELECT_EMOTIONAL_STATE.EXE</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-pink-300 font-serif italic">&gt; choose your planetary vibe ♡</h3>
           <div className="max-w-4xl mx-auto">
             <PlanetSelector
               moods={quickMoodOptions}
@@ -66,9 +66,9 @@ export default function Dashboard() {
             <div className="text-3xl font-bold text-cyan-400 mb-2 font-mono">
               {analytics?.streak || 0}
             </div>
-            <div className="text-cyan-300 font-mono">DAY_STREAK</div>
+            <div className="text-pink-300 font-serif">cosmic streak</div>
             <div className="mt-2">
-              <Flame className="h-6 w-6 text-magenta-400 mx-auto animate-cyber-glow" />
+              <Flame className="h-6 w-6 text-pink-400 mx-auto animate-cyber-glow" />
             </div>
           </CardContent>
         </Card>
