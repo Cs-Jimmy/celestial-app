@@ -19,7 +19,7 @@ export function Navigation() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full animate-cyber-glow border-2 border-pink-400"></div>
-              <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 font-serif">celestial ✨</h1>
+              <h1 className="text-xl font-bold text-pink-300 font-serif">celestial ✨</h1>
               <span className="text-xs bg-gradient-to-r from-pink-400 to-purple-500 px-2 py-1 rounded-full text-white font-serif">cosmic.vibes</span>
             </div>
             <div className="flex items-center space-x-6">
