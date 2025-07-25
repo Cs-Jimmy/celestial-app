@@ -26,9 +26,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="min-h-screen cosmic-bg text-white overflow-x-hidden">
-          {/* Star Field Background */}
-          <div className="fixed inset-0 stars opacity-30 animate-twinkle"></div>
+        <div className="min-h-screen y2k-bg text-cyan-400 overflow-x-hidden">
+          {/* Matrix Grid Background */}
+          <div className="fixed inset-0 matrix-grid animate-matrix-scroll"></div>
           
           <Navigation />
           

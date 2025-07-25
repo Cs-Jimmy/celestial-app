@@ -15,14 +15,14 @@ import { useToast } from "@/hooks/use-toast";
 import type { Mood } from "@shared/schema";
 
 const allMoodOptions: MoodOption[] = [
-  { id: "joy", name: "Joy", color: "yellow", description: "Golden Planet", className: "mood-joy" },
-  { id: "calm", name: "Calm", color: "blue", description: "Azure World", className: "mood-calm" },
-  { id: "energy", name: "Energy", color: "red", description: "Crimson Core", className: "mood-energy" },
-  { id: "love", name: "Love", color: "pink", description: "Rose Nebula", className: "mood-love" },
-  { id: "peace", name: "Peace", color: "green", description: "Emerald Haven", className: "mood-peace" },
-  { id: "creative", name: "Creative", color: "purple", description: "Violet Vision", className: "mood-creative" },
-  { id: "focused", name: "Focused", color: "orange", description: "Amber Star", className: "mood-focused" },
-  { id: "sad", name: "Reflective", color: "gray", description: "Silver Moon", className: "mood-sad" },
+  { id: "pegasi-b", name: "Euphoric", color: "yellow", description: "51 Pegasi b", className: "planet-pegasi-b" },
+  { id: "proxima-b", name: "Passionate", color: "red", description: "Proxima Centauri b", className: "planet-proxima-b" },
+  { id: "kepler-452b", name: "Balanced", color: "green", description: "Kepler-452b", className: "planet-kepler-452b" },
+  { id: "trappist-1e", name: "Serene", color: "blue", description: "TRAPPIST-1e", className: "planet-trappist-1e" },
+  { id: "kepler-186f", name: "Mystical", color: "purple", description: "Kepler-186f", className: "planet-kepler-186f" },
+  { id: "hd-209458b", name: "Transcendent", color: "cyan", description: "HD 209458 b", className: "planet-hd-209458b" },
+  { id: "gliese-667cc", name: "Energetic", color: "orange", description: "Gliese 667Cc", className: "planet-gliese-667cc" },
+  { id: "psr-b1257", name: "Contemplative", color: "gray", description: "PSR B1257+12 b", className: "planet-psr-b1257" },
 ];
 
 export default function MoodTracker() {
@@ -94,8 +94,8 @@ export default function MoodTracker() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold mb-4">Planetary Mood System</h2>
-        <p className="text-gray-300">Select the planet that represents your current emotional state</p>
+        <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-400 font-mono">EXOPLANET.MOOD_SYSTEM</h2>
+        <p className="text-cyan-300 font-mono">&gt; SELECT TARGET EXOPLANET FOR EMOTIONAL_MAPPING</p>
       </div>
 
       {/* Planet Selection Grid */}

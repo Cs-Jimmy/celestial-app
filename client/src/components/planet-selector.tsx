@@ -30,14 +30,14 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
             onClick={() => onSelect(mood.id)}
           >
             <div 
-              className={`${planetSize} mx-auto rounded-full planet-shadow ${mood.className} group-hover:scale-110 transition-all animate-float group-hover:animate-glow cursor-pointer ${
-                selectedMood === mood.id ? "ring-4 ring-yellow-400" : ""
+              className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} group-hover:scale-110 transition-all animate-float group-hover:animate-cyber-glow cursor-pointer ${
+                selectedMood === mood.id ? "ring-4 ring-cyan-400" : ""
               }`}
               style={{ animationDelay: `${index * 0.5}s` }}
             />
           </Button>
-          <h4 className="font-semibold">{mood.name}</h4>
-          <p className="text-xs text-gray-400">{mood.description}</p>
+          <h4 className="font-semibold text-cyan-300 font-mono">{mood.name}</h4>
+          <p className="text-xs text-cyan-500 font-mono">{mood.description}</p>
         </div>
       ))}
     </div>

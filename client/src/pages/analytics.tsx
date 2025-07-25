@@ -17,25 +17,25 @@ interface Analytics {
 }
 
 const moodColors: Record<string, string> = {
-  joy: "bg-yellow-400",
-  calm: "bg-blue-400",
-  energy: "bg-red-400",
-  love: "bg-pink-400",
-  peace: "bg-green-400",
-  creative: "bg-purple-400",
-  focused: "bg-orange-400",
-  sad: "bg-gray-400",
+  "pegasi-b": "bg-yellow-400",
+  "proxima-b": "bg-red-400", 
+  "kepler-452b": "bg-green-400",
+  "trappist-1e": "bg-blue-400",
+  "kepler-186f": "bg-purple-400",
+  "hd-209458b": "bg-cyan-400",
+  "gliese-667cc": "bg-orange-400",
+  "psr-b1257": "bg-gray-400",
 };
 
 const moodLabels: Record<string, string> = {
-  joy: "Joyful",
-  calm: "Calm",
-  energy: "Energetic",
-  love: "Loving",
-  peace: "Peaceful",
-  creative: "Creative",
-  focused: "Focused",
-  sad: "Reflective",
+  "pegasi-b": "51 Pegasi b",
+  "proxima-b": "Proxima Centauri b",
+  "kepler-452b": "Kepler-452b",
+  "trappist-1e": "TRAPPIST-1e",
+  "kepler-186f": "Kepler-186f",
+  "hd-209458b": "HD 209458 b",
+  "gliese-667cc": "Gliese 667Cc",
+  "psr-b1257": "PSR B1257+12 b",
 };
 
 export default function Analytics() {
@@ -73,16 +73,16 @@ export default function Analytics() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold mb-4">Mission Analytics</h2>
-        <p className="text-gray-300">Analyze your emotional patterns and progress</p>
+        <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-400 font-mono">EXOPLANET.ANALYTICS</h2>
+        <p className="text-cyan-300 font-mono">&gt; ANALYZING EMOTIONAL_PATTERNS.DAT</p>
       </div>
 
       {/* Analytics Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Mood Distribution */}
-        <Card className="glass-panel border-white/10">
+        <Card className="cyber-panel border-cyan-500/50">
           <CardContent className="p-8">
-            <h3 className="text-xl font-semibold mb-6">Emotional Constellation</h3>
+            <h3 className="text-xl font-semibold mb-6 text-cyan-300 font-mono">EXOPLANET_DISTRIBUTION.DAT</h3>
             <div className="space-y-4">
               {analytics.moodDistribution.map((stat) => (
                 <div key={stat.mood} className="flex items-center justify-between">
@@ -104,9 +104,9 @@ export default function Analytics() {
         </Card>
 
         {/* Weekly Trends */}
-        <Card className="glass-panel border-white/10">
+        <Card className="cyber-panel border-cyan-500/50">
           <CardContent className="p-8">
-            <h3 className="text-xl font-semibold mb-6">Orbital Patterns</h3>
+            <h3 className="text-xl font-semibold mb-6 text-cyan-300 font-mono">ORBITAL_PATTERNS.LOG</h3>
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between text-sm mb-2">
@@ -134,9 +134,9 @@ export default function Analytics() {
         </Card>
 
         {/* Mission Insights */}
-        <Card className="glass-panel border-white/10 lg:col-span-2">
+        <Card className="cyber-panel border-cyan-500/50 lg:col-span-2">
           <CardContent className="p-8">
-            <h3 className="text-xl font-semibold mb-6">Mission Intelligence</h3>
+            <h3 className="text-xl font-semibold mb-6 text-cyan-300 font-mono">MISSION_INTELLIGENCE.SYS</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white/5 p-6 rounded-lg text-center">
                 <Star className="h-8 w-8 mx-auto mb-2 text-yellow-400" />

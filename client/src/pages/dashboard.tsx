@@ -7,10 +7,10 @@ import { Flame, BookOpen, Smile } from "lucide-react";
 import type { Mood, MissionLog } from "@shared/schema";
 
 const quickMoodOptions: MoodOption[] = [
-  { id: "joy", name: "Joyful", color: "yellow", description: "Golden Planet", className: "mood-joy" },
-  { id: "calm", name: "Calm", color: "blue", description: "Azure World", className: "mood-calm" },
-  { id: "energy", name: "Energetic", color: "red", description: "Crimson Core", className: "mood-energy" },
-  { id: "love", name: "Loving", color: "pink", description: "Rose Nebula", className: "mood-love" },
+  { id: "pegasi-b", name: "Euphoric", color: "yellow", description: "51 Pegasi b", className: "planet-pegasi-b" },
+  { id: "proxima-b", name: "Passionate", color: "red", description: "Proxima Centauri b", className: "planet-proxima-b" },
+  { id: "kepler-452b", name: "Balanced", color: "green", description: "Kepler-452b", className: "planet-kepler-452b" },
+  { id: "trappist-1e", name: "Serene", color: "blue", description: "TRAPPIST-1e", className: "planet-trappist-1e" },
 ];
 
 interface Analytics {
@@ -40,12 +40,12 @@ export default function Dashboard() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Hero Section */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">Welcome back, Space Explorer</h2>
-        <p className="text-xl text-gray-300 mb-8">Ready for today's emotional journey?</p>
+        <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-400">WELCOME BACK, EXPLORER</h2>
+        <p className="text-xl text-cyan-300 mb-8 font-mono">&gt; INITIALIZING EMOTIONAL.SCAN...</p>
         
         {/* Quick Mood Check */}
-        <div className="glass-panel rounded-2xl p-8 mb-8">
-          <h3 className="text-2xl font-semibold mb-6">How are you feeling today?</h3>
+        <div className="cyber-panel rounded-2xl p-8 mb-8">
+          <h3 className="text-2xl font-semibold mb-6 text-cyan-300 font-mono">&gt; SELECT_EMOTIONAL_STATE.EXE</h3>
           <div className="max-w-4xl mx-auto">
             <PlanetSelector
               moods={quickMoodOptions}
@@ -61,48 +61,48 @@ export default function Dashboard() {
 
       {/* Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <Card className="glass-panel border-white/10 text-center">
+        <Card className="cyber-panel border-cyan-500/50 text-center">
           <CardContent className="pt-6">
-            <div className="text-3xl font-bold text-yellow-400 mb-2">
+            <div className="text-3xl font-bold text-cyan-400 mb-2 font-mono">
               {analytics?.streak || 0}
             </div>
-            <div className="text-gray-300">Day Streak</div>
+            <div className="text-cyan-300 font-mono">DAY_STREAK</div>
             <div className="mt-2">
-              <Flame className="h-6 w-6 text-orange-500 mx-auto" />
+              <Flame className="h-6 w-6 text-magenta-400 mx-auto animate-cyber-glow" />
             </div>
           </CardContent>
         </Card>
 
-        <Card className="glass-panel border-white/10 text-center">
+        <Card className="cyber-panel border-cyan-500/50 text-center">
           <CardContent className="pt-6">
-            <div className="text-3xl font-bold text-blue-400 mb-2">
+            <div className="text-3xl font-bold text-cyan-400 mb-2 font-mono">
               {analytics?.totalEntries || 0}
             </div>
-            <div className="text-gray-300">Total Entries</div>
+            <div className="text-cyan-300 font-mono">TOTAL_ENTRIES</div>
             <div className="mt-2">
-              <BookOpen className="h-6 w-6 text-blue-400 mx-auto" />
+              <BookOpen className="h-6 w-6 text-magenta-400 mx-auto animate-cyber-glow" />
             </div>
           </CardContent>
         </Card>
 
-        <Card className="glass-panel border-white/10 text-center">
+        <Card className="cyber-panel border-cyan-500/50 text-center">
           <CardContent className="pt-6">
-            <div className="text-3xl font-bold text-green-400 mb-2">
-              {analytics?.predominantMood || "N/A"}
+            <div className="text-3xl font-bold text-cyan-400 mb-2 font-mono">
+              {analytics?.predominantMood || "NULL"}
             </div>
-            <div className="text-gray-300">This Week's Vibe</div>
+            <div className="text-cyan-300 font-mono">PRIME_VIBE</div>
             <div className="mt-2">
-              <Smile className="h-6 w-6 text-green-400 mx-auto" />
+              <Smile className="h-6 w-6 text-magenta-400 mx-auto animate-cyber-glow" />
             </div>
           </CardContent>
         </Card>
       </div>
 
       {/* Recent Activity */}
-      <Card className="glass-panel border-white/10">
+      <Card className="cyber-panel border-cyan-500/50">
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-semibold">Recent Mission Logs</h3>
+            <h3 className="text-xl font-semibold text-cyan-300 font-mono">RECENT_MISSION_LOGS.DAT</h3>
             <Link href="/mission-log">
               <Button variant="outline" size="sm">
                 View All

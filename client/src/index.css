@@ -24,24 +24,25 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
 
-  /* Space Theme Colors */
-  --space-deep: hsl(230, 75%, 10%);
-  --space-blue: hsl(230, 75%, 30%);
-  --space-purple: hsl(260, 60%, 25%);
-  --space-nebula: hsl(330, 85%, 70%);
-  --space-stellar: hsl(45, 100%, 50%);
-  --space-asteroid: hsl(0, 0%, 55%);
-  --space-cosmic: hsl(260, 75%, 35%);
+  /* Y2K/Acubi Theme Colors */
+  --y2k-cyan: hsl(180, 100%, 50%);
+  --y2k-magenta: hsl(300, 100%, 50%);
+  --y2k-lime: hsl(75, 100%, 50%);
+  --y2k-purple: hsl(270, 100%, 60%);
+  --y2k-pink: hsl(330, 100%, 70%);
+  --y2k-blue: hsl(210, 100%, 60%);
+  --y2k-orange: hsl(30, 100%, 60%);
+  --y2k-silver: hsl(0, 0%, 75%);
 
-  /* Mood Colors */
-  --mood-joy: hsl(45, 100%, 50%);
-  --mood-calm: hsl(210, 85%, 55%);
-  --mood-energy: hsl(0, 85%, 55%);
-  --mood-love: hsl(330, 85%, 70%);
-  --mood-peace: hsl(150, 70%, 50%);
-  --mood-creative: hsl(270, 75%, 65%);
-  --mood-focused: hsl(35, 85%, 55%);
-  --mood-sad: hsl(0, 0%, 45%);
+  /* Planet Mood Colors - Based on Real Exoplanets */
+  --pegasi-b: hsl(45, 100%, 60%);        /* 51 Pegasi b - Golden hot Jupiter */
+  --proxima-b: hsl(0, 80%, 60%);         /* Proxima Centauri b - Red dwarf glow */
+  --kepler-452b: hsl(120, 60%, 50%);     /* Kepler-452b - Earth-like green */
+  --trappist-1e: hsl(210, 100%, 70%);    /* TRAPPIST-1e - Cool blue */
+  --kepler-186f: hsl(300, 80%, 60%);     /* Kepler-186f - Purple mystery */
+  --hd-209458b: hsl(180, 100%, 60%);     /* HD 209458 b - Cyan atmosphere */
+  --gliese-667cc: hsl(30, 100%, 60%);    /* Gliese 667Cc - Orange warmth */
+  --psr-b1257: hsl(0, 0%, 60%);          /* PSR B1257+12 b - Gray pulsar world */
 }
 
 .dark {
@@ -74,68 +75,84 @@
 
   body {
     @apply font-sans antialiased;
-    background: linear-gradient(135deg, var(--space-deep) 0%, var(--space-purple) 50%, var(--space-blue) 100%);
-    color: white;
+    background: linear-gradient(45deg, #000, #1a0033, #330066, #000033);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    color: var(--y2k-cyan);
     min-height: 100vh;
+    font-family: 'Courier New', monospace;
   }
 }
 
 @layer components {
-  .cosmic-bg {
-    background: linear-gradient(135deg, var(--space-deep) 0%, var(--space-purple) 50%, var(--space-blue) 100%);
+  .y2k-bg {
+    background: linear-gradient(45deg, #000, #1a0033, #330066, #000033);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
   }
 
-  .glass-panel {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .cyber-panel {
+    background: linear-gradient(145deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+    backdrop-filter: blur(15px);
+    border: 2px solid var(--y2k-cyan);
+    box-shadow: 0 0 20px var(--y2k-cyan), inset 0 0 20px rgba(0, 255, 255, 0.1);
   }
 
-  .planet-shadow {
-    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.2);
+  .planet-hologram {
+    box-shadow: 
+      0 0 30px currentColor,
+      inset 0 0 30px rgba(255, 255, 255, 0.1),
+      0 0 60px currentColor;
+    border: 2px solid currentColor;
   }
 
-  .stars {
+  .matrix-grid {
     background-image: 
-      radial-gradient(2px 2px at 20px 30px, white, transparent),
-      radial-gradient(2px 2px at 40px 70px, white, transparent),
-      radial-gradient(1px 1px at 90px 40px, white, transparent),
-      radial-gradient(1px 1px at 130px 80px, white, transparent),
-      radial-gradient(2px 2px at 160px 30px, white, transparent);
-    background-repeat: repeat;
-    background-size: 200px 100px;
+      linear-gradient(var(--y2k-cyan) 1px, transparent 1px),
+      linear-gradient(90deg, var(--y2k-cyan) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.1;
   }
 
-  .mood-joy {
-    background: linear-gradient(135deg, var(--mood-joy), hsl(40, 100%, 40%));
+  /* Planet Mood Classes - Real Exoplanets */
+  .planet-pegasi-b {
+    background: radial-gradient(circle at 30% 30%, var(--pegasi-b), hsl(35, 90%, 40%));
+    color: var(--pegasi-b);
   }
 
-  .mood-calm {
-    background: linear-gradient(135deg, var(--mood-calm), hsl(210, 85%, 35%));
+  .planet-proxima-b {
+    background: radial-gradient(circle at 30% 30%, var(--proxima-b), hsl(0, 70%, 35%));
+    color: var(--proxima-b);
   }
 
-  .mood-energy {
-    background: linear-gradient(135deg, var(--mood-energy), hsl(0, 85%, 35%));
+  .planet-kepler-452b {
+    background: radial-gradient(circle at 30% 30%, var(--kepler-452b), hsl(120, 50%, 30%));
+    color: var(--kepler-452b);
   }
 
-  .mood-love {
-    background: linear-gradient(135deg, var(--mood-love), hsl(330, 85%, 50%));
+  .planet-trappist-1e {
+    background: radial-gradient(circle at 30% 30%, var(--trappist-1e), hsl(210, 90%, 50%));
+    color: var(--trappist-1e);
   }
 
-  .mood-peace {
-    background: linear-gradient(135deg, var(--mood-peace), hsl(150, 70%, 30%));
+  .planet-kepler-186f {
+    background: radial-gradient(circle at 30% 30%, var(--kepler-186f), hsl(300, 70%, 40%));
+    color: var(--kepler-186f);
   }
 
-  .mood-creative {
-    background: linear-gradient(135deg, var(--mood-creative), hsl(270, 75%, 45%));
+  .planet-hd-209458b {
+    background: radial-gradient(circle at 30% 30%, var(--hd-209458b), hsl(180, 90%, 40%));
+    color: var(--hd-209458b);
   }
 
-  .mood-focused {
-    background: linear-gradient(135deg, var(--mood-focused), hsl(35, 85%, 35%));
+  .planet-gliese-667cc {
+    background: radial-gradient(circle at 30% 30%, var(--gliese-667cc), hsl(30, 90%, 40%));
+    color: var(--gliese-667cc);
   }
 
-  .mood-sad {
-    background: linear-gradient(135deg, var(--mood-sad), hsl(0, 0%, 25%));
+  .planet-psr-b1257 {
+    background: radial-gradient(circle at 30% 30%, var(--psr-b1257), hsl(0, 0%, 40%));
+    color: var(--psr-b1257);
   }
 }
 
@@ -144,35 +161,57 @@
     animation: float 6s ease-in-out infinite;
   }
 
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+  .animate-cyber-glow {
+    animation: cyberGlow 2s ease-in-out infinite alternate;
   }
 
-  .animate-orbit {
-    animation: orbit 20s linear infinite;
+  .animate-data-stream {
+    animation: dataStream 3s linear infinite;
   }
 
-  .animate-twinkle {
-    animation: twinkle 3s ease-in-out infinite;
+  .animate-hologram {
+    animation: hologram 4s ease-in-out infinite;
   }
+
+  .animate-matrix-scroll {
+    animation: matrixScroll 20s linear infinite;
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
 }
 
-@keyframes glow {
-  from { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
-  to { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+@keyframes cyberGlow {
+  from { 
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    filter: brightness(1);
+  }
+  to { 
+    box-shadow: 0 0 30px currentColor, 0 0 60px currentColor;
+    filter: brightness(1.2);
+  }
 }
 
-@keyframes orbit {
-  from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-  to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.3; }
+@keyframes dataStream {
+  0% { opacity: 0.3; transform: translateX(-100%); }
   50% { opacity: 1; }
+  100% { opacity: 0.3; transform: translateX(100%); }
+}
+
+@keyframes hologram {
+  0%, 100% { opacity: 0.8; filter: hue-rotate(0deg); }
+  50% { opacity: 1; filter: hue-rotate(180deg); }
+}
+
+@keyframes matrixScroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 400px; }
 }

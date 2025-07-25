@@ -7,14 +7,14 @@ interface MoodCalendarProps {
 }
 
 const moodColors: Record<string, string> = {
-  joy: "bg-yellow-400",
-  calm: "bg-blue-400",
-  energy: "bg-red-400",
-  love: "bg-pink-400",
-  peace: "bg-green-400",
-  creative: "bg-purple-400",
-  focused: "bg-orange-400",
-  sad: "bg-gray-400",
+  "pegasi-b": "bg-yellow-400",
+  "proxima-b": "bg-red-400", 
+  "kepler-452b": "bg-green-400",
+  "trappist-1e": "bg-blue-400",
+  "kepler-186f": "bg-purple-400",
+  "hd-209458b": "bg-cyan-400",
+  "gliese-667cc": "bg-orange-400",
+  "psr-b1257": "bg-gray-400",
 };
 
 export function MoodCalendar({ moods, onDateSelect }: MoodCalendarProps) {
