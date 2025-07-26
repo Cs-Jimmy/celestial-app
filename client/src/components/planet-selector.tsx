@@ -80,9 +80,15 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
   const planetsWithoutSun = moods.filter(mood => mood.id !== "happy");
   const sunMood = moods.find(mood => mood.id === "happy");
   
-  // Create concentric circles of planets around the sun
-  const orbitRadii = [130, 200, 270]; // Three orbital distances
-  const planetsPerOrbit = Math.ceil(planetsWithoutSun.length / orbitRadii.length);
+  // Create concentric circles of planets around the sun with better spacing
+  const orbitRadii = [140, 220, 300]; // Three orbital distances - increased spacing
+  
+  // Distribute planets more evenly - fewer planets per inner orbit
+  const orbitDistribution = [
+    { radius: 140, maxPlanets: 2 }, // Inner orbit - max 2 planets
+    { radius: 220, maxPlanets: 3 }, // Middle orbit - max 3 planets  
+    { radius: 300, maxPlanets: 4 }  // Outer orbit - max 4 planets
+  ];
   
   const planetOrbitData: Record<string, { radius: number; angle: number; ringClass: string }> = {};
   
@@ -91,29 +97,38 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
     planetOrbitData[sunMood.id] = { radius: 0, angle: 0, ringClass: "" };
   }
   
-  // Distribute remaining planets in circular orbits
+  // Distribute remaining planets across orbits to avoid overcrowding
+  let currentOrbitIndex = 0;
+  let planetsInCurrentOrbit = 0;
+  
   planetsWithoutSun.forEach((mood, index) => {
-    const orbitIndex = Math.floor(index / planetsPerOrbit);
-    const positionInOrbit = index % planetsPerOrbit;
-    const planetsInThisOrbit = Math.min(planetsPerOrbit, planetsWithoutSun.length - orbitIndex * planetsPerOrbit);
+    // Move to next orbit if current one is full
+    if (planetsInCurrentOrbit >= orbitDistribution[currentOrbitIndex].maxPlanets) {
+      currentOrbitIndex = Math.min(currentOrbitIndex + 1, orbitDistribution.length - 1);
+      planetsInCurrentOrbit = 0;
+    }
     
-    const radius = orbitRadii[orbitIndex] || orbitRadii[orbitRadii.length - 1];
-    const angleStep = 360 / planetsInThisOrbit;
-    const angle = positionInOrbit * angleStep;
+    const currentOrbit = orbitDistribution[currentOrbitIndex];
+    const radius = currentOrbit.radius;
+    
+    // Calculate angle with better spacing - add offset to avoid clustering
+    const angleStep = 360 / currentOrbit.maxPlanets;
+    const angle = planetsInCurrentOrbit * angleStep + (currentOrbitIndex * 30); // Add offset per orbit
     
     // Map to appropriate ring class based on radius
     let ringClass = "";
-    if (radius <= 130) ringClass = "orbit-ring-mercury";
-    else if (radius <= 200) ringClass = "orbit-ring-venus"; 
+    if (radius <= 150) ringClass = "orbit-ring-mercury";
+    else if (radius <= 230) ringClass = "orbit-ring-venus"; 
     else ringClass = "orbit-ring-earth";
     
     planetOrbitData[mood.id] = { radius, angle, ringClass };
+    planetsInCurrentOrbit++;
   });
 
   return (
-    <div className="relative flex items-center justify-center min-h-[700px]">
+    <div className="relative flex items-center justify-center min-h-[750px]">
       {/* Orbital container */}
-      <div className="relative w-[700px] h-[700px]">
+      <div className="relative w-[750px] h-[750px]">
         {/* Orbital rings - show only the ones we're using */}
         <div className="orbit-ring orbit-ring-mercury"></div>
         <div className="orbit-ring orbit-ring-venus"></div>

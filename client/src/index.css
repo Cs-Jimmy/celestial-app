@@ -388,9 +388,9 @@ html, body {
     pointer-events: none;
   }
 
-  .orbit-ring-mercury { width: 260px; height: 260px; }
-  .orbit-ring-venus { width: 400px; height: 400px; }
-  .orbit-ring-earth { width: 540px; height: 540px; }
+  .orbit-ring-mercury { width: 280px; height: 280px; }
+  .orbit-ring-venus { width: 440px; height: 440px; }
+  .orbit-ring-earth { width: 600px; height: 600px; }
   .orbit-ring-mars { width: 680px; height: 680px; }
   .orbit-ring-jupiter { width: 820px; height: 820px; }
   .orbit-ring-uranus { width: 960px; height: 960px; }
