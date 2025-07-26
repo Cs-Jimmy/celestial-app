@@ -45,7 +45,7 @@ export default function Analytics() {
 
   if (isLoading) {
     return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-8">
         <div className="text-center">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-600 rounded w-64 mx-auto mb-4"></div>
@@ -58,7 +58,7 @@ export default function Analytics() {
 
   if (!analytics) {
     return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Mission Analytics</h2>
           <p className="text-gray-300">No data available yet. Start tracking your moods to see analytics!</p>
@@ -71,7 +71,7 @@ export default function Analytics() {
   const growthTrajectory = analytics.averageMood > 0 ? (analytics.averageMood / 10) * 100 : 0;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-8">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 font-serif">✨ cosmic insights ✨</h2>
         <p className="text-pink-300 font-serif italic">&gt; reading your celestial energy patterns...</p>

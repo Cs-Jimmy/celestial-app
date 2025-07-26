@@ -30,7 +30,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="min-h-screen y2k-bg text-cyan-400 overflow-x-hidden">
+        <div className="min-h-screen y2k-bg text-cyan-400 overflow-x-hidden max-w-full">
           {/* Animated background pattern */}
           <div className="fixed inset-0 matrix-grid animate-matrix-scroll"></div>
           

@@ -2,6 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent horizontal scrolling on mobile */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure all containers respect viewport width */
+.container {
+  max-width: 100vw;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* Prevent wide elements from causing horizontal scroll */
+  .max-w-7xl {
+    max-width: 100vw;
+    width: 100%;
+  }
+  
+  /* Ensure cards don't overflow */
+  .glass-panel, .cyber-panel {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* Fix grid layouts on mobile */
+  .grid {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Navigation adjustments */
+  .flex.items-center.space-x-6 {
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+  
+  /* Button text sizing on mobile */
+  @media (max-width: 640px) {
+    .text-sm {
+      font-size: 0.75rem;
+    }
+    
+    /* Hide button text on very small screens, keep only icons */
+    .mobile-hide-text {
+      display: none;
+    }
+  }
+}
+
 :root {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(20, 14.3%, 4.1%);
