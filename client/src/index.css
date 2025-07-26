@@ -88,8 +88,8 @@ html, body {
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
 
-  /* Feminine Y2K/Acubi Theme Colors */
-  --y2k-hot-pink: hsl(320, 100%, 60%);
+  /* Theme Colors */
+  --y2k-hot-pink: hsl(321, 57%, 69%);
   --y2k-bubblegum: hsl(330, 90%, 75%);
   --y2k-lavender: hsl(280, 80%, 70%);
   --y2k-holographic: hsl(270, 100%, 80%);

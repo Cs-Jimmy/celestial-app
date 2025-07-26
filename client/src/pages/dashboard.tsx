@@ -67,9 +67,6 @@ export default function Dashboard() {
               {analytics?.streak || 0}
             </div>
             <div className="text-pink-300 font-serif">cosmic streak</div>
-            <div className="mt-2">
-              <Flame className="h-6 w-6 text-pink-400 mx-auto animate-cyber-glow" />
-            </div>
           </CardContent>
         </Card>
 
@@ -79,9 +76,6 @@ export default function Dashboard() {
               {analytics?.totalEntries || 0}
             </div>
             <div className="text-cyan-300 font-mono">TOTAL_ENTRIES</div>
-            <div className="mt-2">
-              <BookOpen className="h-6 w-6 text-magenta-400 mx-auto animate-cyber-glow" />
-            </div>
           </CardContent>
         </Card>
 
@@ -91,9 +85,6 @@ export default function Dashboard() {
               {analytics?.predominantMood || "NULL"}
             </div>
             <div className="text-cyan-300 font-mono">PRIME_VIBE</div>
-            <div className="mt-2">
-              <Smile className="h-6 w-6 text-magenta-400 mx-auto animate-cyber-glow" />
-            </div>
           </CardContent>
         </Card>
       </div>
