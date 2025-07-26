@@ -6,44 +6,44 @@ export interface MoodGuidance {
 
 export const moodGuidanceData: Record<string, MoodGuidance> = {
   "happy": {
-    tip: "✨ Channel this golden energy into spreading joy and celebrating your wins!",
-    activity: "Treat yourself to something beautiful, call your besties, or start that creative project you've been dreaming about.",
+    tip: "☀️ Like the Sun's radiant warmth, your golden energy illuminates everything around you!",
+    activity: "Share your bright energy - celebrate achievements, create something beautiful, or brighten someone's day with your warmth.",
     color: "text-yellow-300"
   },
   "love": {
-    tip: "💖 This warm pink energy is perfect for deep connections and self-expression!",
-    activity: "Write in your journal, create art that speaks to your soul, or have that heart-to-heart conversation.",
+    tip: "💕 Venus blesses you with soft pink energy of affection and beauty!",
+    activity: "Express your heart through art, write love letters, have meaningful conversations, or create something that celebrates connection.",
     color: "text-pink-400"
   },
   "calm": {
-    tip: "🌿 Your balanced mint energy is ideal for nurturing yourself and making mindful choices.",
-    activity: "Practice gentle self-care, organize your sacred space, or take a peaceful nature walk.",
-    color: "text-emerald-300"
+    tip: "🌍 Like Earth's steady presence, your blue energy brings balance and nurturing peace.",
+    activity: "Ground yourself in nature, practice mindful breathing, organize your space, or engage in gentle self-care rituals.",
+    color: "text-blue-300"
   },
   "sad": {
-    tip: "💜 Honor this soft blue energy with gentle self-compassion and healing.",
-    activity: "Take a warm bath, journal your feelings, or reach out to someone who cares about you.",
-    color: "text-purple-300"
+    tip: "🌊 Neptune's deep blue waters invite you to flow with your emotions and find healing.",
+    activity: "Honor your feelings through journaling, take a soothing bath, listen to music, or seek comfort from loved ones.",
+    color: "text-blue-400"
   },
   "excited": {
-    tip: "🔮 Channel this vibrant violet energy into positive action and creative expression!",
-    activity: "Dance to your favorite music, start a new project, or share your excitement with friends.",
+    tip: "💜 Mars channels vibrant violet energy of passion, drive, and creative fire!",
+    activity: "Channel this electric energy into action - dance, create, start new projects, or share your enthusiasm with others.",
     color: "text-violet-400"
   },
   "peaceful": {
-    tip: "✨ This serene blue energy is perfect for deep reflection and spiritual connection!",
-    activity: "Meditate, practice gratitude, or spend quiet time in nature connecting with your inner wisdom.",
+    tip: "🌌 Uranus gifts you with serene cyan energy of wisdom and spiritual connection.",
+    activity: "Meditate under the stars, practice gratitude, spend quiet time in nature, or explore your inner wisdom through reflection.",
     color: "text-cyan-300"
   },
   "energetic": {
-    tip: "🧡 Channel this vibrant peachy energy into movement and joyful productivity!",
-    activity: "Try a new workout, clean your space with intention, or tackle that project you've been putting off.",
-    color: "text-orange-300"
+    tip: "🪐 Jupiter's expansive beige energy fuels your motivation and ambitious spirit!",
+    activity: "Take on new challenges, organize and tackle your goals, exercise with purpose, or expand your horizons through learning.",
+    color: "text-amber-300"
   },
   "anxious": {
-    tip: "🌸 Honor this tender rose energy with extra gentleness and grounding practices.",
-    activity: "Practice deep breathing, do some gentle stretching, or create a calming environment around yourself.",
-    color: "text-rose-300"
+    tip: "☿️ Mercury's gentle silver energy reminds you to slow down and find your center.",
+    activity: "Practice deep breathing exercises, create a calm environment, do gentle stretches, or engage in soothing repetitive activities.",
+    color: "text-gray-300"
   }
 };
 

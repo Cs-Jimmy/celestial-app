@@ -103,7 +103,7 @@ html, body {
   --venus: hsl(340, 70%, 80%);           /* Venus - Soft peachy pink */
   --earth: hsl(200, 60%, 75%);           /* Earth - Gentle sky blue */
   --neptune: hsl(220, 80%, 80%);         /* Neptune - Light ocean blue */
-  --mars: hsl(15, 70%, 75%);             /* Mars - Warm coral orange */
+  --mars: hsl(270, 80%, 75%);            /* Mars - Excited violet purple */
   --uranus: hsl(180, 50%, 80%);          /* Uranus - Soft mint blue */
   --jupiter: hsl(35, 60%, 75%);          /* Jupiter - Creamy beige */
   --mercury: hsl(0, 0%, 75%);            /* Mercury - Light gray */
@@ -203,7 +203,7 @@ html, body {
   }
 
   .planet-mars {
-    background: radial-gradient(circle at 30% 30%, var(--mars), hsl(15, 60%, 55%));
+    background: radial-gradient(circle at 30% 30%, var(--mars), hsl(270, 70%, 65%));
     color: var(--mars);
   }
 

@@ -20,7 +20,7 @@ const allMoodOptions: MoodOption[] = [
   { id: "love", name: "Love", color: "pink", description: "Venus", className: "planet-venus" },
   { id: "calm", name: "Calm", color: "blue", description: "Earth", className: "planet-earth" },
   { id: "sad", name: "Sad", color: "blue", description: "Neptune", className: "planet-neptune" },
-  { id: "excited", name: "Excited", color: "orange", description: "Mars", className: "planet-mars" },
+  { id: "excited", name: "Excited", color: "violet", description: "Mars", className: "planet-mars" },
   { id: "peaceful", name: "Peaceful", color: "cyan", description: "Uranus", className: "planet-uranus" },
   { id: "energetic", name: "Energetic", color: "orange", description: "Jupiter", className: "planet-jupiter" },
   { id: "anxious", name: "Anxious", color: "gray", description: "Mercury", className: "planet-mercury" },

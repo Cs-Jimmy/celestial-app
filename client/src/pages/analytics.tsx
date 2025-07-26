@@ -18,10 +18,10 @@ interface Analytics {
 
 const moodColors: Record<string, string> = {
   "happy": "bg-yellow-200",
-  "love": "bg-orange-200", 
+  "love": "bg-pink-200", 
   "calm": "bg-blue-200",
   "sad": "bg-blue-300",
-  "excited": "bg-orange-300",
+  "excited": "bg-violet-200",
   "peaceful": "bg-cyan-200",
   "energetic": "bg-amber-200",
   "anxious": "bg-gray-200",
