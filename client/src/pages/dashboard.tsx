@@ -96,7 +96,7 @@ export default function Dashboard() {
       <Card className="dark-universe-panel border-blue-400/50">
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-semibold text-royal-blue font-serif font-bold cosmic-glow">RECENT_MISSION_LOGS.TXT</h3>
+            <h3 className="text-xl font-semibold text-royal-blue font-serif font-bold cosmic-glow">recent mission logs</h3>
             <Link href="/mission-log">
               <Button variant="outline" size="sm">
                 View All
