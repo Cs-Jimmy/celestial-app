@@ -76,53 +76,39 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
     );
   }
 
-  // Mood tracker layout - orbital system with planets distributed in circles around sun
+  // Mood tracker layout - proper solar system with evenly distributed planets
   const planetsWithoutSun = moods.filter(mood => mood.id !== "happy");
   const sunMood = moods.find(mood => mood.id === "happy");
   
-  // Create concentric circles of planets around the sun with better spacing
-  const orbitRadii = [140, 220, 300]; // Three orbital distances - increased spacing
+  // Define specific orbital positions for each planet with proper spacing
+  const solarSystemLayout: Record<string, { radius: number; angle: number; ringClass: string; animationDelay: number }> = {
+    "happy": { radius: 0, angle: 0, ringClass: "", animationDelay: 0 }, // Sun at center
+    "anxious": { radius: 140, angle: 0, ringClass: "orbit-ring-mercury", animationDelay: 0 }, // Mercury
+    "love": { radius: 140, angle: 180, ringClass: "orbit-ring-mercury", animationDelay: 1.5 }, // Venus (same orbit, opposite side)
+    "calm": { radius: 220, angle: 60, ringClass: "orbit-ring-venus", animationDelay: 3 }, // Earth
+    "excited": { radius: 220, angle: 180, ringClass: "orbit-ring-venus", animationDelay: 4.5 }, // Mars
+    "energetic": { radius: 220, angle: 300, ringClass: "orbit-ring-venus", animationDelay: 6 }, // Jupiter (3 planets evenly spaced)
+    "peaceful": { radius: 300, angle: 90, ringClass: "orbit-ring-earth", animationDelay: 7.5 }, // Uranus
+    "sad": { radius: 300, angle: 270, ringClass: "orbit-ring-earth", animationDelay: 9 }, // Neptune (opposite side)
+  };
   
-  // Distribute planets more evenly - fewer planets per inner orbit
-  const orbitDistribution = [
-    { radius: 140, maxPlanets: 2 }, // Inner orbit - max 2 planets
-    { radius: 220, maxPlanets: 3 }, // Middle orbit - max 3 planets  
-    { radius: 300, maxPlanets: 4 }  // Outer orbit - max 4 planets
-  ];
+  const planetOrbitData: Record<string, { radius: number; angle: number; ringClass: string; animationDelay: number }> = {};
   
-  const planetOrbitData: Record<string, { radius: number; angle: number; ringClass: string }> = {};
-  
-  // Place sun at center
-  if (sunMood) {
-    planetOrbitData[sunMood.id] = { radius: 0, angle: 0, ringClass: "" };
-  }
-  
-  // Distribute remaining planets across orbits to avoid overcrowding
-  let currentOrbitIndex = 0;
-  let planetsInCurrentOrbit = 0;
-  
-  planetsWithoutSun.forEach((mood, index) => {
-    // Move to next orbit if current one is full
-    if (planetsInCurrentOrbit >= orbitDistribution[currentOrbitIndex].maxPlanets) {
-      currentOrbitIndex = Math.min(currentOrbitIndex + 1, orbitDistribution.length - 1);
-      planetsInCurrentOrbit = 0;
+  // Assign predefined positions or distribute remaining planets
+  moods.forEach((mood, index) => {
+    if (solarSystemLayout[mood.id]) {
+      planetOrbitData[mood.id] = solarSystemLayout[mood.id];
+    } else {
+      // Fallback for any extra planets
+      const radius = 300;
+      const angle = index * (360 / moods.length);
+      planetOrbitData[mood.id] = { 
+        radius, 
+        angle, 
+        ringClass: "orbit-ring-earth", 
+        animationDelay: index * 1.5 
+      };
     }
-    
-    const currentOrbit = orbitDistribution[currentOrbitIndex];
-    const radius = currentOrbit.radius;
-    
-    // Calculate angle with better spacing - add offset to avoid clustering
-    const angleStep = 360 / currentOrbit.maxPlanets;
-    const angle = planetsInCurrentOrbit * angleStep + (currentOrbitIndex * 30); // Add offset per orbit
-    
-    // Map to appropriate ring class based on radius
-    let ringClass = "";
-    if (radius <= 150) ringClass = "orbit-ring-mercury";
-    else if (radius <= 230) ringClass = "orbit-ring-venus"; 
-    else ringClass = "orbit-ring-earth";
-    
-    planetOrbitData[mood.id] = { radius, angle, ringClass };
-    planetsInCurrentOrbit++;
   });
 
   return (
@@ -136,9 +122,9 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
 
         {/* Planets positioned around the sun */}
         {moods.map((mood) => {
-          const orbitData = planetOrbitData[mood.id] || { radius: 0, angle: 0, ringClass: "" };
+          const orbitData = planetOrbitData[mood.id] || { radius: 0, angle: 0, ringClass: "", animationDelay: 0 };
           const isSun = mood.id === "happy";
-          const animationClass = isSun ? "animate-sun-center" : "animate-planet-static";
+          const animationClass = isSun ? "animate-sun-center" : "animate-planet-float-delayed";
           
           if (isSun) {
             // Sun stays at center
@@ -166,13 +152,13 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
             );
           }
           
-          // Orbital planets - use rotation transform for perfect circular positioning
+          // Orbital planets - positioned at exact angles with staggered floating animations
           return (
             <div 
               key={mood.id} 
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="absolute top-1/2 left-1/2"
               style={{ 
-                transform: `rotate(${orbitData.angle}deg) translateX(${orbitData.radius}px) rotate(-${orbitData.angle}deg)`
+                transform: `rotate(${orbitData.angle}deg) translateX(${orbitData.radius}px) rotate(-${orbitData.angle}deg) translate(-50%, -50%)`
               }}
             >
               <div className="text-center">
@@ -182,11 +168,14 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                   className="group mb-2 p-0 h-auto bg-transparent hover:bg-transparent"
                   onClick={() => onSelect(mood.id)}
                 >
-                  {/* Planet visual with floating animation */}
+                  {/* Planet visual with staggered floating animation */}
                   <div 
                     className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} ${animationClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
                       selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
                     }`}
+                    style={{
+                      animationDelay: `${orbitData.animationDelay}s`
+                    }}
                   />
                 </Button>
                 {/* Planet labels */}

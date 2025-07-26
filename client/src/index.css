@@ -377,6 +377,11 @@ html, body {
     animation: planetFloat 6s ease-in-out infinite;
   }
 
+  /* Individual planet floating animations with staggered delays */
+  .animate-planet-float-delayed {
+    animation: planetFloatDiagonal 8s ease-in-out infinite;
+  }
+
   /* Orbital ring styles */
   .orbit-ring {
     position: absolute;
@@ -472,6 +477,21 @@ html, body {
 @keyframes planetFloat {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-4px); }
+}
+
+@keyframes planetFloatDiagonal {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px); 
+  }
+  25% { 
+    transform: translateY(-6px) translateX(2px); 
+  }
+  50% { 
+    transform: translateY(-8px) translateX(0px); 
+  }
+  75% { 
+    transform: translateY(-6px) translateX(-2px); 
+  }
 }
 
 @keyframes cyberGlow {
