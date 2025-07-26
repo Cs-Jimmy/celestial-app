@@ -61,42 +61,42 @@ export default function Dashboard() {
 
       {/* Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <Card className="dark-universe-panel border-blue-400/50 text-center">
+        <Card className="dark-universe-panel border-[#4ea8de]/40 text-center">
           <CardContent className="pt-6">
-            <div className="text-3xl font-bold text-blue-300 mb-2 font-mono">
+            <div className="text-3xl font-bold text-[#E4D9FF] mb-2 font-mono">
               {analytics?.streak || 0}
             </div>
-            <div className="text-royal-blue font-serif font-bold cosmic-glow">cosmic streak</div>
+            <div className="text-[#E4D9FF] font-serif font-bold cosmic-glow">cosmic streak</div>
             <div className="mt-2">
               <Flame className="h-6 w-6 text-pink-400 mx-auto" />
             </div>
           </CardContent>
         </Card>
 
-        <Card className="dark-universe-panel border-blue-400/50 text-center">
+        <Card className="dark-universe-panel border-[#4ea8de]/40 text-center">
           <CardContent className="pt-6">
-            <div className="text-3xl font-bold text-blue-300 mb-2 font-mono">
+            <div className="text-3xl font-bold text-[#E4D9FF] mb-2 font-mono">
               {analytics?.totalEntries || 0}
             </div>
-            <div className="text-royal-blue font-serif font-bold cosmic-glow">total entries</div>
+            <div className="text-[#E4D9FF] font-serif font-bold cosmic-glow">total entries</div>
           </CardContent>
         </Card>
 
-        <Card className="dark-universe-panel border-blue-400/50 text-center">
+        <Card className="dark-universe-panel border-[#4ea8de]/40 text-center">
           <CardContent className="pt-6">
-            <div className="text-3xl font-bold text-blue-300 mb-2 font-mono">
+            <div className="text-3xl font-bold text-[#E4D9FF] mb-2 font-mono">
               {analytics?.predominantMood || "NULL"}
             </div>
-            <div className="text-royal-blue font-serif font-bold cosmic-glow">prime vibe</div>
+            <div className="text-[#E4D9FF] font-serif font-bold cosmic-glow">prime vibe</div>
           </CardContent>
         </Card>
       </div>
 
       {/* Recent Activity */}
-      <Card className="dark-universe-panel border-blue-400/50">
+      <Card className="dark-universe-panel border-[#4ea8de]/40">
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-semibold text-royal-blue font-serif font-bold cosmic-glow">recent mission logs</h3>
+            <h3 className="text-xl font-semibold text-[#E4D9FF] font-serif font-bold cosmic-glow">recent mission logs</h3>
             <Link href="/mission-log">
               <Button variant="outline" size="sm">
                 View All
