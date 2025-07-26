@@ -48,16 +48,16 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
   // Set grid layout based on variant
   const gridCols = size === "large" ? "grid-cols-2 md:grid-cols-4 lg:grid-cols-8" : "grid-cols-2 md:grid-cols-4";
 
-  // Planet positions around the sun (stationary)
+  // Planet positions around the sun (stationary) - spread out on separate orbits
   const planetPositions: Record<string, { x: number; y: number; ringClass?: string }> = {
     "happy": { x: 0, y: 0 }, // Sun at center
-    "anxious": { x: 80, y: 0, ringClass: "orbit-ring-mercury" }, // Mercury - right
-    "love": { x: -110, y: 0, ringClass: "orbit-ring-venus" }, // Venus - left
-    "calm": { x: 0, y: -140, ringClass: "orbit-ring-earth" }, // Earth - top
-    "excited": { x: 0, y: 170, ringClass: "orbit-ring-mars" }, // Mars - bottom
-    "energetic": { x: 142, y: 142, ringClass: "orbit-ring-jupiter" }, // Jupiter - bottom right
-    "peaceful": { x: -163, y: -163, ringClass: "orbit-ring-uranus" }, // Uranus - top left
-    "sad": { x: -184, y: 184, ringClass: "orbit-ring-neptune" }, // Neptune - bottom left
+    "anxious": { x: 90, y: 0, ringClass: "orbit-ring-mercury" }, // Mercury - right (90px radius)
+    "love": { x: 0, y: -120, ringClass: "orbit-ring-venus" }, // Venus - top (120px radius)
+    "calm": { x: -150, y: 0, ringClass: "orbit-ring-earth" }, // Earth - left (150px radius)
+    "excited": { x: 127, y: 127, ringClass: "orbit-ring-mars" }, // Mars - bottom right (180px radius)
+    "energetic": { x: 0, y: 210, ringClass: "orbit-ring-jupiter" }, // Jupiter - bottom (210px radius)
+    "peaceful": { x: -170, y: -170, ringClass: "orbit-ring-uranus" }, // Uranus - top left (240px radius)
+    "sad": { x: 191, y: -191, ringClass: "orbit-ring-neptune" }, // Neptune - top right (270px radius)
   };
 
   return (
