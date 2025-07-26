@@ -120,17 +120,17 @@ html, body {
 .dark {
   --background: #1E2749;
   --foreground: #FAFAFF;
-  --muted: #273469;
+  --muted: rgba(39, 52, 105, 0.6);
   --muted-foreground: #E4D9FF;
-  --popover: #1E2749;
+  --popover: rgba(30, 39, 73, 0.8);
   --popover-foreground: #FAFAFF;
-  --card: #273469;
+  --card: rgba(39, 52, 105, 0.6);
   --card-foreground: #FAFAFF;
-  --border: #E4D9FF;
-  --input: #273469;
+  --border: transparent;
+  --input: rgba(39, 52, 105, 0.7);
   --primary: #E4D9FF;
   --primary-foreground: #1E2749;
-  --secondary: #273469;
+  --secondary: rgba(48, 52, 63, 0.6);
   --secondary-foreground: #FAFAFF;
   --accent: #E4D9FF;
   --accent-foreground: #1E2749;
@@ -246,14 +246,14 @@ html, body {
 
 
   .cyber-panel {
-    background: #273469;
-    border: 2px solid #E4D9FF;
+    background: rgba(39, 52, 105, 0.6);
+    border: 2px solid transparent;
     border-radius: 20px;
   }
 
   .dark-universe-panel {
-    background: #273469;
-    border: 1px solid #E4D9FF;
+    background: rgba(30, 39, 73, 0.7);
+    border: 1px solid transparent;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
