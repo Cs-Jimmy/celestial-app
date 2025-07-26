@@ -68,7 +68,7 @@ export default function Dashboard() {
             </div>
             <div className="text-pink-300 font-serif">cosmic streak</div>
             <div className="mt-2">
-              <Flame className="h-6 w-6 text-pink-400 mx-auto animate-cyber-glow" />
+              <Flame className="h-6 w-6 text-pink-400 mx-auto" />
             </div>
           </CardContent>
         </Card>
