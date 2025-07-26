@@ -176,58 +176,49 @@ html, body {
     overflow: hidden;
   }
 
+  /* Closer stars - medium speed */
   .dark-universe-panel::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
     background-image: 
-      radial-gradient(1px 1px at 40px 20px, rgba(255,255,255,0.6), transparent 40%),
-      radial-gradient(1px 1px at 80px 50px, rgba(173,216,230,0.5), transparent 35%),
-      radial-gradient(2px 2px at 120px 70px, rgba(255,255,255,0.8), transparent 50%),
-      radial-gradient(1px 1px at 160px 30px, rgba(135,206,250,0.4), transparent 30%),
-      radial-gradient(1px 1px at 200px 80px, rgba(255,255,255,0.5), transparent 35%);
+      radial-gradient(2px 2px at 25% 15%, rgba(255,255,255,0.9), transparent 70%),
+      radial-gradient(1.5px 1.5px at 65% 45%, rgba(255,255,255,0.7), transparent 60%),
+      radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.6), transparent 50%),
+      radial-gradient(2px 2px at 85% 25%, rgba(255,255,255,0.8), transparent 65%),
+      radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,0.5), transparent 45%),
+      radial-gradient(1.5px 1.5px at 75% 60%, rgba(255,255,255,0.7), transparent 55%);
     background-repeat: repeat;
-    background-size: 240px 100px;
-    width: 120%;
-    height: 120%;
-    opacity: 0.4;
+    background-size: 250px 180px;
+    opacity: 0.5;
     pointer-events: none;
-    animation: deepSpaceTwinkle 5s ease-in-out infinite alternate, moveStarsFast 15s linear infinite;
+    animation: starTwinkleSubtle 12s ease-in-out infinite, starDriftMedium 65s linear infinite;
   }
 
+  /* Far distant stars - very slow */
   .dark-universe-panel::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: -100%;
+    left: -100%;
+    right: -100%;
+    bottom: -100%;
     background-image: 
-      radial-gradient(3px 3px at 15px 25px, rgba(255,255,255,1), rgba(255,255,255,0.8) 30%, transparent 70%),
-      radial-gradient(2px 2px at 35px 60px, rgba(135,206,250,1), rgba(135,206,250,0.6) 40%, transparent 80%),
-      radial-gradient(1px 1px at 70px 35px, rgba(255,255,255,1), transparent 50%),
-      radial-gradient(2px 2px at 110px 75px, rgba(173,216,230,1), rgba(173,216,230,0.7) 35%, transparent 70%),
-      radial-gradient(1px 1px at 140px 20px, rgba(255,255,255,0.9), transparent 60%),
-      radial-gradient(3px 3px at 180px 85px, rgba(255,255,255,1), rgba(255,255,255,0.8) 30%, transparent 70%),
-      radial-gradient(1px 1px at 50px 90px, rgba(176,196,222,1), transparent 50%),
-      radial-gradient(2px 2px at 85px 15px, rgba(255,255,255,1), rgba(255,255,255,0.6) 40%, transparent 80%),
-      radial-gradient(1px 1px at 25px 95px, rgba(255,255,255,0.8), transparent 60%),
-      radial-gradient(2px 2px at 165px 45px, rgba(135,206,250,1), rgba(135,206,250,0.7) 35%, transparent 75%),
-      radial-gradient(1px 1px at 120px 5px, rgba(255,255,255,1), transparent 50%),
-      radial-gradient(3px 3px at 5px 65px, rgba(173,216,230,1), rgba(173,216,230,0.8) 30%, transparent 70%),
-      radial-gradient(2px 2px at 190px 30px, rgba(255,255,255,0.9), transparent 60%),
-      radial-gradient(1px 1px at 30px 70px, rgba(176,196,222,0.8), transparent 50%),
-      radial-gradient(2px 2px at 150px 90px, rgba(135,206,250,0.7), transparent 65%);
+      radial-gradient(1px 1px at 15% 25%, rgba(255,255,255,0.8), transparent 60%),
+      radial-gradient(0.5px 0.5px at 35% 60%, rgba(255,255,255,0.6), transparent 40%),
+      radial-gradient(1px 1px at 70% 35%, rgba(255,255,255,0.9), transparent 50%),
+      radial-gradient(0.5px 0.5px at 20% 75%, rgba(255,255,255,0.4), transparent 30%),
+      radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.7), transparent 55%),
+      radial-gradient(0.5px 0.5px at 50% 90%, rgba(255,255,255,0.5), transparent 35%),
+      radial-gradient(1px 1px at 90% 55%, rgba(255,255,255,0.8), transparent 60%);
     background-repeat: repeat;
-    background-size: 220px 120px;
-    width: 120%;
-    height: 120%;
-    opacity: 0.7;
+    background-size: 300px 200px;
+    opacity: 0.3;
     pointer-events: none;
-    animation: deepSpaceTwinkle 4s ease-in-out infinite alternate, moveStars 20s linear infinite;
+    animation: starTwinkleSubtle 8s ease-in-out infinite, starDriftSlow 90s linear infinite;
   }
 
   .planet-hologram {
@@ -359,29 +350,34 @@ html, body {
   100% { opacity: 0.3; }
 }
 
-@keyframes deepSpaceTwinkle {
-  0% { opacity: 0.3; }
-  25% { opacity: 0.6; }
-  50% { opacity: 0.8; }
-  75% { opacity: 0.5; }
-  100% { opacity: 0.3; }
+
+
+/* Subtle star twinkling - realistic opacity changes */
+@keyframes starTwinkleSubtle {
+  0% { opacity: 0.2; }
+  30% { opacity: 0.4; }
+  60% { opacity: 0.6; }
+  80% { opacity: 0.3; }
+  100% { opacity: 0.2; }
 }
 
-@keyframes moveStars {
+/* Very slow diagonal drift for distant stars */
+@keyframes starDriftSlow {
   from { 
-    transform: translateY(0);
+    transform: translateX(0) translateY(0);
   }
   to { 
-    transform: translateY(-100vh);
+    transform: translateX(-50px) translateY(-30px);
   }
 }
 
-@keyframes moveStarsFast {
+/* Medium speed diagonal drift for closer stars */
+@keyframes starDriftMedium {
   from { 
-    transform: translateY(0);
+    transform: translateX(0) translateY(0);
   }
   to { 
-    transform: translateY(-100vh);
+    transform: translateX(-40px) translateY(-25px);
   }
 }
 
