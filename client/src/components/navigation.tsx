@@ -26,7 +26,7 @@ export function Navigation() {
                 <Link key={path} href={path}>
                   <Button
                     variant="ghost"
-                    className={`px-4 py-2 rounded-lg transition-all hover:bg-pink-500/20 border border-transparent hover:border-pink-500/50 text-pink-200 hover:text-pink-100 ${
+                    className={`px-4 py-2 rounded-lg transition-all hover:bg-pink-500/20 border border-transparent hover:border-pink-500/50 text-pink-200 hover:text-pink-100 font-mono uppercase tracking-wider text-sm ${
                       location === path ? "bg-pink-500/20 border-pink-500/50 text-pink-100" : ""
                     }`}
                   >
