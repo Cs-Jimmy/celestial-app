@@ -167,11 +167,10 @@ html, body {
   .dark-universe-panel {
     background: linear-gradient(145deg, rgba(0, 0, 5, 0.98), rgba(5, 5, 15, 0.96), rgba(2, 2, 10, 0.97));
     backdrop-filter: blur(25px);
-    border: 2px solid rgba(65, 105, 225, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 
-      0 0 40px rgba(65, 105, 225, 0.5), 
-      inset 0 0 40px rgba(65, 105, 225, 0.15),
-      0 0 80px rgba(65, 105, 225, 0.3);
+      0 0 20px rgba(0, 0, 0, 0.8), 
+      inset 0 0 20px rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -201,8 +200,7 @@ html, body {
     background-size: 200px 100px;
     opacity: 0.6;
     pointer-events: none;
-    animation: deepSpaceTwinkle 6s ease-in-out infinite alternate;
-    filter: drop-shadow(0 0 4px rgba(255,255,255,0.8)) drop-shadow(0 0 8px rgba(135,206,250,0.6));
+    animation: deepSpaceTwinkle 6s ease-in-out infinite alternate, starDrift 20s linear infinite;
   }
 
   .planet-hologram {
@@ -335,26 +333,19 @@ html, body {
 }
 
 @keyframes deepSpaceTwinkle {
-  0% { 
-    opacity: 0.4; 
-    filter: drop-shadow(0 0 3px rgba(255,255,255,0.6)) drop-shadow(0 0 6px rgba(135,206,250,0.4));
-  }
-  25% { 
-    opacity: 0.7; 
-    filter: drop-shadow(0 0 6px rgba(255,255,255,0.9)) drop-shadow(0 0 12px rgba(135,206,250,0.7));
-  }
-  50% { 
-    opacity: 0.9; 
-    filter: drop-shadow(0 0 8px rgba(255,255,255,1)) drop-shadow(0 0 16px rgba(135,206,250,0.9));
-  }
-  75% { 
-    opacity: 0.6; 
-    filter: drop-shadow(0 0 5px rgba(255,255,255,0.8)) drop-shadow(0 0 10px rgba(135,206,250,0.6));
-  }
-  100% { 
-    opacity: 0.4; 
-    filter: drop-shadow(0 0 3px rgba(255,255,255,0.6)) drop-shadow(0 0 6px rgba(135,206,250,0.4));
-  }
+  0% { opacity: 0.3; }
+  25% { opacity: 0.6; }
+  50% { opacity: 0.8; }
+  75% { opacity: 0.5; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes starDrift {
+  0% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(5px) translateY(-3px); }
+  50% { transform: translateX(-3px) translateY(5px); }
+  75% { transform: translateX(3px) translateY(3px); }
+  100% { transform: translateX(0) translateY(0); }
 }
 
 .text-royal-blue {
@@ -362,10 +353,5 @@ html, body {
 }
 
 .cosmic-glow {
-  text-shadow: 
-    0 0 5px var(--royal-blue),
-    0 0 10px var(--royal-blue),
-    0 0 15px var(--royal-blue),
-    0 0 20px rgba(65, 105, 225, 0.8);
-  filter: drop-shadow(0 0 3px var(--royal-blue));
+  text-shadow: 0 0 2px rgba(65, 105, 225, 0.3);
 }
