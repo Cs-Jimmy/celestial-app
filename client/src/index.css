@@ -195,12 +195,15 @@ html, body {
       radial-gradient(1px 1px at 25px 95px, rgba(255,255,255,0.8), transparent 60%),
       radial-gradient(2px 2px at 165px 45px, rgba(135,206,250,1), rgba(135,206,250,0.7) 35%, transparent 75%),
       radial-gradient(1px 1px at 120px 5px, rgba(255,255,255,1), transparent 50%),
-      radial-gradient(3px 3px at 5px 65px, rgba(173,216,230,1), rgba(173,216,230,0.8) 30%, transparent 70%);
+      radial-gradient(3px 3px at 5px 65px, rgba(173,216,230,1), rgba(173,216,230,0.8) 30%, transparent 70%),
+      radial-gradient(2px 2px at 190px 30px, rgba(255,255,255,0.9), transparent 60%),
+      radial-gradient(1px 1px at 30px 70px, rgba(176,196,222,0.8), transparent 50%),
+      radial-gradient(2px 2px at 150px 90px, rgba(135,206,250,0.7), transparent 65%);
     background-repeat: repeat;
-    background-size: 200px 100px;
-    opacity: 0.6;
+    background-size: 220px 120px;
+    opacity: 0.7;
     pointer-events: none;
-    animation: deepSpaceTwinkle 6s ease-in-out infinite alternate, starDrift 20s linear infinite;
+    animation: deepSpaceTwinkle 6s ease-in-out infinite alternate, starDrift 15s ease-in-out infinite, starFloat 25s linear infinite;
   }
 
   .planet-hologram {
@@ -341,11 +344,20 @@ html, body {
 }
 
 @keyframes starDrift {
-  0% { transform: translateX(0) translateY(0); }
-  25% { transform: translateX(5px) translateY(-3px); }
-  50% { transform: translateX(-3px) translateY(5px); }
-  75% { transform: translateX(3px) translateY(3px); }
-  100% { transform: translateX(0) translateY(0); }
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  25% { transform: translateX(8px) translateY(-6px) rotate(90deg); }
+  50% { transform: translateX(-6px) translateY(8px) rotate(180deg); }
+  75% { transform: translateX(6px) translateY(6px) rotate(270deg); }
+  100% { transform: translateX(0) translateY(0) rotate(360deg); }
+}
+
+@keyframes starFloat {
+  0% { transform: translateX(0) translateY(0) scale(1); }
+  20% { transform: translateX(10px) translateY(-8px) scale(1.1); }
+  40% { transform: translateX(-8px) translateY(12px) scale(0.9); }
+  60% { transform: translateX(12px) translateY(-4px) scale(1.05); }
+  80% { transform: translateX(-6px) translateY(10px) scale(0.95); }
+  100% { transform: translateX(0) translateY(0) scale(1); }
 }
 
 .text-royal-blue {
