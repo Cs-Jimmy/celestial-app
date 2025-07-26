@@ -125,17 +125,39 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
           const isSun = mood.id === "happy";
           const animationClass = isSun ? "animate-sun-center" : "animate-planet-static";
           
-          // Calculate x, y position using trigonometry
-          const angleRad = (orbitData.angle * Math.PI) / 180;
-          const x = orbitData.radius * Math.cos(angleRad);
-          const y = orbitData.radius * Math.sin(angleRad);
+          if (isSun) {
+            // Sun stays at center
+            return (
+              <div 
+                key={mood.id} 
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              >
+                <div className="text-center">
+                  <Button
+                    variant="ghost"
+                    className="group mb-2 p-0 h-auto bg-transparent hover:bg-transparent"
+                    onClick={() => onSelect(mood.id)}
+                  >
+                    <div 
+                      className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} ${animationClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
+                        selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
+                      }`}
+                    />
+                  </Button>
+                  <h4 className="font-semibold text-pink-300 font-serif text-xs">{mood.name}</h4>
+                  <p className="text-xs text-pink-400 font-serif italic">{mood.description}</p>
+                </div>
+              </div>
+            );
+          }
           
+          // Orbital planets - use rotation transform for perfect circular positioning
           return (
             <div 
               key={mood.id} 
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               style={{ 
-                transform: `translate(${x}px, ${y}px)`
+                transform: `rotate(${orbitData.angle}deg) translateX(${orbitData.radius}px) rotate(-${orbitData.angle}deg)`
               }}
             >
               <div className="text-center">
@@ -145,7 +167,7 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                   className="group mb-2 p-0 h-auto bg-transparent hover:bg-transparent"
                   onClick={() => onSelect(mood.id)}
                 >
-                  {/* Planet visual */}
+                  {/* Planet visual with floating animation */}
                   <div 
                     className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} ${animationClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
                       selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
