@@ -67,6 +67,9 @@ export default function Dashboard() {
               {analytics?.streak || 0}
             </div>
             <div className="text-pink-300 font-serif">cosmic streak</div>
+            <div className="mt-2">
+              <Flame className="h-6 w-6 text-pink-400 mx-auto animate-cyber-glow" />
+            </div>
           </CardContent>
         </Card>
 
