@@ -388,13 +388,13 @@ html, body {
     pointer-events: none;
   }
 
-  .orbit-ring-mercury { width: 180px; height: 180px; }
-  .orbit-ring-venus { width: 240px; height: 240px; }
-  .orbit-ring-earth { width: 300px; height: 300px; }
-  .orbit-ring-mars { width: 360px; height: 360px; }
-  .orbit-ring-jupiter { width: 420px; height: 420px; }
-  .orbit-ring-uranus { width: 480px; height: 480px; }
-  .orbit-ring-neptune { width: 540px; height: 540px; }
+  .orbit-ring-mercury { width: 220px; height: 220px; }
+  .orbit-ring-venus { width: 300px; height: 300px; }
+  .orbit-ring-earth { width: 380px; height: 380px; }
+  .orbit-ring-mars { width: 460px; height: 460px; }
+  .orbit-ring-jupiter { width: 540px; height: 540px; }
+  .orbit-ring-uranus { width: 620px; height: 620px; }
+  .orbit-ring-neptune { width: 700px; height: 700px; }
 }
 
 @keyframes feminineGradientShift {

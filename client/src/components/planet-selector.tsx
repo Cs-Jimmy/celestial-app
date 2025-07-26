@@ -48,22 +48,51 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
   // Set grid layout based on variant
   const gridCols = size === "large" ? "grid-cols-2 md:grid-cols-4 lg:grid-cols-8" : "grid-cols-2 md:grid-cols-4";
 
-  // Planet positions around the sun (stationary) - spread out on separate orbits
-  const planetPositions: Record<string, { x: number; y: number; ringClass?: string }> = {
-    "happy": { x: 0, y: 0 }, // Sun at center
-    "anxious": { x: 90, y: 0, ringClass: "orbit-ring-mercury" }, // Mercury - right (90px radius)
-    "love": { x: 0, y: -120, ringClass: "orbit-ring-venus" }, // Venus - top (120px radius)
-    "calm": { x: -150, y: 0, ringClass: "orbit-ring-earth" }, // Earth - left (150px radius)
-    "excited": { x: 127, y: 127, ringClass: "orbit-ring-mars" }, // Mars - bottom right (180px radius)
-    "energetic": { x: 0, y: 210, ringClass: "orbit-ring-jupiter" }, // Jupiter - bottom (210px radius)
-    "peaceful": { x: -170, y: -170, ringClass: "orbit-ring-uranus" }, // Uranus - top left (240px radius)
-    "sad": { x: 191, y: -191, ringClass: "orbit-ring-neptune" }, // Neptune - top right (270px radius)
+  // Check if this is being used in the mood tracker page (size === "large")
+  const isMoodTracker = size === "large";
+
+  if (!isMoodTracker) {
+    // Dashboard layout - planets in a line
+    return (
+      <div className={`grid ${gridCols} gap-6`}>
+        {moods.map((mood, index) => (
+          <div key={mood.id} className="text-center">
+            <Button
+              variant="ghost"
+              className="group mb-4 p-0 h-auto bg-transparent hover:bg-transparent"
+              onClick={() => onSelect(mood.id)}
+            >
+              <div 
+                className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} animate-planet-static group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
+                  selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
+                }`}
+              />
+            </Button>
+            <h4 className="font-semibold text-pink-300 font-serif">{mood.name}</h4>
+            <p className="text-xs text-pink-400 font-serif italic">{mood.description}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  // Mood tracker layout - orbital system
+  // Calculate planet positions using proper angles on their orbits
+  const planetOrbitData: Record<string, { radius: number; angle: number; ringClass: string }> = {
+    "happy": { radius: 0, angle: 0, ringClass: "" }, // Sun at center
+    "anxious": { radius: 110, angle: 0, ringClass: "orbit-ring-mercury" }, // Mercury - 0° (right)
+    "love": { radius: 150, angle: 315, ringClass: "orbit-ring-venus" }, // Venus - 315° (top-right)
+    "calm": { radius: 190, angle: 270, ringClass: "orbit-ring-earth" }, // Earth - 270° (top)
+    "excited": { radius: 230, angle: 45, ringClass: "orbit-ring-mars" }, // Mars - 45° (bottom-right)
+    "energetic": { radius: 270, angle: 180, ringClass: "orbit-ring-jupiter" }, // Jupiter - 180° (left)
+    "peaceful": { radius: 310, angle: 225, ringClass: "orbit-ring-uranus" }, // Uranus - 225° (top-left)
+    "sad": { radius: 350, angle: 135, ringClass: "orbit-ring-neptune" }, // Neptune - 135° (bottom-left)
   };
 
   return (
-    <div className="relative flex items-center justify-center min-h-[600px]">
+    <div className="relative flex items-center justify-center min-h-[800px]">
       {/* Orbital container */}
-      <div className="relative w-[600px] h-[600px]">
+      <div className="relative w-[800px] h-[800px]">
         {/* Orbital rings */}
         <div className="orbit-ring orbit-ring-mercury"></div>
         <div className="orbit-ring orbit-ring-venus"></div>
@@ -75,16 +104,21 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
 
         {/* Planets positioned around the sun */}
         {moods.map((mood) => {
-          const position = planetPositions[mood.id] || { x: 0, y: 0 };
+          const orbitData = planetOrbitData[mood.id] || { radius: 0, angle: 0, ringClass: "" };
           const isSun = mood.id === "happy";
           const animationClass = isSun ? "animate-sun-center" : "animate-planet-static";
+          
+          // Calculate x, y position using trigonometry
+          const angleRad = (orbitData.angle * Math.PI) / 180;
+          const x = orbitData.radius * Math.cos(angleRad);
+          const y = orbitData.radius * Math.sin(angleRad);
           
           return (
             <div 
               key={mood.id} 
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
               style={{ 
-                transform: `translate(${position.x - 48}px, ${position.y - 48}px)` // Offset by half planet size
+                transform: `translate(${x}px, ${y}px)`
               }}
             >
               <div className="text-center">
