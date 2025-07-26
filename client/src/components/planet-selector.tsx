@@ -76,31 +76,48 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
     );
   }
 
-  // Mood tracker layout - orbital system
-  // Calculate planet positions using proper angles on their orbits
-  const planetOrbitData: Record<string, { radius: number; angle: number; ringClass: string }> = {
-    "happy": { radius: 0, angle: 0, ringClass: "" }, // Sun at center
-    "anxious": { radius: 110, angle: 0, ringClass: "orbit-ring-mercury" }, // Mercury - 0° (right)
-    "love": { radius: 150, angle: 315, ringClass: "orbit-ring-venus" }, // Venus - 315° (top-right)
-    "calm": { radius: 190, angle: 270, ringClass: "orbit-ring-earth" }, // Earth - 270° (top)
-    "excited": { radius: 230, angle: 45, ringClass: "orbit-ring-mars" }, // Mars - 45° (bottom-right)
-    "energetic": { radius: 270, angle: 180, ringClass: "orbit-ring-jupiter" }, // Jupiter - 180° (left)
-    "peaceful": { radius: 310, angle: 225, ringClass: "orbit-ring-uranus" }, // Uranus - 225° (top-left)
-    "sad": { radius: 350, angle: 135, ringClass: "orbit-ring-neptune" }, // Neptune - 135° (bottom-left)
-  };
+  // Mood tracker layout - orbital system with planets distributed in circles around sun
+  const planetsWithoutSun = moods.filter(mood => mood.id !== "happy");
+  const sunMood = moods.find(mood => mood.id === "happy");
+  
+  // Create concentric circles of planets around the sun
+  const orbitRadii = [130, 200, 270]; // Three orbital distances
+  const planetsPerOrbit = Math.ceil(planetsWithoutSun.length / orbitRadii.length);
+  
+  const planetOrbitData: Record<string, { radius: number; angle: number; ringClass: string }> = {};
+  
+  // Place sun at center
+  if (sunMood) {
+    planetOrbitData[sunMood.id] = { radius: 0, angle: 0, ringClass: "" };
+  }
+  
+  // Distribute remaining planets in circular orbits
+  planetsWithoutSun.forEach((mood, index) => {
+    const orbitIndex = Math.floor(index / planetsPerOrbit);
+    const positionInOrbit = index % planetsPerOrbit;
+    const planetsInThisOrbit = Math.min(planetsPerOrbit, planetsWithoutSun.length - orbitIndex * planetsPerOrbit);
+    
+    const radius = orbitRadii[orbitIndex] || orbitRadii[orbitRadii.length - 1];
+    const angleStep = 360 / planetsInThisOrbit;
+    const angle = positionInOrbit * angleStep;
+    
+    // Map to appropriate ring class based on radius
+    let ringClass = "";
+    if (radius <= 130) ringClass = "orbit-ring-mercury";
+    else if (radius <= 200) ringClass = "orbit-ring-venus"; 
+    else ringClass = "orbit-ring-earth";
+    
+    planetOrbitData[mood.id] = { radius, angle, ringClass };
+  });
 
   return (
-    <div className="relative flex items-center justify-center min-h-[800px]">
+    <div className="relative flex items-center justify-center min-h-[700px]">
       {/* Orbital container */}
-      <div className="relative w-[800px] h-[800px]">
-        {/* Orbital rings */}
+      <div className="relative w-[700px] h-[700px]">
+        {/* Orbital rings - show only the ones we're using */}
         <div className="orbit-ring orbit-ring-mercury"></div>
         <div className="orbit-ring orbit-ring-venus"></div>
         <div className="orbit-ring orbit-ring-earth"></div>
-        <div className="orbit-ring orbit-ring-mars"></div>
-        <div className="orbit-ring orbit-ring-jupiter"></div>
-        <div className="orbit-ring orbit-ring-uranus"></div>
-        <div className="orbit-ring orbit-ring-neptune"></div>
 
         {/* Planets positioned around the sun */}
         {moods.map((mood) => {
