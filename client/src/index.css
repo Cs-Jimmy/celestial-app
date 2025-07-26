@@ -88,22 +88,22 @@ html, body {
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
 
-  /* Coolors Palette - Deep Space Theme */
-  --deep-teal: #012a36;         /* Deep teal - darkest */
-  --dark-purple: #29274c;       /* Dark purple */
-  --royal-purple: #7e52a0;      /* Royal purple */
-  --soft-pink: #d295bf;         /* Soft pink */
-  --pale-pink: #e6bccd;         /* Pale pink - lightest */
+  /* New Palette from Image */
+  --dark-gray: #30343F;         /* Dark gray - darkest */
+  --light-gray: #FAFAFF;        /* Very light gray - lightest */
+  --light-purple: #E4D9FF;      /* Light purple */
+  --dark-blue: #273469;         /* Dark blue */
+  --darker-blue: #1E2749;       /* Darker blue */
 
   /* Theme Colors mapped to new palette */
-  --y2k-hot-pink: #d295bf;
-  --y2k-bubblegum: #e6bccd;
-  --y2k-lavender: #7e52a0;
-  --y2k-holographic: #d295bf;
-  --y2k-pearl: #e6bccd;
-  --y2k-electric-blue: #012a36;
-  --y2k-neon-green: #29274c;
-  --y2k-chrome: #e6bccd;
+  --y2k-hot-pink: #E4D9FF;
+  --y2k-bubblegum: #FAFAFF;
+  --y2k-lavender: #E4D9FF;
+  --y2k-holographic: #E4D9FF;
+  --y2k-pearl: #FAFAFF;
+  --y2k-electric-blue: #273469;
+  --y2k-neon-green: #1E2749;
+  --y2k-chrome: #FAFAFF;
 
   /* Planet-Based Mood Colors - Keep original colors */
   --sun: hsl(45, 90%, 80%);              /* Sun - Warm golden yellow */
@@ -118,25 +118,25 @@ html, body {
 }
 
 .dark {
-  --background: #012a36;
-  --foreground: #e6bccd;
-  --muted: #29274c;
-  --muted-foreground: #d295bf;
-  --popover: #012a36;
-  --popover-foreground: #e6bccd;
-  --card: #29274c;
-  --card-foreground: #e6bccd;
-  --border: #7e52a0;
-  --input: #29274c;
-  --primary: #d295bf;
-  --primary-foreground: #012a36;
-  --secondary: #29274c;
-  --secondary-foreground: #e6bccd;
-  --accent: #7e52a0;
-  --accent-foreground: #e6bccd;
-  --destructive: #d295bf;
-  --destructive-foreground: #012a36;
-  --ring: #d295bf;
+  --background: #1E2749;
+  --foreground: #FAFAFF;
+  --muted: #273469;
+  --muted-foreground: #E4D9FF;
+  --popover: #1E2749;
+  --popover-foreground: #FAFAFF;
+  --card: #273469;
+  --card-foreground: #FAFAFF;
+  --border: #E4D9FF;
+  --input: #273469;
+  --primary: #E4D9FF;
+  --primary-foreground: #1E2749;
+  --secondary: #273469;
+  --secondary-foreground: #FAFAFF;
+  --accent: #E4D9FF;
+  --accent-foreground: #1E2749;
+  --destructive: #E4D9FF;
+  --destructive-foreground: #1E2749;
+  --ring: #E4D9FF;
   --radius: 1rem;
 }
 
@@ -147,10 +147,10 @@ html, body {
 
   body {
     @apply font-sans antialiased;
-    background: linear-gradient(45deg, #012a36, #29274c, #7e52a0, #012a36);
+    background: linear-gradient(45deg, #1E2749, #273469, #30343F, #1E2749);
     background-size: 400% 400%;
     animation: feminineGradientShift 10s ease infinite;
-    color: #e6bccd;
+    color: #FAFAFF;
     min-height: 100vh;
     font-family: 'Georgia', serif;
   }
@@ -246,20 +246,17 @@ html, body {
 
 
   .cyber-panel {
-    background: linear-gradient(145deg, rgba(210, 149, 191, 0.15), rgba(126, 82, 160, 0.15), rgba(230, 188, 205, 0.1));
-    backdrop-filter: blur(15px);
-    border: 2px solid var(--soft-pink);
-    box-shadow: 0 0 25px var(--soft-pink), inset 0 0 25px rgba(210, 149, 191, 0.2);
+    background: #273469;
+    border: 2px solid #E4D9FF;
     border-radius: 20px;
   }
 
   .dark-universe-panel {
-    background: linear-gradient(145deg, rgba(1, 42, 54, 0.95), rgba(41, 39, 76, 0.90), rgba(126, 82, 160, 0.05));
-    border: 1px solid var(--royal-purple);
+    background: #273469;
+    border: 1px solid #E4D9FF;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(10px);
   }
 
 
@@ -269,9 +266,9 @@ html, body {
   .planet-hologram {
     box-shadow: 
       0 0 20px currentColor,
-      inset 0 0 25px rgba(230, 188, 205, 0.15),
+      inset 0 0 25px rgba(228, 217, 255, 0.15),
       0 0 40px currentColor,
-      0 0 60px rgba(210, 149, 191, 0.2);
+      0 0 60px rgba(228, 217, 255, 0.2);
     border: 2px solid currentColor;
     filter: drop-shadow(0 0 10px currentColor);
   }
