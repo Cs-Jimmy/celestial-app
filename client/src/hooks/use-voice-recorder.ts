@@ -1,21 +1,27 @@
+// Voice recorder hook - handles audio recording for mission logs
 import { useState, useRef, useCallback } from "react";
 
+// What we get back when recording is finished
 interface RecordingResult {
-  audioData: string;
-  duration: number;
+  audioData: string; // Audio file as base64 string for storage
+  duration: number; // How long the recording is in seconds
 }
 
+// Main voice recorder hook
 export function useVoiceRecorder() {
-  const [isRecording, setIsRecording] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  const [recordingTime, setRecordingTime] = useState(0);
-  const [audioURL, setAudioURL] = useState<string | null>(null);
+  // Recording state
+  const [isRecording, setIsRecording] = useState(false); // Is currently recording
+  const [isPaused, setIsPaused] = useState(false); // Is recording paused
+  const [recordingTime, setRecordingTime] = useState(0); // Seconds recorded so far
+  const [audioURL, setAudioURL] = useState<string | null>(null); // URL to play back recording
 
-  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
-  const audioChunksRef = useRef<Blob[]>([]);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const startTimeRef = useRef<number>(0);
+  // Browser APIs for recording
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null); // Browser recording interface
+  const audioChunksRef = useRef<Blob[]>([]); // Audio data pieces
+  const timerRef = useRef<NodeJS.Timeout | null>(null); // Timer to track recording time
+  const startTimeRef = useRef<number>(0); // When recording started
 
+  // Start counting recording time
   const startTimer = useCallback(() => {
     startTimeRef.current = Date.now() - recordingTime * 1000;
     timerRef.current = setInterval(() => {
@@ -23,6 +29,7 @@ export function useVoiceRecorder() {
     }, 1000);
   }, [recordingTime]);
 
+  // Stop counting recording time
   const stopTimer = useCallback(() => {
     if (timerRef.current) {
       clearInterval(timerRef.current);
@@ -30,28 +37,33 @@ export function useVoiceRecorder() {
     }
   }, []);
 
+  // Start recording audio from microphone
   const startRecording = useCallback(async () => {
     try {
+      // Ask browser for microphone access
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const mediaRecorder = new MediaRecorder(stream);
       mediaRecorderRef.current = mediaRecorder;
       audioChunksRef.current = [];
 
+      // Save audio data as it's recorded
       mediaRecorder.ondataavailable = (event) => {
         if (event.data.size > 0) {
           audioChunksRef.current.push(event.data);
         }
       };
 
+      // When recording stops, create playback URL
       mediaRecorder.onstop = () => {
         const audioBlob = new Blob(audioChunksRef.current, { type: "audio/wav" });
         const url = URL.createObjectURL(audioBlob);
         setAudioURL(url);
         
-        // Stop all tracks to release the microphone
+        // Release microphone access
         stream.getTracks().forEach(track => track.stop());
       };
 
+      // Start recording
       mediaRecorder.start();
       setIsRecording(true);
       setIsPaused(false);
@@ -62,6 +74,7 @@ export function useVoiceRecorder() {
     }
   }, [startTimer]);
 
+  // Stop recording and return audio data for saving
   const stopRecording = useCallback((): RecordingResult | null => {
     if (mediaRecorderRef.current && isRecording) {
       mediaRecorderRef.current.stop();
@@ -69,26 +82,27 @@ export function useVoiceRecorder() {
       setIsPaused(false);
       stopTimer();
 
-      // Convert audio blob to base64 for storage
+      // Convert audio to text format for database storage
       if (audioChunksRef.current.length > 0) {
         const audioBlob = new Blob(audioChunksRef.current, { type: "audio/wav" });
         const reader = new FileReader();
         
         return new Promise<RecordingResult>((resolve) => {
           reader.onloadend = () => {
-            const audioData = reader.result as string;
+            const audioData = reader.result as string; // Base64 audio data
             resolve({
               audioData,
               duration: recordingTime,
             });
           };
-          reader.readAsDataURL(audioBlob);
+          reader.readAsDataURL(audioBlob); // Convert to base64
         }) as any; // TypeScript workaround for Promise handling
       }
     }
     return null;
   }, [isRecording, recordingTime, stopTimer]);
 
+  // Pause recording (can be resumed later)
   const pauseRecording = useCallback(() => {
     if (mediaRecorderRef.current && isRecording) {
       mediaRecorderRef.current.pause();
@@ -97,6 +111,7 @@ export function useVoiceRecorder() {
     }
   }, [isRecording, stopTimer]);
 
+  // Resume paused recording
   const resumeRecording = useCallback(() => {
     if (mediaRecorderRef.current && isRecording && isPaused) {
       mediaRecorderRef.current.resume();
@@ -105,6 +120,7 @@ export function useVoiceRecorder() {
     }
   }, [isRecording, isPaused, startTimer]);
 
+  // Clear everything and start over
   const resetRecording = useCallback(() => {
     stopTimer();
     setIsRecording(false);
@@ -114,15 +130,16 @@ export function useVoiceRecorder() {
     audioChunksRef.current = [];
   }, [stopTimer]);
 
+  // Return all functions and state for components to use
   return {
-    isRecording,
-    isPaused,
-    recordingTime,
-    audioURL,
-    startRecording,
-    stopRecording,
-    pauseRecording,
-    resumeRecording,
-    resetRecording,
+    isRecording, // True when actively recording
+    isPaused, // True when recording is paused
+    recordingTime, // Seconds recorded so far
+    audioURL, // URL to play back the recording
+    startRecording, // Function to start recording
+    stopRecording, // Function to stop and get audio data
+    pauseRecording, // Function to pause recording
+    resumeRecording, // Function to resume recording
+    resetRecording, // Function to clear everything
   };
 }
