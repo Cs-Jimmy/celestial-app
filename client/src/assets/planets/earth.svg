@@ -1,0 +1,16 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="earthGradient" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4682B4;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="38" fill="url(#earthGradient)"/>
+  <!-- Continents -->
+  <path d="M20 30 Q35 25 45 35 L40 50 Q30 45 20 50 Z" fill="#8FBC8F" opacity="0.8"/>
+  <path d="M55 20 Q70 25 75 40 L65 45 Q60 35 55 40 Z" fill="#8FBC8F" opacity="0.8"/>
+  <path d="M25 60 Q40 55 50 65 L45 75 Q35 70 25 75 Z" fill="#8FBC8F" opacity="0.8"/>
+  <!-- Clouds -->
+  <ellipse cx="35" cy="25" rx="8" ry="3" fill="white" opacity="0.6"/>
+  <ellipse cx="65" cy="60" rx="6" ry="2" fill="white" opacity="0.5"/>
+</svg>

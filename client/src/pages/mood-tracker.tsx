@@ -16,14 +16,14 @@ import { useToast } from "@/hooks/use-toast";
 import type { Mood } from "@shared/schema";
 
 const allMoodOptions: MoodOption[] = [
-  { id: "happy", name: "Happy", color: "yellow", description: "feeling joyful & bright", className: "planet-happy" },
-  { id: "love", name: "Love", color: "pink", description: "feeling warm & connected", className: "planet-love" },
-  { id: "calm", name: "Calm", color: "green", description: "feeling peaceful & balanced", className: "planet-calm" },
-  { id: "sad", name: "Sad", color: "blue", description: "feeling down & melancholy", className: "planet-sad" },
-  { id: "excited", name: "Excited", color: "purple", description: "feeling energized & thrilled", className: "planet-excited" },
-  { id: "peaceful", name: "Peaceful", color: "cyan", description: "feeling serene & content", className: "planet-peaceful" },
-  { id: "energetic", name: "Energetic", color: "orange", description: "feeling active & motivated", className: "planet-energetic" },
-  { id: "anxious", name: "Anxious", color: "gray", description: "feeling worried & tense", className: "planet-anxious" },
+  { id: "happy", name: "Happy", color: "yellow", description: "Sun", className: "planet-sun" },
+  { id: "love", name: "Love", color: "pink", description: "Venus", className: "planet-venus" },
+  { id: "calm", name: "Calm", color: "blue", description: "Earth", className: "planet-earth" },
+  { id: "sad", name: "Sad", color: "blue", description: "Neptune", className: "planet-neptune" },
+  { id: "excited", name: "Excited", color: "orange", description: "Mars", className: "planet-mars" },
+  { id: "peaceful", name: "Peaceful", color: "cyan", description: "Uranus", className: "planet-uranus" },
+  { id: "energetic", name: "Energetic", color: "orange", description: "Jupiter", className: "planet-jupiter" },
+  { id: "anxious", name: "Anxious", color: "gray", description: "Mercury", className: "planet-mercury" },
 ];
 
 export default function MoodTracker() {

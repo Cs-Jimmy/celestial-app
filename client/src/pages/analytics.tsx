@@ -17,25 +17,25 @@ interface Analytics {
 }
 
 const moodColors: Record<string, string> = {
-  "happy": "bg-yellow-300",
-  "love": "bg-pink-400", 
-  "calm": "bg-emerald-300",
-  "sad": "bg-purple-300",
-  "excited": "bg-violet-400",
-  "peaceful": "bg-cyan-300",
-  "energetic": "bg-orange-300",
-  "anxious": "bg-rose-300",
+  "happy": "bg-yellow-200",
+  "love": "bg-orange-200", 
+  "calm": "bg-blue-200",
+  "sad": "bg-blue-300",
+  "excited": "bg-orange-300",
+  "peaceful": "bg-cyan-200",
+  "energetic": "bg-amber-200",
+  "anxious": "bg-gray-200",
 };
 
 const moodLabels: Record<string, string> = {
-  "happy": "Happy",
-  "love": "Love",
-  "calm": "Calm",
-  "sad": "Sad",
-  "excited": "Excited",
-  "peaceful": "Peaceful",
-  "energetic": "Energetic",
-  "anxious": "Anxious",
+  "happy": "Happy (Sun)",
+  "love": "Love (Venus)",
+  "calm": "Calm (Earth)",
+  "sad": "Sad (Neptune)",
+  "excited": "Excited (Mars)",
+  "peaceful": "Peaceful (Uranus)",
+  "energetic": "Energetic (Jupiter)",
+  "anxious": "Anxious (Mercury)",
 };
 
 export default function Analytics() {

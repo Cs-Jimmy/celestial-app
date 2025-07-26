@@ -1,0 +1,17 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="jupiterGradient" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#F4E4BC;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D2B48C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#CD853F;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="40" fill="url(#jupiterGradient)"/>
+  <!-- Bands -->
+  <ellipse cx="50" cy="35" rx="35" ry="3" fill="#DEB887" opacity="0.7"/>
+  <ellipse cx="50" cy="45" rx="38" ry="2" fill="#CD853F" opacity="0.6"/>
+  <ellipse cx="50" cy="55" rx="36" ry="3" fill="#DEB887" opacity="0.7"/>
+  <ellipse cx="50" cy="65" rx="34" ry="2" fill="#CD853F" opacity="0.6"/>
+  <!-- Great Red Spot -->
+  <ellipse cx="60" cy="50" rx="6" ry="4" fill="#DC143C" opacity="0.8"/>
+</svg>

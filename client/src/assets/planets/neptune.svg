@@ -1,0 +1,16 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="neptuneGradient" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#87CEFA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4169E1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#191970;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="37" fill="url(#neptuneGradient)"/>
+  <!-- Storm features -->
+  <ellipse cx="45" cy="40" rx="4" ry="2" fill="#6495ED" opacity="0.7"/>
+  <ellipse cx="60" cy="60" rx="3" ry="1.5" fill="#6495ED" opacity="0.6"/>
+  <!-- Wind patterns -->
+  <path d="M15 45 Q35 42 55 45 T85 45" stroke="#87CEEB" stroke-width="1" fill="none" opacity="0.4"/>
+  <path d="M20 65 Q40 62 60 65 T80 65" stroke="#87CEEB" stroke-width="1" fill="none" opacity="0.4"/>
+</svg>
