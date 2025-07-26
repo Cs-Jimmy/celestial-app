@@ -75,31 +75,45 @@ export function useVoiceRecorder() {
   }, [startTimer]);
 
   // Stop recording and return audio data for saving
-  const stopRecording = useCallback((): RecordingResult | null => {
-    if (mediaRecorderRef.current && isRecording) {
-      mediaRecorderRef.current.stop();
-      setIsRecording(false);
-      setIsPaused(false);
-      stopTimer();
+  const stopRecording = useCallback((onComplete?: (result: RecordingResult) => void): Promise<RecordingResult | null> => {
+    return new Promise((resolve) => {
+      if (mediaRecorderRef.current && isRecording) {
+        // Set up the stop handler before stopping
+        const originalOnStop = mediaRecorderRef.current.onstop;
+        mediaRecorderRef.current.onstop = () => {
+          // Call original stop handler first
+          if (originalOnStop) {
+            originalOnStop.call(mediaRecorderRef.current, new Event('stop'));
+          }
+          
+          // Convert audio to text format for database storage
+          if (audioChunksRef.current.length > 0) {
+            const audioBlob = new Blob(audioChunksRef.current, { type: "audio/wav" });
+            const reader = new FileReader();
+            
+            reader.onloadend = () => {
+              const audioData = reader.result as string; // Base64 audio data
+              const result = {
+                audioData,
+                duration: recordingTime,
+              };
+              if (onComplete) onComplete(result);
+              resolve(result);
+            };
+            reader.readAsDataURL(audioBlob); // Convert to base64
+          } else {
+            resolve(null);
+          }
+        };
 
-      // Convert audio to text format for database storage
-      if (audioChunksRef.current.length > 0) {
-        const audioBlob = new Blob(audioChunksRef.current, { type: "audio/wav" });
-        const reader = new FileReader();
-        
-        return new Promise<RecordingResult>((resolve) => {
-          reader.onloadend = () => {
-            const audioData = reader.result as string; // Base64 audio data
-            resolve({
-              audioData,
-              duration: recordingTime,
-            });
-          };
-          reader.readAsDataURL(audioBlob); // Convert to base64
-        }) as any; // TypeScript workaround for Promise handling
+        mediaRecorderRef.current.stop();
+        setIsRecording(false);
+        setIsPaused(false);
+        stopTimer();
+      } else {
+        resolve(null);
       }
-    }
-    return null;
+    });
   }, [isRecording, recordingTime, stopTimer]);
 
   // Pause recording (can be resumed later)

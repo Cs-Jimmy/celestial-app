@@ -29,10 +29,14 @@ export function VoiceRecorder({ onRecordingComplete }: VoiceRecorderProps) {
     }
   };
 
-  const handleStopRecording = () => {
-    const result = stopRecording();
-    if (result) {
-      onRecordingComplete(result.audioData, result.duration);
+  const handleStopRecording = async () => {
+    try {
+      const result = await stopRecording();
+      if (result) {
+        onRecordingComplete(result.audioData, result.duration);
+      }
+    } catch (error) {
+      console.error("Failed to stop recording:", error);
     }
   };
 
