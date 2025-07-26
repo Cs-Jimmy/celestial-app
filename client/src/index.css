@@ -163,6 +163,39 @@ html, body {
     border-radius: 20px;
   }
 
+  .dark-universe-panel {
+    background: linear-gradient(145deg, rgba(0, 0, 20, 0.95), rgba(10, 10, 30, 0.90), rgba(5, 5, 25, 0.92));
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(100, 149, 237, 0.6);
+    box-shadow: 
+      0 0 30px rgba(100, 149, 237, 0.4), 
+      inset 0 0 30px rgba(100, 149, 237, 0.1),
+      0 0 60px rgba(100, 149, 237, 0.2);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dark-universe-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    opacity: 0.3;
+    pointer-events: none;
+    animation: twinkle 4s ease-in-out infinite alternate;
+  }
+
   .planet-hologram {
     box-shadow: 
       0 0 20px currentColor,
@@ -284,4 +317,10 @@ html, body {
 @keyframes matrixScroll {
   0% { background-position: 0 0; }
   100% { background-position: 0 400px; }
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.3; }
 }

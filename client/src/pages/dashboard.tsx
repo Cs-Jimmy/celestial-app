@@ -61,42 +61,42 @@ export default function Dashboard() {
 
       {/* Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <Card className="cyber-panel border-cyan-500/50 text-center">
+        <Card className="dark-universe-panel border-blue-400/50 text-center">
           <CardContent className="pt-6">
-            <div className="text-3xl font-bold text-cyan-400 mb-2 font-mono">
+            <div className="text-3xl font-bold text-blue-300 mb-2 font-mono">
               {analytics?.streak || 0}
             </div>
-            <div className="text-pink-300 font-serif">cosmic streak</div>
+            <div className="text-blue-600 font-serif font-bold">cosmic streak</div>
             <div className="mt-2">
               <Flame className="h-6 w-6 text-pink-400 mx-auto" />
             </div>
           </CardContent>
         </Card>
 
-        <Card className="cyber-panel border-cyan-500/50 text-center">
+        <Card className="dark-universe-panel border-blue-400/50 text-center">
           <CardContent className="pt-6">
-            <div className="text-3xl font-bold text-cyan-400 mb-2 font-mono">
+            <div className="text-3xl font-bold text-blue-300 mb-2 font-mono">
               {analytics?.totalEntries || 0}
             </div>
-            <div className="text-cyan-300 font-mono">TOTAL_ENTRIES</div>
+            <div className="text-blue-600 font-mono font-bold">TOTAL_ENTRIES</div>
           </CardContent>
         </Card>
 
-        <Card className="cyber-panel border-cyan-500/50 text-center">
+        <Card className="dark-universe-panel border-blue-400/50 text-center">
           <CardContent className="pt-6">
-            <div className="text-3xl font-bold text-cyan-400 mb-2 font-mono">
+            <div className="text-3xl font-bold text-blue-300 mb-2 font-mono">
               {analytics?.predominantMood || "NULL"}
             </div>
-            <div className="text-cyan-300 font-mono">PRIME_VIBE</div>
+            <div className="text-blue-600 font-mono font-bold">PRIME_VIBE</div>
           </CardContent>
         </Card>
       </div>
 
       {/* Recent Activity */}
-      <Card className="cyber-panel border-cyan-500/50">
+      <Card className="dark-universe-panel border-blue-400/50">
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-semibold text-cyan-300 font-mono">RECENT_MISSION_LOGS.DAT</h3>
+            <h3 className="text-xl font-semibold text-blue-600 font-mono font-bold">RECENT_MISSION_LOGS.DAT</h3>
             <Link href="/mission-log">
               <Button variant="outline" size="sm">
                 View All
