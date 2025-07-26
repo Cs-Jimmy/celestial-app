@@ -151,25 +151,7 @@ html, body {
 
 @layer components {
   .y2k-bg {
-    background: 
-      /* Very subtle scattered stars */
-      radial-gradient(0.5px 0.5px at 15% 20%, rgba(255,255,255,0.4), transparent 1px),
-      radial-gradient(0.5px 0.5px at 35% 10%, rgba(255,255,255,0.3), transparent 1px),
-      radial-gradient(0.5px 0.5px at 65% 30%, rgba(255,255,255,0.5), transparent 1px),
-      radial-gradient(0.5px 0.5px at 85% 15%, rgba(255,255,255,0.3), transparent 1px),
-      radial-gradient(0.5px 0.5px at 25% 60%, rgba(255,255,255,0.4), transparent 1px),
-      radial-gradient(0.5px 0.5px at 45% 80%, rgba(255,255,255,0.3), transparent 1px),
-      radial-gradient(0.5px 0.5px at 75% 70%, rgba(255,255,255,0.4), transparent 1px),
-      radial-gradient(0.5px 0.5px at 10% 50%, rgba(255,255,255,0.3), transparent 1px),
-      radial-gradient(0.5px 0.5px at 55% 45%, rgba(255,255,255,0.5), transparent 1px),
-      radial-gradient(0.5px 0.5px at 90% 85%, rgba(255,255,255,0.3), transparent 1px),
-      /* Pure black background */
-      #000000;
-    background-size: 
-      200px 200px, 180px 180px, 220px 220px, 160px 160px, 240px 240px,
-      190px 190px, 210px 210px, 170px 170px, 230px 230px, 150px 150px,
-      100% 100%;
-    animation: subtleStarDrift 150s linear infinite, starTwinkleSubtle 12s ease-in-out infinite;
+    background: #000000;
     position: relative;
     overflow: hidden;
   }
@@ -183,84 +165,16 @@ html, body {
   }
 
   .dark-universe-panel {
-    background: linear-gradient(145deg, rgba(0, 0, 5, 0.98), rgba(5, 5, 15, 0.96), rgba(2, 2, 10, 0.97));
-    backdrop-filter: blur(25px);
+    background: rgba(15, 15, 25, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 
-      0 0 20px rgba(0, 0, 0, 0.8), 
-      inset 0 0 20px rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     position: relative;
     overflow: hidden;
   }
 
-  /* Closer stars - medium speed */
-  .dark-universe-panel::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    right: -50%;
-    bottom: -50%;
-    background-image: 
-      radial-gradient(4px 4px at 10% 10%, rgba(255,255,255,1), rgba(255,255,255,0.5) 50%, transparent 80%),
-      radial-gradient(3px 3px at 30% 20%, rgba(255,255,255,0.9), rgba(255,255,255,0.4) 45%, transparent 75%),
-      radial-gradient(2px 2px at 50% 15%, rgba(255,255,255,0.8), rgba(255,255,255,0.3) 40%, transparent 70%),
-      radial-gradient(4px 4px at 70% 25%, rgba(255,255,255,1), rgba(255,255,255,0.5) 50%, transparent 80%),
-      radial-gradient(2px 2px at 90% 30%, rgba(255,255,255,0.7), rgba(255,255,255,0.3) 35%, transparent 65%),
-      radial-gradient(3px 3px at 15% 45%, rgba(255,255,255,0.9), rgba(255,255,255,0.4) 45%, transparent 75%),
-      radial-gradient(4px 4px at 35% 55%, rgba(255,255,255,1), rgba(255,255,255,0.5) 50%, transparent 80%),
-      radial-gradient(2px 2px at 55% 65%, rgba(255,255,255,0.8), rgba(255,255,255,0.3) 40%, transparent 70%),
-      radial-gradient(3px 3px at 75% 70%, rgba(255,255,255,0.9), rgba(255,255,255,0.4) 45%, transparent 75%),
-      radial-gradient(4px 4px at 95% 75%, rgba(255,255,255,1), rgba(255,255,255,0.5) 50%, transparent 80%),
-      radial-gradient(2px 2px at 20% 85%, rgba(255,255,255,0.7), rgba(255,255,255,0.3) 35%, transparent 65%),
-      radial-gradient(3px 3px at 40% 95%, rgba(255,255,255,0.9), rgba(255,255,255,0.4) 45%, transparent 75%),
-      radial-gradient(4px 4px at 60% 90%, rgba(255,255,255,1), rgba(255,255,255,0.5) 50%, transparent 80%),
-      radial-gradient(2px 2px at 80% 95%, rgba(255,255,255,0.8), rgba(255,255,255,0.3) 40%, transparent 70%),
-      radial-gradient(3px 3px at 5% 60%, rgba(255,255,255,0.9), rgba(255,255,255,0.4) 45%, transparent 75%),
-      radial-gradient(4px 4px at 25% 40%, rgba(255,255,255,1), rgba(255,255,255,0.5) 50%, transparent 80%);
-    background-repeat: repeat;
-    background-size: 180px 120px;
-    opacity: 0.6;
-    pointer-events: none;
-    animation: starTwinkleSubtle 12s ease-in-out infinite, starDriftMedium 65s linear infinite;
-  }
 
-  /* Far distant stars - very slow */
-  .dark-universe-panel::before {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    right: -100%;
-    bottom: -100%;
-    background-image: 
-      radial-gradient(3px 3px at 8% 12%, rgba(255,255,255,0.9), rgba(255,255,255,0.3) 40%, transparent 70%),
-      radial-gradient(2px 2px at 18% 25%, rgba(255,255,255,0.7), rgba(255,255,255,0.2) 35%, transparent 65%),
-      radial-gradient(3px 3px at 32% 8%, rgba(255,255,255,1), rgba(255,255,255,0.4) 40%, transparent 75%),
-      radial-gradient(2px 2px at 45% 18%, rgba(255,255,255,0.6), rgba(255,255,255,0.2) 30%, transparent 60%),
-      radial-gradient(3px 3px at 58% 35%, rgba(255,255,255,1), rgba(255,255,255,0.4) 45%, transparent 80%),
-      radial-gradient(2px 2px at 72% 45%, rgba(255,255,255,0.8), rgba(255,255,255,0.3) 35%, transparent 70%),
-      radial-gradient(3px 3px at 85% 28%, rgba(255,255,255,0.9), rgba(255,255,255,0.3) 40%, transparent 70%),
-      radial-gradient(2px 2px at 92% 58%, rgba(255,255,255,0.7), rgba(255,255,255,0.2) 35%, transparent 65%),
-      radial-gradient(3px 3px at 12% 68%, rgba(255,255,255,1), rgba(255,255,255,0.4) 40%, transparent 75%),
-      radial-gradient(2px 2px at 28% 78%, rgba(255,255,255,0.6), rgba(255,255,255,0.2) 30%, transparent 60%),
-      radial-gradient(3px 3px at 42% 88%, rgba(255,255,255,0.8), rgba(255,255,255,0.3) 35%, transparent 70%),
-      radial-gradient(2px 2px at 55% 92%, rgba(255,255,255,0.7), rgba(255,255,255,0.2) 35%, transparent 65%),
-      radial-gradient(3px 3px at 68% 75%, rgba(255,255,255,0.9), rgba(255,255,255,0.3) 40%, transparent 70%),
-      radial-gradient(2px 2px at 78% 85%, rgba(255,255,255,0.6), rgba(255,255,255,0.2) 30%, transparent 60%),
-      radial-gradient(3px 3px at 88% 95%, rgba(255,255,255,1), rgba(255,255,255,0.4) 40%, transparent 75%),
-      radial-gradient(2px 2px at 95% 15%, rgba(255,255,255,0.8), rgba(255,255,255,0.3) 35%, transparent 70%),
-      radial-gradient(3px 3px at 5% 52%, rgba(255,255,255,0.9), rgba(255,255,255,0.3) 40%, transparent 70%),
-      radial-gradient(2px 2px at 22% 38%, rgba(255,255,255,0.7), rgba(255,255,255,0.2) 35%, transparent 65%),
-      radial-gradient(3px 3px at 38% 62%, rgba(255,255,255,1), rgba(255,255,255,0.4) 40%, transparent 75%),
-      radial-gradient(2px 2px at 52% 15%, rgba(255,255,255,0.6), rgba(255,255,255,0.2) 30%, transparent 60%);
-    background-repeat: repeat;
-    background-size: 200px 150px;
-    opacity: 0.4;
-    pointer-events: none;
-    animation: starTwinkleSubtle 8s ease-in-out infinite, starDriftSlow 90s linear infinite;
-  }
+
+
 
   .planet-hologram {
     box-shadow: 
