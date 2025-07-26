@@ -152,17 +152,17 @@ html, body {
 @layer components {
   .y2k-bg {
     background: 
-      /* Subtle scattered stars */
-      radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.8), transparent 2px),
-      radial-gradient(0.5px 0.5px at 35% 10%, rgba(255,255,255,0.6), transparent 1.5px),
-      radial-gradient(1px 1px at 65% 30%, rgba(255,255,255,0.9), transparent 2px),
-      radial-gradient(0.5px 0.5px at 85% 15%, rgba(255,255,255,0.5), transparent 1.5px),
-      radial-gradient(1px 1px at 25% 60%, rgba(255,255,255,0.7), transparent 2px),
-      radial-gradient(0.5px 0.5px at 45% 80%, rgba(255,255,255,0.6), transparent 1.5px),
-      radial-gradient(1px 1px at 75% 70%, rgba(255,255,255,0.8), transparent 2px),
-      radial-gradient(0.5px 0.5px at 10% 50%, rgba(255,255,255,0.5), transparent 1.5px),
-      radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,0.9), transparent 2px),
-      radial-gradient(0.5px 0.5px at 90% 85%, rgba(255,255,255,0.6), transparent 1.5px),
+      /* Very subtle scattered stars */
+      radial-gradient(0.5px 0.5px at 15% 20%, rgba(255,255,255,0.4), transparent 1px),
+      radial-gradient(0.5px 0.5px at 35% 10%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.5px 0.5px at 65% 30%, rgba(255,255,255,0.5), transparent 1px),
+      radial-gradient(0.5px 0.5px at 85% 15%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.5px 0.5px at 25% 60%, rgba(255,255,255,0.4), transparent 1px),
+      radial-gradient(0.5px 0.5px at 45% 80%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.5px 0.5px at 75% 70%, rgba(255,255,255,0.4), transparent 1px),
+      radial-gradient(0.5px 0.5px at 10% 50%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.5px 0.5px at 55% 45%, rgba(255,255,255,0.5), transparent 1px),
+      radial-gradient(0.5px 0.5px at 90% 85%, rgba(255,255,255,0.3), transparent 1px),
       /* Pure black background */
       #000000;
     background-size: 
@@ -393,13 +393,13 @@ html, body {
 
 
 
-/* Subtle star twinkling - realistic opacity changes */
+/* Very subtle star twinkling */
 @keyframes starTwinkleSubtle {
-  0% { opacity: 0.2; }
-  30% { opacity: 0.4; }
-  60% { opacity: 0.6; }
-  80% { opacity: 0.3; }
-  100% { opacity: 0.2; }
+  0% { opacity: 0.1; }
+  30% { opacity: 0.2; }
+  60% { opacity: 0.3; }
+  80% { opacity: 0.15; }
+  100% { opacity: 0.1; }
 }
 
 /* Very slow diagonal drift for distant stars */
