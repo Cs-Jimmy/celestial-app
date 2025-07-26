@@ -176,7 +176,28 @@ html, body {
       radial-gradient(0.5px 0.5px at 55% 88%, rgba(255,255,255,0.6), rgba(255,255,255,0.2) 1px, transparent 2px),
       radial-gradient(1px 1px at 72% 65%, rgba(255,255,255,0.8), rgba(255,255,255,0.3) 2px, transparent 3px),
       radial-gradient(0.5px 0.5px at 88% 78%, rgba(255,255,255,0.7), rgba(255,255,255,0.2) 1px, transparent 2px),
-      radial-gradient(1px 1px at 5% 35%, rgba(255,255,255,0.9), rgba(255,255,255,0.3) 2px, transparent 3px);
+      radial-gradient(1px 1px at 5% 35%, rgba(255,255,255,0.9), rgba(255,255,255,0.3) 2px, transparent 3px),
+      /* Tiny distant stars */
+      radial-gradient(0.3px 0.3px at 18% 5%, rgba(255,255,255,0.4), transparent 1px),
+      radial-gradient(0.3px 0.3px at 35% 12%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.3px 0.3px at 52% 22%, rgba(255,255,255,0.5), transparent 1px),
+      radial-gradient(0.3px 0.3px at 68% 8%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.3px 0.3px at 82% 28%, rgba(255,255,255,0.4), transparent 1px),
+      radial-gradient(0.3px 0.3px at 95% 18%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.3px 0.3px at 8% 45%, rgba(255,255,255,0.4), transparent 1px),
+      radial-gradient(0.3px 0.3px at 22% 62%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.3px 0.3px at 38% 48%, rgba(255,255,255,0.5), transparent 1px),
+      radial-gradient(0.3px 0.3px at 58% 78%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.3px 0.3px at 75% 52%, rgba(255,255,255,0.4), transparent 1px),
+      radial-gradient(0.3px 0.3px at 92% 68%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.3px 0.3px at 12% 85%, rgba(255,255,255,0.4), transparent 1px),
+      radial-gradient(0.3px 0.3px at 28% 95%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.3px 0.3px at 48% 92%, rgba(255,255,255,0.5), transparent 1px),
+      radial-gradient(0.3px 0.3px at 65% 82%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.3px 0.3px at 85% 95%, rgba(255,255,255,0.4), transparent 1px),
+      radial-gradient(0.3px 0.3px at 2% 25%, rgba(255,255,255,0.3), transparent 1px),
+      radial-gradient(0.3px 0.3px at 42% 5%, rgba(255,255,255,0.4), transparent 1px),
+      radial-gradient(0.3px 0.3px at 78% 35%, rgba(255,255,255,0.3), transparent 1px);
     background-size: 300px 250px;
     background-repeat: repeat;
     animation: starDriftRandom 180s linear infinite, starTwinkleRealistic 15s ease-in-out infinite;
