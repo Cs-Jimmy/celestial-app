@@ -34,15 +34,15 @@
   --y2k-neon-green: hsl(120, 100%, 70%);
   --y2k-chrome: hsl(0, 0%, 85%);
 
-  /* Feminine Planet Mood Colors - Y2K Exoplanets */
-  --pegasi-b: hsl(50, 100%, 75%);        /* 51 Pegasi b - Shimmery gold */
-  --proxima-b: hsl(320, 100%, 65%);      /* Proxima Centauri b - Hot pink passion */
-  --kepler-452b: hsl(150, 80%, 65%);     /* Kepler-452b - Mint green balance */
-  --trappist-1e: hsl(240, 100%, 80%);    /* TRAPPIST-1e - Soft lavender serenity */
-  --kepler-186f: hsl(280, 90%, 70%);     /* Kepler-186f - Purple holographic */
-  --hd-209458b: hsl(195, 100%, 75%);     /* HD 209458 b - Electric blue transcendence */
-  --gliese-667cc: hsl(30, 90%, 70%);     /* Gliese 667Cc - Peachy orange energy */
-  --psr-b1257: hsl(300, 30%, 70%);       /* PSR B1257+12 b - Dusty rose contemplation */
+  /* Feminine Basic Emotion Colors */
+  --happy: hsl(50, 100%, 75%);           /* Happy - Bright golden yellow */
+  --love: hsl(320, 100%, 65%);           /* Love - Hot pink warmth */
+  --calm: hsl(150, 80%, 65%);            /* Calm - Mint green balance */
+  --sad: hsl(240, 100%, 80%);            /* Sad - Soft lavender blue */
+  --excited: hsl(280, 90%, 70%);         /* Excited - Purple energy */
+  --peaceful: hsl(195, 100%, 75%);       /* Peaceful - Electric blue serenity */
+  --energetic: hsl(30, 90%, 70%);        /* Energetic - Peachy orange vitality */
+  --anxious: hsl(300, 30%, 70%);         /* Anxious - Dusty rose tension */
 }
 
 .dark {
@@ -117,45 +117,45 @@
     opacity: 0.1;
   }
 
-  /* Planet Mood Classes - Real Exoplanets */
-  .planet-pegasi-b {
-    background: radial-gradient(circle at 30% 30%, var(--pegasi-b), hsl(35, 90%, 40%));
-    color: var(--pegasi-b);
+  /* Planet Mood Classes - Basic Emotions */
+  .planet-happy {
+    background: radial-gradient(circle at 30% 30%, var(--happy), hsl(45, 90%, 50%));
+    color: var(--happy);
   }
 
-  .planet-proxima-b {
-    background: radial-gradient(circle at 30% 30%, var(--proxima-b), hsl(0, 70%, 35%));
-    color: var(--proxima-b);
+  .planet-love {
+    background: radial-gradient(circle at 30% 30%, var(--love), hsl(320, 80%, 45%));
+    color: var(--love);
   }
 
-  .planet-kepler-452b {
-    background: radial-gradient(circle at 30% 30%, var(--kepler-452b), hsl(120, 50%, 30%));
-    color: var(--kepler-452b);
+  .planet-calm {
+    background: radial-gradient(circle at 30% 30%, var(--calm), hsl(150, 70%, 45%));
+    color: var(--calm);
   }
 
-  .planet-trappist-1e {
-    background: radial-gradient(circle at 30% 30%, var(--trappist-1e), hsl(210, 90%, 50%));
-    color: var(--trappist-1e);
+  .planet-sad {
+    background: radial-gradient(circle at 30% 30%, var(--sad), hsl(240, 80%, 60%));
+    color: var(--sad);
   }
 
-  .planet-kepler-186f {
-    background: radial-gradient(circle at 30% 30%, var(--kepler-186f), hsl(300, 70%, 40%));
-    color: var(--kepler-186f);
+  .planet-excited {
+    background: radial-gradient(circle at 30% 30%, var(--excited), hsl(280, 80%, 50%));
+    color: var(--excited);
   }
 
-  .planet-hd-209458b {
-    background: radial-gradient(circle at 30% 30%, var(--hd-209458b), hsl(180, 90%, 40%));
-    color: var(--hd-209458b);
+  .planet-peaceful {
+    background: radial-gradient(circle at 30% 30%, var(--peaceful), hsl(195, 90%, 55%));
+    color: var(--peaceful);
   }
 
-  .planet-gliese-667cc {
-    background: radial-gradient(circle at 30% 30%, var(--gliese-667cc), hsl(30, 90%, 40%));
-    color: var(--gliese-667cc);
+  .planet-energetic {
+    background: radial-gradient(circle at 30% 30%, var(--energetic), hsl(30, 80%, 50%));
+    color: var(--energetic);
   }
 
-  .planet-psr-b1257 {
-    background: radial-gradient(circle at 30% 30%, var(--psr-b1257), hsl(0, 0%, 40%));
-    color: var(--psr-b1257);
+  .planet-anxious {
+    background: radial-gradient(circle at 30% 30%, var(--anxious), hsl(300, 20%, 50%));
+    color: var(--anxious);
   }
 }
 

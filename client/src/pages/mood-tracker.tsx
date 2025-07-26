@@ -6,6 +6,7 @@ import { Slider } from "@/components/ui/slider";
 import { Card, CardContent } from "@/components/ui/card";
 import { PlanetSelector, type MoodOption } from "@/components/planet-selector";
 import { MoodCalendar } from "@/components/mood-calendar";
+import { MeditationExercise } from "@/components/meditation-exercise";
 import { getMoodGuidance } from "@/lib/mood-guidance";
 import { generateStardate } from "@/lib/stardate";
 import { queryClient } from "@/lib/queryClient";
@@ -15,14 +16,14 @@ import { useToast } from "@/hooks/use-toast";
 import type { Mood } from "@shared/schema";
 
 const allMoodOptions: MoodOption[] = [
-  { id: "pegasi-b", name: "Euphoric", color: "yellow", description: "51 Pegasi b", className: "planet-pegasi-b" },
-  { id: "proxima-b", name: "Passionate", color: "red", description: "Proxima Centauri b", className: "planet-proxima-b" },
-  { id: "kepler-452b", name: "Balanced", color: "green", description: "Kepler-452b", className: "planet-kepler-452b" },
-  { id: "trappist-1e", name: "Serene", color: "blue", description: "TRAPPIST-1e", className: "planet-trappist-1e" },
-  { id: "kepler-186f", name: "Mystical", color: "purple", description: "Kepler-186f", className: "planet-kepler-186f" },
-  { id: "hd-209458b", name: "Transcendent", color: "cyan", description: "HD 209458 b", className: "planet-hd-209458b" },
-  { id: "gliese-667cc", name: "Energetic", color: "orange", description: "Gliese 667Cc", className: "planet-gliese-667cc" },
-  { id: "psr-b1257", name: "Contemplative", color: "gray", description: "PSR B1257+12 b", className: "planet-psr-b1257" },
+  { id: "happy", name: "Happy", color: "yellow", description: "feeling joyful & bright", className: "planet-happy" },
+  { id: "love", name: "Love", color: "pink", description: "feeling warm & connected", className: "planet-love" },
+  { id: "calm", name: "Calm", color: "green", description: "feeling peaceful & balanced", className: "planet-calm" },
+  { id: "sad", name: "Sad", color: "blue", description: "feeling down & melancholy", className: "planet-sad" },
+  { id: "excited", name: "Excited", color: "purple", description: "feeling energized & thrilled", className: "planet-excited" },
+  { id: "peaceful", name: "Peaceful", color: "cyan", description: "feeling serene & content", className: "planet-peaceful" },
+  { id: "energetic", name: "Energetic", color: "orange", description: "feeling active & motivated", className: "planet-energetic" },
+  { id: "anxious", name: "Anxious", color: "gray", description: "feeling worried & tense", className: "planet-anxious" },
 ];
 
 export default function MoodTracker() {
@@ -94,8 +95,8 @@ export default function MoodTracker() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-400 font-mono">EXOPLANET.MOOD_SYSTEM</h2>
-        <p className="text-cyan-300 font-mono">&gt; SELECT TARGET EXOPLANET FOR EMOTIONAL_MAPPING</p>
+        <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 font-serif">✨ mood tracker ✨</h2>
+        <p className="text-pink-300 font-serif italic">&gt; choose how you're feeling today...</p>
       </div>
 
       {/* Planet Selection Grid */}
@@ -177,6 +178,14 @@ export default function MoodTracker() {
             </div>
           </CardContent>
         </Card>
+      )}
+
+      {/* Meditation Exercise */}
+      {selectedMood && (
+        <div className="mb-8">
+          <h3 className="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 font-serif">✨ meditation & breathing ✨</h3>
+          <MeditationExercise mood={selectedMood} />
+        </div>
       )}
 
       {/* Mood Calendar */}

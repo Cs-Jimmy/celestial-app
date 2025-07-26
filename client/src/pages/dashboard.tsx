@@ -7,10 +7,10 @@ import { Flame, BookOpen, Smile } from "lucide-react";
 import type { Mood, MissionLog } from "@shared/schema";
 
 const quickMoodOptions: MoodOption[] = [
-  { id: "pegasi-b", name: "Euphoric", color: "yellow", description: "51 Pegasi b", className: "planet-pegasi-b" },
-  { id: "proxima-b", name: "Passionate", color: "red", description: "Proxima Centauri b", className: "planet-proxima-b" },
-  { id: "kepler-452b", name: "Balanced", color: "green", description: "Kepler-452b", className: "planet-kepler-452b" },
-  { id: "trappist-1e", name: "Serene", color: "blue", description: "TRAPPIST-1e", className: "planet-trappist-1e" },
+  { id: "happy", name: "Happy", color: "yellow", description: "feeling joyful & bright", className: "planet-happy" },
+  { id: "love", name: "Love", color: "pink", description: "feeling warm & connected", className: "planet-love" },
+  { id: "calm", name: "Calm", color: "green", description: "feeling peaceful & balanced", className: "planet-calm" },
+  { id: "sad", name: "Sad", color: "blue", description: "feeling down & melancholy", className: "planet-sad" },
 ];
 
 interface Analytics {
