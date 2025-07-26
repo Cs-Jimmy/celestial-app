@@ -31,6 +31,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="min-h-screen y2k-bg text-cyan-400 overflow-x-hidden max-w-full">
+          {/* Distant starfield layer for 3D depth */}
+          <div className="starfield-distant"></div>
           {/* Animated background pattern */}
           <div className="fixed inset-0 matrix-grid animate-matrix-scroll"></div>
           
