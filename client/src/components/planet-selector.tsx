@@ -126,8 +126,11 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
           const isSun = mood.id === "happy";
           const animationClass = isSun ? "animate-sun-center" : "animate-planet-float-delayed";
           
+          // Sun stays larger, orbital planets are smaller for realistic scale
+          const planetDisplaySize = isSun ? planetSize : (size === "large" ? "w-16 h-16" : "w-12 h-12");
+          
           if (isSun) {
-            // Sun stays at center
+            // Sun stays at center with original size
             return (
               <div 
                 key={mood.id} 
@@ -140,7 +143,7 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                     onClick={() => onSelect(mood.id)}
                   >
                     <div 
-                      className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} ${animationClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
+                      className={`${planetDisplaySize} mx-auto rounded-full planet-hologram ${mood.className} ${animationClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
                         selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
                       }`}
                     />
@@ -152,7 +155,7 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
             );
           }
           
-          // Orbital planets - positioned at exact angles with staggered floating animations
+          // Orbital planets - smaller size with staggered floating animations
           return (
             <div 
               key={mood.id} 
@@ -168,9 +171,9 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                   className="group mb-2 p-0 h-auto bg-transparent hover:bg-transparent"
                   onClick={() => onSelect(mood.id)}
                 >
-                  {/* Planet visual with staggered floating animation */}
+                  {/* Smaller orbital planets with staggered floating animation */}
                   <div 
-                    className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} ${animationClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
+                    className={`${planetDisplaySize} mx-auto rounded-full planet-hologram ${mood.className} ${animationClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
                       selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
                     }`}
                     style={{
