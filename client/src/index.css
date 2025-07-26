@@ -195,7 +195,7 @@ html, body {
     height: 120%;
     opacity: 0.4;
     pointer-events: none;
-    animation: deepSpaceTwinkle 5s ease-in-out infinite alternate, starfieldMoveFast 8s linear infinite;
+    animation: deepSpaceTwinkle 5s ease-in-out infinite alternate, starfieldMoveFast 18s linear infinite;
   }
 
   .dark-universe-panel::before {
@@ -227,7 +227,7 @@ html, body {
     height: 120%;
     opacity: 0.7;
     pointer-events: none;
-    animation: deepSpaceTwinkle 4s ease-in-out infinite alternate, starfieldMove 12s linear infinite;
+    animation: deepSpaceTwinkle 4s ease-in-out infinite alternate, starfieldMove 25s linear infinite;
   }
 
   .planet-hologram {
