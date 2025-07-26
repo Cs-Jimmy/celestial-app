@@ -367,6 +367,39 @@ html, body {
   .animate-matrix-scroll {
     animation: matrixScroll 20s linear infinite;
   }
+
+  /* Planet floating animations - each with unique timing and pattern */
+  .animate-planet-float-1 {
+    animation: planetFloat1 14s ease-in-out infinite;
+  }
+
+  .animate-planet-float-2 {
+    animation: planetFloat2 16s ease-in-out infinite 2s;
+  }
+
+  .animate-planet-float-3 {
+    animation: planetFloat3 18s ease-in-out infinite 4s;
+  }
+
+  .animate-planet-float-4 {
+    animation: planetFloat4 15s ease-in-out infinite 6s;
+  }
+
+  .animate-planet-float-5 {
+    animation: planetFloat5 17s ease-in-out infinite 8s;
+  }
+
+  .animate-planet-float-6 {
+    animation: planetFloat6 19s ease-in-out infinite 10s;
+  }
+
+  .animate-planet-float-7 {
+    animation: planetFloat7 13s ease-in-out infinite 12s;
+  }
+
+  .animate-planet-float-8 {
+    animation: planetFloat8 20s ease-in-out infinite 14s;
+  }
 }
 
 @keyframes feminineGradientShift {
@@ -433,6 +466,61 @@ html, body {
 @keyframes float {
   0%, 100% { transform: translateY(0px) scale(1); }
   50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* Planet floating animations - unique patterns for each planet */
+@keyframes planetFloat1 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-8px) translateX(3px); }
+  50% { transform: translateY(-12px) translateX(0px); }
+  75% { transform: translateY(-6px) translateX(-2px); }
+}
+
+@keyframes planetFloat2 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  30% { transform: translateY(-10px) translateX(-4px); }
+  60% { transform: translateY(-5px) translateX(2px); }
+  90% { transform: translateY(-8px) translateX(1px); }
+}
+
+@keyframes planetFloat3 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  20% { transform: translateY(-6px) translateX(2px); }
+  40% { transform: translateY(-14px) translateX(-1px); }
+  80% { transform: translateY(-4px) translateX(-3px); }
+}
+
+@keyframes planetFloat4 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  35% { transform: translateY(-9px) translateX(4px); }
+  70% { transform: translateY(-7px) translateX(-2px); }
+}
+
+@keyframes planetFloat5 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-11px) translateX(-3px); }
+  50% { transform: translateY(-3px) translateX(1px); }
+  75% { transform: translateY(-13px) translateX(2px); }
+}
+
+@keyframes planetFloat6 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  40% { transform: translateY(-5px) translateX(3px); }
+  80% { transform: translateY(-10px) translateX(-1px); }
+}
+
+@keyframes planetFloat7 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  15% { transform: translateY(-7px) translateX(-2px); }
+  45% { transform: translateY(-12px) translateX(3px); }
+  85% { transform: translateY(-4px) translateX(1px); }
+}
+
+@keyframes planetFloat8 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  30% { transform: translateY(-8px) translateX(2px); }
+  65% { transform: translateY(-6px) translateX(-4px); }
+  90% { transform: translateY(-11px) translateX(1px); }
 }
 
 @keyframes cyberGlow {

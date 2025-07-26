@@ -48,31 +48,47 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
   // Set grid layout based on variant
   const gridCols = size === "large" ? "grid-cols-2 md:grid-cols-4 lg:grid-cols-8" : "grid-cols-2 md:grid-cols-4";
 
+  // Array of floating animation classes to cycle through
+  const floatingAnimations = [
+    "animate-planet-float-1",
+    "animate-planet-float-2", 
+    "animate-planet-float-3",
+    "animate-planet-float-4",
+    "animate-planet-float-5",
+    "animate-planet-float-6",
+    "animate-planet-float-7",
+    "animate-planet-float-8"
+  ];
+
   return (
     <div className={`grid ${gridCols} gap-6`}>
       {/* Render each mood as a clickable planet */}
-      {moods.map((mood, index) => (
-        <div key={mood.id} className="text-center">
-          {/* Planet button */}
-          <Button
-            variant="ghost"
-            className="group mb-4 p-0 h-auto bg-transparent hover:bg-transparent"
-            onClick={() => onSelect(mood.id)}
-          >
-            {/* Planet visual with animations */}
-            <div 
-              className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} group-hover:scale-110 transition-all animate-float group-hover:animate-cyber-glow cursor-pointer ${
-                selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
-              }`}
-              style={{ animationDelay: `${index * 0.5}s` }} // Stagger animations
-            />
-          </Button>
-          {/* Mood name */}
-          <h4 className="font-semibold text-pink-300 font-serif">{mood.name}</h4>
-          {/* Planet name */}
-          <p className="text-xs text-pink-400 font-serif italic">{mood.description}</p>
-        </div>
-      ))}
+      {moods.map((mood, index) => {
+        // Assign unique floating animation to each planet
+        const floatingClass = floatingAnimations[index % floatingAnimations.length];
+        
+        return (
+          <div key={mood.id} className="text-center">
+            {/* Planet button */}
+            <Button
+              variant="ghost"
+              className="group mb-4 p-0 h-auto bg-transparent hover:bg-transparent"
+              onClick={() => onSelect(mood.id)}
+            >
+              {/* Planet visual with floating animations */}
+              <div 
+                className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} ${floatingClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
+                  selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
+                }`}
+              />
+            </Button>
+            {/* Mood name */}
+            <h4 className="font-semibold text-pink-300 font-serif">{mood.name}</h4>
+            {/* Planet name */}
+            <p className="text-xs text-pink-400 font-serif italic">{mood.description}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
