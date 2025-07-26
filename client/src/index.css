@@ -195,7 +195,7 @@ html, body {
     height: 120%;
     opacity: 0.4;
     pointer-events: none;
-    animation: deepSpaceTwinkle 5s ease-in-out infinite alternate, starfieldMoveFast 18s linear infinite;
+    animation: deepSpaceTwinkle 5s ease-in-out infinite alternate, moveStarsFast 15s linear infinite;
   }
 
   .dark-universe-panel::before {
@@ -227,7 +227,7 @@ html, body {
     height: 120%;
     opacity: 0.7;
     pointer-events: none;
-    animation: deepSpaceTwinkle 4s ease-in-out infinite alternate, starfieldMove 25s linear infinite;
+    animation: deepSpaceTwinkle 4s ease-in-out infinite alternate, moveStars 20s linear infinite;
   }
 
   .planet-hologram {
@@ -367,25 +367,21 @@ html, body {
   100% { opacity: 0.3; }
 }
 
-@keyframes starfieldMove {
-  0% { 
-    transform: translateX(0) translateY(0); 
-    background-position: 0px 0px;
+@keyframes moveStars {
+  from { 
+    transform: translateY(0);
   }
-  100% { 
-    transform: translateX(-220px) translateY(-60px); 
-    background-position: -220px -120px;
+  to { 
+    transform: translateY(-100vh);
   }
 }
 
-@keyframes starfieldMoveFast {
-  0% { 
-    transform: translateX(0) translateY(0); 
-    background-position: 0px 0px;
+@keyframes moveStarsFast {
+  from { 
+    transform: translateY(0);
   }
-  100% { 
-    transform: translateX(-240px) translateY(-40px); 
-    background-position: -240px -100px;
+  to { 
+    transform: translateY(-100vh);
   }
 }
 
