@@ -109,7 +109,7 @@ export default function Dashboard() {
               {recentLogs.map((log) => (
                 <div
                   key={log.id}
-                  className="flex items-center space-x-4 p-4 bg-white/5 rounded-lg"
+                  className="flex items-center space-x-4 p-4 bg-transparent rounded-lg"
                 >
                   <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                   <div className="flex-1">

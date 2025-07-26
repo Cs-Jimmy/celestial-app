@@ -67,25 +67,25 @@ html, body {
 }
 
 :root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(20, 14.3%, 4.1%);
-  --muted: hsl(60, 4.8%, 95.9%);
-  --muted-foreground: hsl(25, 5.3%, 44.7%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(20, 14.3%, 4.1%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(20, 14.3%, 4.1%);
-  --border: hsl(20, 5.9%, 90%);
-  --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(207, 90%, 54%);
-  --primary-foreground: hsl(211, 100%, 99%);
-  --secondary: hsl(60, 4.8%, 95.9%);
-  --secondary-foreground: hsl(24, 9.8%, 10%);
-  --accent: hsl(60, 4.8%, 95.9%);
-  --accent-foreground: hsl(24, 9.8%, 10%);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(20, 14.3%, 4.1%);
+  --background: #1E2749;
+  --foreground: #FAFAFF;
+  --muted: rgba(39, 52, 105, 0.3);
+  --muted-foreground: #E4D9FF;
+  --popover: rgba(30, 39, 73, 0.5);
+  --popover-foreground: #FAFAFF;
+  --card: rgba(39, 52, 105, 0.15);
+  --card-foreground: #FAFAFF;
+  --border: transparent;
+  --input: rgba(39, 52, 105, 0.4);
+  --primary: #E4D9FF;
+  --primary-foreground: #1E2749;
+  --secondary: rgba(48, 52, 63, 0.6);
+  --secondary-foreground: #FAFAFF;
+  --accent: #E4D9FF;
+  --accent-foreground: #1E2749;
+  --destructive: #E4D9FF;
+  --destructive-foreground: #1E2749;
+  --ring: #E4D9FF;
   --radius: 0.5rem;
 
   /* New Palette from Image */
