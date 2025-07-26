@@ -19,7 +19,7 @@ export function Navigation() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full animate-cyber-glow border-2 border-pink-400"></div>
-              <h1 className="text-xl font-bold text-pink-300 font-serif">celestial ✨</h1>
+              <h1 className="text-xl font-bold text-pink-300 font-serif">celestial</h1>
             </div>
             <div className="flex items-center space-x-6">
               {navItems.map(({ path, label, icon: Icon }) => (
