@@ -88,48 +88,55 @@ html, body {
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
 
-  /* Theme Colors */
-  --y2k-hot-pink: hsl(321, 57%, 69%);
-  --y2k-bubblegum: hsl(330, 90%, 75%);
-  --y2k-lavender: hsl(280, 80%, 70%);
-  --y2k-holographic: hsl(270, 100%, 80%);
-  --y2k-pearl: hsl(60, 20%, 90%);
-  --y2k-electric-blue: hsl(195, 100%, 70%);
-  --y2k-neon-green: hsl(120, 100%, 70%);
-  --y2k-chrome: hsl(0, 0%, 85%);
+  /* Coolors Palette - Deep Space Theme */
+  --deep-teal: #012a36;         /* Deep teal - darkest */
+  --dark-purple: #29274c;       /* Dark purple */
+  --royal-purple: #7e52a0;      /* Royal purple */
+  --soft-pink: #d295bf;         /* Soft pink */
+  --pale-pink: #e6bccd;         /* Pale pink - lightest */
 
-  /* Planet-Based Mood Colors - Lighter & Friendlier */
-  --sun: hsl(45, 90%, 80%);              /* Sun - Warm golden yellow */
-  --venus: hsl(340, 70%, 80%);           /* Venus - Soft peachy pink */
-  --earth: hsl(200, 60%, 75%);           /* Earth - Gentle sky blue */
-  --neptune: hsl(220, 80%, 80%);         /* Neptune - Light ocean blue */
-  --royal-blue: hsl(225, 73%, 57%);      /* Royal Blue for cosmic text */
-  --mars: hsl(270, 80%, 75%);            /* Mars - Excited violet purple */
-  --uranus: hsl(180, 50%, 80%);          /* Uranus - Soft mint blue */
-  --jupiter: hsl(35, 60%, 75%);          /* Jupiter - Creamy beige */
-  --mercury: hsl(0, 0%, 75%);            /* Mercury - Light gray */
+  /* Theme Colors mapped to new palette */
+  --y2k-hot-pink: #d295bf;
+  --y2k-bubblegum: #e6bccd;
+  --y2k-lavender: #7e52a0;
+  --y2k-holographic: #d295bf;
+  --y2k-pearl: #e6bccd;
+  --y2k-electric-blue: #012a36;
+  --y2k-neon-green: #29274c;
+  --y2k-chrome: #e6bccd;
+
+  /* Planet-Based Mood Colors using new palette */
+  --sun: #e6bccd;              /* Sun - Pale pink */
+  --venus: #d295bf;            /* Venus - Soft pink */
+  --earth: #012a36;            /* Earth - Deep teal */
+  --neptune: #29274c;          /* Neptune - Dark purple */
+  --royal-blue: #7e52a0;       /* Royal Purple for cosmic text */
+  --mars: #7e52a0;             /* Mars - Royal purple */
+  --uranus: #012a36;           /* Uranus - Deep teal */
+  --jupiter: #d295bf;          /* Jupiter - Soft pink */
+  --mercury: #29274c;          /* Mercury - Dark purple */
 }
 
 .dark {
-  --background: hsl(300, 20%, 8%);
-  --foreground: hsl(320, 50%, 95%);
-  --muted: hsl(280, 15%, 15%);
-  --muted-foreground: hsl(300, 20%, 65%);
-  --popover: hsl(300, 20%, 8%);
-  --popover-foreground: hsl(320, 50%, 95%);
-  --card: hsl(300, 25%, 10%);
-  --card-foreground: hsl(320, 50%, 95%);
-  --border: hsl(280, 30%, 25%);
-  --input: hsl(280, 25%, 18%);
-  --primary: hsl(320, 100%, 70%);
-  --primary-foreground: hsl(300, 100%, 10%);
-  --secondary: hsl(280, 20%, 20%);
-  --secondary-foreground: hsl(320, 50%, 95%);
-  --accent: hsl(280, 40%, 25%);
-  --accent-foreground: hsl(320, 50%, 95%);
-  --destructive: hsl(0, 80%, 60%);
-  --destructive-foreground: hsl(320, 50%, 95%);
-  --ring: hsl(320, 60%, 70%);
+  --background: #012a36;
+  --foreground: #e6bccd;
+  --muted: #29274c;
+  --muted-foreground: #d295bf;
+  --popover: #012a36;
+  --popover-foreground: #e6bccd;
+  --card: #29274c;
+  --card-foreground: #e6bccd;
+  --border: #7e52a0;
+  --input: #29274c;
+  --primary: #d295bf;
+  --primary-foreground: #012a36;
+  --secondary: #29274c;
+  --secondary-foreground: #e6bccd;
+  --accent: #7e52a0;
+  --accent-foreground: #e6bccd;
+  --destructive: #d295bf;
+  --destructive-foreground: #012a36;
+  --ring: #d295bf;
   --radius: 1rem;
 }
 
@@ -140,10 +147,10 @@ html, body {
 
   body {
     @apply font-sans antialiased;
-    background: linear-gradient(45deg, #0a0015, #2d0040, #4d0080, #1a0030);
+    background: linear-gradient(45deg, #012a36, #29274c, #7e52a0, #012a36);
     background-size: 400% 400%;
     animation: feminineGradientShift 10s ease infinite;
-    color: var(--y2k-hot-pink);
+    color: #e6bccd;
     min-height: 100vh;
     font-family: 'Georgia', serif;
   }
@@ -239,19 +246,20 @@ html, body {
 
 
   .cyber-panel {
-    background: linear-gradient(145deg, rgba(255, 20, 147, 0.15), rgba(138, 43, 226, 0.15), rgba(255, 105, 180, 0.1));
+    background: linear-gradient(145deg, rgba(210, 149, 191, 0.15), rgba(126, 82, 160, 0.15), rgba(230, 188, 205, 0.1));
     backdrop-filter: blur(15px);
-    border: 2px solid var(--y2k-hot-pink);
-    box-shadow: 0 0 25px var(--y2k-hot-pink), inset 0 0 25px rgba(255, 20, 147, 0.2);
+    border: 2px solid var(--soft-pink);
+    box-shadow: 0 0 25px var(--soft-pink), inset 0 0 25px rgba(210, 149, 191, 0.2);
     border-radius: 20px;
   }
 
   .dark-universe-panel {
-    background: rgba(15, 15, 25, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(145deg, rgba(1, 42, 54, 0.95), rgba(41, 39, 76, 0.90), rgba(126, 82, 160, 0.05));
+    border: 1px solid var(--royal-purple);
     border-radius: 20px;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
   }
 
 
@@ -261,9 +269,9 @@ html, body {
   .planet-hologram {
     box-shadow: 
       0 0 20px currentColor,
-      inset 0 0 25px rgba(255, 182, 193, 0.15),
+      inset 0 0 25px rgba(230, 188, 205, 0.15),
       0 0 40px currentColor,
-      0 0 60px rgba(255, 20, 147, 0.2);
+      0 0 60px rgba(210, 149, 191, 0.2);
     border: 2px solid currentColor;
     filter: drop-shadow(0 0 10px currentColor);
   }
