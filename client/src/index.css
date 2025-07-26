@@ -183,23 +183,7 @@ html, body {
     pointer-events: none;
   }
 
-  .y2k-bg::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      /* Shooting stars */
-      linear-gradient(45deg, transparent 0%, transparent 40%, rgba(255,255,255,0.8) 50%, transparent 60%, transparent 100%),
-      linear-gradient(-30deg, transparent 0%, transparent 45%, rgba(255,255,255,0.6) 55%, transparent 65%, transparent 100%),
-      linear-gradient(60deg, transparent 0%, transparent 35%, rgba(255,255,255,0.7) 45%, transparent 55%, transparent 100%);
-    background-size: 800px 600px, 1000px 700px, 900px 650px;
-    background-position: -200px -150px, -300px -200px, -250px -175px;
-    animation: shootingStar1 25s linear infinite, shootingStar2 35s linear infinite 8s, shootingStar3 30s linear infinite 15s;
-    pointer-events: none;
-  }
+
 
   .cyber-panel {
     background: linear-gradient(145deg, rgba(255, 20, 147, 0.15), rgba(138, 43, 226, 0.15), rgba(255, 105, 180, 0.1));
@@ -440,60 +424,7 @@ html, body {
   100% { opacity: 0.7; }
 }
 
-/* Shooting star animations */
-@keyframes shootingStar1 {
-  0% { 
-    background-position: -200px -150px;
-    opacity: 0;
-  }
-  5% { 
-    opacity: 1;
-  }
-  10% { 
-    background-position: 1200px 600px;
-    opacity: 0;
-  }
-  100% { 
-    background-position: 1200px 600px;
-    opacity: 0;
-  }
-}
 
-@keyframes shootingStar2 {
-  0% { 
-    background-position: -300px -200px;
-    opacity: 0;
-  }
-  3% { 
-    opacity: 1;
-  }
-  8% { 
-    background-position: 1300px 700px;
-    opacity: 0;
-  }
-  100% { 
-    background-position: 1300px 700px;
-    opacity: 0;
-  }
-}
-
-@keyframes shootingStar3 {
-  0% { 
-    background-position: -250px -175px;
-    opacity: 0;
-  }
-  4% { 
-    opacity: 1;
-  }
-  9% { 
-    background-position: 1250px 650px;
-    opacity: 0;
-  }
-  100% { 
-    background-position: 1250px 650px;
-    opacity: 0;
-  }
-}
 
 .text-royal-blue {
   color: var(--royal-blue);
