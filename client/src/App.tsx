@@ -1,3 +1,4 @@
+// Import routing and page components
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -10,6 +11,7 @@ import MissionLog from "@/pages/mission-log";
 import Analytics from "@/pages/analytics";
 import NotFound from "@/pages/not-found";
 
+// Component that defines which page to show based on URL
 function Router() {
   return (
     <Switch>
@@ -17,25 +19,30 @@ function Router() {
       <Route path="/mood-tracker" component={MoodTracker} />
       <Route path="/mission-log" component={MissionLog} />
       <Route path="/analytics" component={Analytics} />
+      {/* Show 404 page for unknown URLs */}
       <Route component={NotFound} />
     </Switch>
   );
 }
 
+// Main app component that wraps everything
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="min-h-screen y2k-bg text-cyan-400 overflow-x-hidden">
-          {/* Matrix Grid Background */}
+          {/* Animated background pattern */}
           <div className="fixed inset-0 matrix-grid animate-matrix-scroll"></div>
           
+          {/* Top navigation bar */}
           <Navigation />
           
+          {/* Main content area where pages appear */}
           <main className="relative z-10">
             <Router />
           </main>
           
+          {/* Toast notifications for user feedback */}
           <Toaster />
         </div>
       </TooltipProvider>

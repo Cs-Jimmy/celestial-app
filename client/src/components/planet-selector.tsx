@@ -1,7 +1,8 @@
+// Planet selector component - displays mood options as clickable planets
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-// Import planet SVGs
+// Import planet SVG images for each mood
 import sunSvg from "@/assets/planets/sun.svg";
 import venusSvg from "@/assets/planets/venus.svg";
 import earthSvg from "@/assets/planets/earth.svg";
@@ -11,14 +12,16 @@ import uranusSvg from "@/assets/planets/uranus.svg";
 import neptuneSvg from "@/assets/planets/neptune.svg";
 import mercurySvg from "@/assets/planets/mercury.svg";
 
+// Type definition for mood options
 export interface MoodOption {
-  id: string;
-  name: string;
-  color: string;
-  description: string;
-  className: string;
+  id: string; // Unique identifier (e.g., "happy", "sad")
+  name: string; // Display name (e.g., "Happy")
+  color: string; // Color theme
+  description: string; // Planet name (e.g., "Sun", "Earth")
+  className: string; // CSS class for styling
 }
 
+// Map mood IDs to their planet images
 const planetImages: Record<string, string> = {
   "happy": sunSvg,
   "love": venusSvg,
@@ -30,34 +33,43 @@ const planetImages: Record<string, string> = {
   "anxious": mercurySvg,
 };
 
+// Props for the PlanetSelector component
 interface PlanetSelectorProps {
-  moods: MoodOption[];
-  selectedMood?: string;
-  onSelect: (mood: string) => void;
-  size?: "small" | "large";
+  moods: MoodOption[]; // Array of mood options to display
+  selectedMood?: string; // Currently selected mood ID
+  onSelect: (mood: string) => void; // Function called when user clicks a planet
+  size?: "small" | "large"; // Size variant for different contexts
 }
 
+// Main planet selector component
 export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }: PlanetSelectorProps) {
+  // Set planet size based on variant
   const planetSize = size === "large" ? "w-24 h-24" : "w-16 h-16";
+  // Set grid layout based on variant
   const gridCols = size === "large" ? "grid-cols-2 md:grid-cols-4 lg:grid-cols-8" : "grid-cols-2 md:grid-cols-4";
 
   return (
     <div className={`grid ${gridCols} gap-6`}>
+      {/* Render each mood as a clickable planet */}
       {moods.map((mood, index) => (
         <div key={mood.id} className="text-center">
+          {/* Planet button */}
           <Button
             variant="ghost"
             className="group mb-4 p-0 h-auto bg-transparent hover:bg-transparent"
             onClick={() => onSelect(mood.id)}
           >
+            {/* Planet visual with animations */}
             <div 
               className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} group-hover:scale-110 transition-all animate-float group-hover:animate-cyber-glow cursor-pointer ${
                 selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
               }`}
-              style={{ animationDelay: `${index * 0.5}s` }}
+              style={{ animationDelay: `${index * 0.5}s` }} // Stagger animations
             />
           </Button>
+          {/* Mood name */}
           <h4 className="font-semibold text-pink-300 font-serif">{mood.name}</h4>
+          {/* Planet name */}
           <p className="text-xs text-pink-400 font-serif italic">{mood.description}</p>
         </div>
       ))}
