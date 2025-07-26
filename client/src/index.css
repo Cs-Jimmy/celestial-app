@@ -124,7 +124,7 @@ html, body {
   --muted-foreground: #E4D9FF;
   --popover: rgba(30, 39, 73, 0.5);
   --popover-foreground: #FAFAFF;
-  --card: rgba(39, 52, 105, 0.3);
+  --card: rgba(39, 52, 105, 0.15);
   --card-foreground: #FAFAFF;
   --border: transparent;
   --input: rgba(39, 52, 105, 0.4);
@@ -252,7 +252,7 @@ html, body {
   }
 
   .dark-universe-panel {
-    background: rgba(30, 39, 73, 0.4);
+    background: rgba(30, 39, 73, 0.15);
     border: 1px solid transparent;
     border-radius: 20px;
     position: relative;
