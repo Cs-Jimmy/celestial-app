@@ -8,6 +8,15 @@ Stellar Mood is a full-stack web application that provides a unique space-themed
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+**January 26, 2025:**
+- Created comprehensive code documentation in `CODE_DOCUMENTATION.md`
+- Fixed mobile horizontal scrolling issues with viewport constraints
+- Removed icons from analytics cards (kept fire icon for cosmic streak only)
+- Enhanced mobile navigation with icon-only display on small screens
+- Applied global CSS fixes for mobile responsiveness
+
 ## System Architecture
 
 ### Frontend Architecture
