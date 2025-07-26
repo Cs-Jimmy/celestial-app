@@ -105,16 +105,16 @@ html, body {
   --y2k-neon-green: #29274c;
   --y2k-chrome: #e6bccd;
 
-  /* Planet-Based Mood Colors using new palette */
-  --sun: #e6bccd;              /* Sun - Pale pink */
-  --venus: #d295bf;            /* Venus - Soft pink */
-  --earth: #012a36;            /* Earth - Deep teal */
-  --neptune: #29274c;          /* Neptune - Dark purple */
-  --royal-blue: #7e52a0;       /* Royal Purple for cosmic text */
-  --mars: #7e52a0;             /* Mars - Royal purple */
-  --uranus: #012a36;           /* Uranus - Deep teal */
-  --jupiter: #d295bf;          /* Jupiter - Soft pink */
-  --mercury: #29274c;          /* Mercury - Dark purple */
+  /* Planet-Based Mood Colors - Keep original colors */
+  --sun: hsl(45, 90%, 80%);              /* Sun - Warm golden yellow */
+  --venus: hsl(340, 70%, 80%);           /* Venus - Soft peachy pink */
+  --earth: hsl(200, 60%, 75%);           /* Earth - Gentle sky blue */
+  --neptune: hsl(220, 80%, 80%);         /* Neptune - Light ocean blue */
+  --royal-blue: #7e52a0;                 /* Royal Purple for cosmic text */
+  --mars: hsl(270, 80%, 75%);            /* Mars - Excited violet purple */
+  --uranus: hsl(180, 50%, 80%);          /* Uranus - Soft mint blue */
+  --jupiter: hsl(35, 60%, 75%);          /* Jupiter - Creamy beige */
+  --mercury: hsl(0, 0%, 75%);            /* Mercury - Light gray */
 }
 
 .dark {
