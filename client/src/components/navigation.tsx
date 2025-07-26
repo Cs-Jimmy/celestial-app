@@ -18,7 +18,7 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full animate-cyber-glow border-2 border-pink-400"></div>
+              <div className="w-8 h-8 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full animate-cyber-glow border-2 border-pink-400 text-[#ffffff]"></div>
               <h1 className="text-xl font-bold text-pink-300 font-serif">celestial</h1>
             </div>
             <div className="flex items-center space-x-2 sm:space-x-6 overflow-x-auto">
@@ -39,7 +39,6 @@ export function Navigation() {
           </div>
         </div>
       </nav>
-
       {/* Floating Action Button */}
       <div className="fixed bottom-8 right-8 z-50">
         <Link href="/mood-tracker">
