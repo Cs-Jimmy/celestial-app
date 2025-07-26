@@ -44,7 +44,7 @@ export default function Dashboard() {
         <p className="text-xl text-pink-300 mb-8 font-serif italic">&gt; scanning your cosmic energy signature...</p>
         
         {/* Quick Mood Check */}
-        <div className="cyber-panel rounded-2xl p-8 mb-8">
+        <div className="cyber-panel rounded-2xl p-8 mb-8 border border-[#4ea8de]/40">
           <h3 className="text-2xl font-semibold mb-6 text-pink-300 font-serif italic">&gt; choose your planetary vibe ♡</h3>
           <div className="max-w-4xl mx-auto">
             <PlanetSelector
