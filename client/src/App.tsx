@@ -9,6 +9,7 @@ import Dashboard from "@/pages/dashboard";
 import MoodTracker from "@/pages/mood-tracker";
 import MissionLog from "@/pages/mission-log";
 import Analytics from "@/pages/analytics";
+import Login from "@/pages/login";
 import NotFound from "@/pages/not-found";
 
 // Component that defines which page to show based on URL
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/mood-tracker" component={MoodTracker} />
       <Route path="/mission-log" component={MissionLog} />
       <Route path="/analytics" component={Analytics} />
+      <Route path="/login" component={Login} />
       {/* Show 404 page for unknown URLs */}
       <Route component={NotFound} />
     </Switch>

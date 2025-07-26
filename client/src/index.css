@@ -382,6 +382,21 @@ html, body {
     animation: planetFloatDiagonal 8s ease-in-out infinite;
   }
 
+  /* Retro terminal styling */
+  .retro-terminal {
+    box-shadow: 
+      0 0 20px rgba(78, 168, 222, 0.3),
+      inset 0 0 20px rgba(78, 168, 222, 0.1),
+      0 0 40px rgba(78, 168, 222, 0.2);
+  }
+
+  .retro-text {
+    text-shadow: 
+      0 0 5px rgba(228, 217, 255, 0.5),
+      0 0 10px rgba(228, 217, 255, 0.3),
+      0 0 15px rgba(228, 217, 255, 0.2);
+  }
+
   /* Orbital ring styles */
   .orbit-ring {
     position: absolute;
