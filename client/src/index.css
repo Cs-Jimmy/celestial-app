@@ -229,20 +229,7 @@ html, body {
       radial-gradient(0.3px 0.3px at 38% 98%, rgba(255,255,255,0.35), transparent 1px),
       radial-gradient(0.2px 0.2px at 52% 85%, rgba(255,255,255,0.25), transparent 0.8px),
       radial-gradient(0.3px 0.3px at 68% 98%, rgba(255,255,255,0.3), transparent 1px),
-      radial-gradient(0.2px 0.2px at 82% 92%, rgba(255,255,255,0.2), transparent 0.8px),
-      /* Cross-shaped diffraction stars */
-      linear-gradient(0deg, transparent 47%, rgba(255,255,255,0.6) 49%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.6) 51%, transparent 53%) 25% 35%/3px 8px no-repeat,
-      linear-gradient(90deg, transparent 47%, rgba(255,255,255,0.6) 49%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.6) 51%, transparent 53%) 25% 35%/8px 3px no-repeat,
-      linear-gradient(0deg, transparent 47%, rgba(255,255,255,0.5) 49%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.5) 51%, transparent 53%) 65% 18%/2px 6px no-repeat,
-      linear-gradient(90deg, transparent 47%, rgba(255,255,255,0.5) 49%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.5) 51%, transparent 53%) 65% 18%/6px 2px no-repeat,
-      linear-gradient(0deg, transparent 47%, rgba(255,255,255,0.7) 49%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.7) 51%, transparent 53%) 80% 75%/3px 7px no-repeat,
-      linear-gradient(90deg, transparent 47%, rgba(255,255,255,0.7) 49%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.7) 51%, transparent 53%) 80% 75%/7px 3px no-repeat,
-      linear-gradient(0deg, transparent 47%, rgba(255,255,255,0.4) 49%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.4) 51%, transparent 53%) 15% 85%/2px 5px no-repeat,
-      linear-gradient(90deg, transparent 47%, rgba(255,255,255,0.4) 49%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.4) 51%, transparent 53%) 15% 85%/5px 2px no-repeat,
-      linear-gradient(0deg, transparent 47%, rgba(255,255,255,0.6) 49%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.6) 51%, transparent 53%) 92% 25%/3px 8px no-repeat,
-      linear-gradient(90deg, transparent 47%, rgba(255,255,255,0.6) 49%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.6) 51%, transparent 53%) 92% 25%/8px 3px no-repeat,
-      linear-gradient(0deg, transparent 47%, rgba(255,255,255,0.5) 49%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.5) 51%, transparent 53%) 45% 65%/2px 6px no-repeat,
-      linear-gradient(90deg, transparent 47%, rgba(255,255,255,0.5) 49%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.5) 51%, transparent 53%) 45% 65%/6px 2px no-repeat;
+      radial-gradient(0.2px 0.2px at 82% 92%, rgba(255,255,255,0.2), transparent 0.8px);
     background-size: 300px 250px;
     background-repeat: repeat;
     animation: starDriftRandom 180s linear infinite, starTwinkleRealistic 15s ease-in-out infinite;
