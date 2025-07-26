@@ -51,17 +51,11 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
             onClick={() => onSelect(mood.id)}
           >
             <div 
-              className={`${planetSize} mx-auto rounded-full group-hover:scale-110 transition-all animate-float group-hover:animate-cyber-glow cursor-pointer overflow-hidden ${
+              className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} group-hover:scale-110 transition-all animate-float group-hover:animate-cyber-glow cursor-pointer ${
                 selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
               }`}
               style={{ animationDelay: `${index * 0.5}s` }}
-            >
-              <img 
-                src={planetImages[mood.id]} 
-                alt={mood.description}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            />
           </Button>
           <h4 className="font-semibold text-pink-300 font-serif">{mood.name}</h4>
           <p className="text-xs text-pink-400 font-serif italic">{mood.description}</p>
