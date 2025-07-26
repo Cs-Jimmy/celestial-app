@@ -156,6 +156,51 @@ html, body {
     overflow: hidden;
   }
 
+  .y2k-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      /* Main stars - various sizes and positions */
+      radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.9), rgba(255,255,255,0.3) 2px, transparent 3px),
+      radial-gradient(0.5px 0.5px at 28% 8%, rgba(255,255,255,0.7), rgba(255,255,255,0.2) 1px, transparent 2px),
+      radial-gradient(1.5px 1.5px at 45% 25%, rgba(255,255,255,1), rgba(255,255,255,0.4) 3px, transparent 4px),
+      radial-gradient(0.5px 0.5px at 62% 42%, rgba(255,255,255,0.6), rgba(255,255,255,0.2) 1px, transparent 2px),
+      radial-gradient(1px 1px at 78% 15%, rgba(255,255,255,0.8), rgba(255,255,255,0.3) 2px, transparent 3px),
+      radial-gradient(0.5px 0.5px at 85% 38%, rgba(255,255,255,0.5), rgba(255,255,255,0.1) 1px, transparent 2px),
+      radial-gradient(1px 1px at 15% 55%, rgba(255,255,255,0.9), rgba(255,255,255,0.3) 2px, transparent 3px),
+      radial-gradient(1.5px 1.5px at 32% 72%, rgba(255,255,255,1), rgba(255,255,255,0.4) 3px, transparent 4px),
+      radial-gradient(0.5px 0.5px at 55% 88%, rgba(255,255,255,0.6), rgba(255,255,255,0.2) 1px, transparent 2px),
+      radial-gradient(1px 1px at 72% 65%, rgba(255,255,255,0.8), rgba(255,255,255,0.3) 2px, transparent 3px),
+      radial-gradient(0.5px 0.5px at 88% 78%, rgba(255,255,255,0.7), rgba(255,255,255,0.2) 1px, transparent 2px),
+      radial-gradient(1px 1px at 5% 35%, rgba(255,255,255,0.9), rgba(255,255,255,0.3) 2px, transparent 3px);
+    background-size: 300px 250px;
+    background-repeat: repeat;
+    animation: starDriftRandom 180s linear infinite, starTwinkleRealistic 15s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .y2k-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      /* Shooting stars */
+      linear-gradient(45deg, transparent 0%, transparent 40%, rgba(255,255,255,0.8) 50%, transparent 60%, transparent 100%),
+      linear-gradient(-30deg, transparent 0%, transparent 45%, rgba(255,255,255,0.6) 55%, transparent 65%, transparent 100%),
+      linear-gradient(60deg, transparent 0%, transparent 35%, rgba(255,255,255,0.7) 45%, transparent 55%, transparent 100%);
+    background-size: 800px 600px, 1000px 700px, 900px 650px;
+    background-position: -200px -150px, -300px -200px, -250px -175px;
+    animation: shootingStar1 25s linear infinite, shootingStar2 35s linear infinite 8s, shootingStar3 30s linear infinite 15s;
+    pointer-events: none;
+  }
+
   .cyber-panel {
     background: linear-gradient(145deg, rgba(255, 20, 147, 0.15), rgba(138, 43, 226, 0.15), rgba(255, 105, 180, 0.1));
     backdrop-filter: blur(15px);
@@ -359,19 +404,94 @@ html, body {
   }
 }
 
-/* Subtle star drift animation */
-@keyframes subtleStarDrift {
-  from { 
-    background-position: 
-      0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
-      0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
-      0% 0%;
+/* Random star movement like real space */
+@keyframes starDriftRandom {
+  0% { 
+    background-position: 0px 0px;
+    transform: translateX(0) translateY(0);
   }
-  to { 
-    background-position: 
-      -30px -20px, -25px -15px, -35px -25px, -20px -10px, -40px -30px,
-      -25px -15px, -30px -20px, -20px -10px, -35px -25px, -15px -8px,
-      0% 0%;
+  25% { 
+    background-position: -40px -25px;
+    transform: translateX(15px) translateY(-10px);
+  }
+  50% { 
+    background-position: -20px -60px;
+    transform: translateX(-8px) translateY(-35px);
+  }
+  75% { 
+    background-position: -70px -30px;
+    transform: translateX(25px) translateY(-20px);
+  }
+  100% { 
+    background-position: -50px -80px;
+    transform: translateX(0) translateY(-50px);
+  }
+}
+
+/* Realistic star twinkling */
+@keyframes starTwinkleRealistic {
+  0% { opacity: 0.7; }
+  15% { opacity: 0.9; }
+  30% { opacity: 0.5; }
+  45% { opacity: 1; }
+  60% { opacity: 0.6; }
+  75% { opacity: 0.8; }
+  90% { opacity: 0.4; }
+  100% { opacity: 0.7; }
+}
+
+/* Shooting star animations */
+@keyframes shootingStar1 {
+  0% { 
+    background-position: -200px -150px;
+    opacity: 0;
+  }
+  5% { 
+    opacity: 1;
+  }
+  10% { 
+    background-position: 1200px 600px;
+    opacity: 0;
+  }
+  100% { 
+    background-position: 1200px 600px;
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar2 {
+  0% { 
+    background-position: -300px -200px;
+    opacity: 0;
+  }
+  3% { 
+    opacity: 1;
+  }
+  8% { 
+    background-position: 1300px 700px;
+    opacity: 0;
+  }
+  100% { 
+    background-position: 1300px 700px;
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar3 {
+  0% { 
+    background-position: -250px -175px;
+    opacity: 0;
+  }
+  4% { 
+    opacity: 1;
+  }
+  9% { 
+    background-position: 1250px 650px;
+    opacity: 0;
+  }
+  100% { 
+    background-position: 1250px 650px;
+    opacity: 0;
   }
 }
 
