@@ -120,14 +120,14 @@ html, body {
 .dark {
   --background: #1E2749;
   --foreground: #FAFAFF;
-  --muted: rgba(39, 52, 105, 0.6);
+  --muted: rgba(39, 52, 105, 0.3);
   --muted-foreground: #E4D9FF;
-  --popover: rgba(30, 39, 73, 0.8);
+  --popover: rgba(30, 39, 73, 0.5);
   --popover-foreground: #FAFAFF;
-  --card: rgba(39, 52, 105, 0.6);
+  --card: rgba(39, 52, 105, 0.3);
   --card-foreground: #FAFAFF;
   --border: transparent;
-  --input: rgba(39, 52, 105, 0.7);
+  --input: rgba(39, 52, 105, 0.4);
   --primary: #E4D9FF;
   --primary-foreground: #1E2749;
   --secondary: rgba(48, 52, 63, 0.6);
@@ -246,13 +246,13 @@ html, body {
 
 
   .cyber-panel {
-    background: rgba(39, 52, 105, 0.6);
+    background: rgba(39, 52, 105, 0.3);
     border: 2px solid transparent;
     border-radius: 20px;
   }
 
   .dark-universe-panel {
-    background: rgba(30, 39, 73, 0.7);
+    background: rgba(30, 39, 73, 0.4);
     border: 1px solid transparent;
     border-radius: 20px;
     position: relative;
