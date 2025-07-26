@@ -83,13 +83,13 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
   // Define specific orbital positions for each planet with proper spacing
   const solarSystemLayout: Record<string, { radius: number; angle: number; ringClass: string; animationDelay: number }> = {
     "happy": { radius: 0, angle: 0, ringClass: "", animationDelay: 0 }, // Sun at center
-    "anxious": { radius: 140, angle: 0, ringClass: "orbit-ring-mercury", animationDelay: 0 }, // Mercury
-    "love": { radius: 140, angle: 180, ringClass: "orbit-ring-mercury", animationDelay: 1.5 }, // Venus (same orbit, opposite side)
+    "love": { radius: 140, angle: 0, ringClass: "orbit-ring-mercury", animationDelay: 1.5 }, // Venus (inner orbit)
     "calm": { radius: 220, angle: 60, ringClass: "orbit-ring-venus", animationDelay: 3 }, // Earth
     "excited": { radius: 220, angle: 180, ringClass: "orbit-ring-venus", animationDelay: 4.5 }, // Mars
     "energetic": { radius: 220, angle: 300, ringClass: "orbit-ring-venus", animationDelay: 6 }, // Jupiter (3 planets evenly spaced)
     "peaceful": { radius: 300, angle: 90, ringClass: "orbit-ring-earth", animationDelay: 7.5 }, // Uranus
-    "sad": { radius: 300, angle: 270, ringClass: "orbit-ring-earth", animationDelay: 9 }, // Neptune (opposite side)
+    "sad": { radius: 300, angle: 210, ringClass: "orbit-ring-earth", animationDelay: 9 }, // Neptune
+    "anxious": { radius: 300, angle: 330, ringClass: "orbit-ring-earth", animationDelay: 0 }, // Mercury moved to furthest orbit
   };
   
   const planetOrbitData: Record<string, { radius: number; angle: number; ringClass: string; animationDelay: number }> = {};
