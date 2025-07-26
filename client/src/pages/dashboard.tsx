@@ -66,7 +66,7 @@ export default function Dashboard() {
             <div className="text-3xl font-bold text-blue-300 mb-2 font-mono">
               {analytics?.streak || 0}
             </div>
-            <div className="text-blue-600 font-serif font-bold">cosmic streak</div>
+            <div className="text-royal-blue font-serif font-bold cosmic-glow">cosmic streak</div>
             <div className="mt-2">
               <Flame className="h-6 w-6 text-pink-400 mx-auto" />
             </div>
@@ -78,7 +78,7 @@ export default function Dashboard() {
             <div className="text-3xl font-bold text-blue-300 mb-2 font-mono">
               {analytics?.totalEntries || 0}
             </div>
-            <div className="text-blue-600 font-mono font-bold">TOTAL_ENTRIES</div>
+            <div className="text-royal-blue font-serif font-bold cosmic-glow">TOTAL_ENTRIES</div>
           </CardContent>
         </Card>
 
@@ -87,7 +87,7 @@ export default function Dashboard() {
             <div className="text-3xl font-bold text-blue-300 mb-2 font-mono">
               {analytics?.predominantMood || "NULL"}
             </div>
-            <div className="text-blue-600 font-mono font-bold">PRIME_VIBE</div>
+            <div className="text-royal-blue font-serif font-bold cosmic-glow">PRIME_VIBE</div>
           </CardContent>
         </Card>
       </div>
@@ -96,7 +96,7 @@ export default function Dashboard() {
       <Card className="dark-universe-panel border-blue-400/50">
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-semibold text-blue-600 font-mono font-bold">RECENT_MISSION_LOGS.DAT</h3>
+            <h3 className="text-xl font-semibold text-royal-blue font-serif font-bold cosmic-glow">RECENT_MISSION_LOGS.DAT</h3>
             <Link href="/mission-log">
               <Button variant="outline" size="sm">
                 View All
