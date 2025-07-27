@@ -529,28 +529,27 @@ html, body {
   .love-hearts .face-content::before {
     content: '';
     position: absolute;
-    top: 12px;
-    left: 8px;
-    width: 6px;
+    top: 10px;
+    left: 6px;
+    width: 8px;
     height: 6px;
     background: #FF69B4;
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    border-radius: 8px 8px 0 0;
     transform: rotate(-45deg);
-    box-shadow: 8px 0 0 #FF69B4;
     filter: drop-shadow(0 0 6px #FF69B4);
   }
 
   .love-hearts .face-content::after {
     content: '';
     position: absolute;
-    top: 8px;
-    left: 12px;
+    top: 10px;
+    left: 10px;
     width: 8px;
-    height: 8px;
-    background: #FF1493;
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    transform: rotate(-45deg);
-    filter: drop-shadow(0 0 6px #FF1493);
+    height: 6px;
+    background: #FF69B4;
+    border-radius: 8px 8px 0 0;
+    transform: rotate(45deg);
+    filter: drop-shadow(0 0 6px #FF69B4);
   }
 
   /* Calm Face - Peaceful closed eyes */
@@ -587,10 +586,10 @@ html, body {
     top: 8px;
     left: 8px;
     width: 3px;
-    height: 8px;
-    background: linear-gradient(180deg, #87CEEB, transparent);
+    height: 6px;
+    background: #87CEEB;
     border-radius: 50%;
-    box-shadow: 12px 0 0 linear-gradient(180deg, #87CEEB, transparent);
+    box-shadow: 12px 0 0 #87CEEB;
     filter: drop-shadow(0 0 4px #87CEEB);
   }
 
@@ -646,20 +645,20 @@ html, body {
   .peaceful-halo .face-content::before {
     content: '';
     position: absolute;
-    top: 2px;
-    left: 8px;
-    width: 16px;
-    height: 16px;
+    top: 0px;
+    left: 6px;
+    width: 20px;
+    height: 4px;
     border: 2px solid #F0F8FF;
-    border-radius: 50%;
-    opacity: 0.8;
-    filter: drop-shadow(0 0 6px #F0F8FF);
+    border-radius: 50px;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 8px #F0F8FF);
   }
 
   .peaceful-halo .face-content::after {
     content: '';
     position: absolute;
-    top: 12px;
+    top: 15px;
     left: 12px;
     width: 8px;
     height: 4px;
@@ -673,24 +672,33 @@ html, body {
   .energetic-bolts .face-content::before {
     content: '';
     position: absolute;
-    top: 6px;
-    left: 10px;
-    width: 3px;
-    height: 12px;
-    background: linear-gradient(45deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
-    clip-path: polygon(40% 0%, 40% 40%, 100% 40%, 60% 100%, 60% 60%, 0% 60%);
+    top: 8px;
+    left: 8px;
+    width: 6px;
+    height: 2px;
+    background: #FFD700;
+    box-shadow: 
+      0 4px 0 #FFD700,
+      -3px 2px 0 #FFA500,
+      3px 2px 0 #FFA500,
+      -2px 6px 0 #FFD700,
+      2px 6px 0 #FFD700;
     filter: drop-shadow(0 0 6px #FFD700);
   }
 
   .energetic-bolts .face-content::after {
     content: '';
     position: absolute;
-    top: 8px;
+    top: 10px;
     left: 18px;
     width: 2px;
-    height: 8px;
-    background: linear-gradient(45deg, #FFA500 0%, #FFD700 50%, #FFA500 100%);
-    clip-path: polygon(40% 0%, 40% 40%, 100% 40%, 60% 100%, 60% 60%, 0% 60%);
+    height: 6px;
+    background: #FFD700;
+    box-shadow: 
+      -2px 0 0 #FFA500,
+      2px 0 0 #FFA500,
+      -1px -2px 0 #FFD700,
+      1px -2px 0 #FFD700;
     filter: drop-shadow(0 0 4px #FFA500);
   }
 
