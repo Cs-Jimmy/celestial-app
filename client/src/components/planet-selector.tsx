@@ -33,16 +33,16 @@ const planetImages: Record<string, string> = {
   "anxious": mercurySvg,
 };
 
-// Map mood IDs to their minimal emotion indicators
-const emotionFaces: Record<string, string> = {
-  "happy": ":)",
-  "love": "♥", 
-  "calm": "~",
-  "sad": ":(",
-  "excited": "!",
-  "peaceful": "°",
-  "energetic": "*",
-  "anxious": "?",
+// Map mood IDs to their CSS face types
+const emotionFaceTypes: Record<string, string> = {
+  "happy": "happy-face",
+  "love": "love-hearts", 
+  "calm": "calm-face",
+  "sad": "sad-face",
+  "excited": "excited-sparks",
+  "peaceful": "peaceful-halo",
+  "energetic": "energetic-bolts",
+  "anxious": "anxious-face",
 };
 
 // Props for the PlanetSelector component
@@ -80,8 +80,8 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                     selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
                   }`}
                 />
-                <div className="emotion-face">
-                  {emotionFaces[mood.id]}
+                <div className={`emotion-face ${emotionFaceTypes[mood.id]}`}>
+                  <div className="face-content"></div>
                 </div>
               </div>
             </Button>
@@ -167,8 +167,8 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                           selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
                         }`}
                       />
-                      <div className="emotion-face">
-                        {emotionFaces[mood.id]}
+                      <div className={`emotion-face ${emotionFaceTypes[mood.id]}`}>
+                        <div className="face-content"></div>
                       </div>
                     </div>
                   </Button>
@@ -205,8 +205,8 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                         animationDelay: `${orbitData.animationDelay}s`
                       }}
                     />
-                    <div className="emotion-face">
-                      {emotionFaces[mood.id]}
+                    <div className={`emotion-face ${emotionFaceTypes[mood.id]}`}>
+                      <div className="face-content"></div>
                     </div>
                   </div>
                 </Button>

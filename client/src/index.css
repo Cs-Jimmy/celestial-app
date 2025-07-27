@@ -474,24 +474,250 @@ html, body {
   /* Planet hover emotion faces */
   .emotion-face {
     position: absolute;
-    top: -35px;
+    top: -40px;
     left: 50%;
-    transform: translateX(-50%);
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
-    color: #E4D9FF;
+    transform: translateX(-50%) scale(0.8);
+    width: 32px;
+    height: 32px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     pointer-events: none;
     z-index: 10;
-    filter: drop-shadow(0 0 6px rgba(78, 168, 222, 0.8));
-    text-shadow: 0 0 8px rgba(228, 217, 255, 0.9);
   }
 
   .planet-container:hover .emotion-face {
     opacity: 1;
-    transform: translateX(-50%) translateY(-5px);
+    transform: translateX(-50%) translateY(-5px) scale(1);
+  }
+
+  .face-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  /* Happy Face - Glowing smile */
+  .happy-face .face-content::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 4px;
+    height: 4px;
+    background: #FFD700;
+    border-radius: 50%;
+    box-shadow: 
+      8px 0 0 #FFD700,
+      4px 12px 0 -1px #FFD700;
+    filter: drop-shadow(0 0 4px #FFD700);
+  }
+
+  .happy-face .face-content::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    width: 12px;
+    height: 6px;
+    border: 2px solid #FFD700;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    filter: drop-shadow(0 0 4px #FFD700);
+  }
+
+  /* Love Hearts */
+  .love-hearts .face-content::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    width: 6px;
+    height: 6px;
+    background: #FF69B4;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: rotate(-45deg);
+    box-shadow: 8px 0 0 #FF69B4;
+    filter: drop-shadow(0 0 6px #FF69B4);
+  }
+
+  .love-hearts .face-content::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    width: 8px;
+    height: 8px;
+    background: #FF1493;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform: rotate(-45deg);
+    filter: drop-shadow(0 0 6px #FF1493);
+  }
+
+  /* Calm Face - Peaceful closed eyes */
+  .calm-face .face-content::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    width: 6px;
+    height: 2px;
+    background: #4ea8de;
+    border-radius: 3px;
+    box-shadow: 10px 0 0 #4ea8de;
+    filter: drop-shadow(0 0 4px #4ea8de);
+  }
+
+  .calm-face .face-content::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    width: 8px;
+    height: 3px;
+    border: 1px solid #4ea8de;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    filter: drop-shadow(0 0 4px #4ea8de);
+  }
+
+  /* Sad Face - Downturned mouth */
+  .sad-face .face-content::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 3px;
+    height: 8px;
+    background: linear-gradient(180deg, #87CEEB, transparent);
+    border-radius: 50%;
+    box-shadow: 12px 0 0 linear-gradient(180deg, #87CEEB, transparent);
+    filter: drop-shadow(0 0 4px #87CEEB);
+  }
+
+  .sad-face .face-content::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    width: 12px;
+    height: 6px;
+    border: 2px solid #87CEEB;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    transform: rotate(180deg);
+    filter: drop-shadow(0 0 4px #87CEEB);
+  }
+
+  /* Excited Sparks */
+  .excited-sparks .face-content::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    width: 8px;
+    height: 2px;
+    background: #FF4500;
+    box-shadow: 
+      0 4px 0 #FF6347,
+      -4px 2px 0 #FF4500,
+      4px 2px 0 #FF4500,
+      -2px 6px 0 #FF6347,
+      2px 6px 0 #FF6347;
+    filter: drop-shadow(0 0 6px #FF4500);
+  }
+
+  .excited-sparks .face-content::after {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 2px;
+    height: 8px;
+    background: #FF4500;
+    box-shadow: 
+      -4px 0 0 #FF6347,
+      4px 0 0 #FF6347,
+      -2px -4px 0 #FF4500,
+      2px -4px 0 #FF4500;
+    filter: drop-shadow(0 0 6px #FF4500);
+  }
+
+  /* Peaceful Halo */
+  .peaceful-halo .face-content::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #F0F8FF;
+    border-radius: 50%;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 6px #F0F8FF);
+  }
+
+  .peaceful-halo .face-content::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 8px;
+    height: 4px;
+    border: 1px solid #F0F8FF;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    filter: drop-shadow(0 0 4px #F0F8FF);
+  }
+
+  /* Energetic Bolts */
+  .energetic-bolts .face-content::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    width: 3px;
+    height: 12px;
+    background: linear-gradient(45deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+    clip-path: polygon(40% 0%, 40% 40%, 100% 40%, 60% 100%, 60% 60%, 0% 60%);
+    filter: drop-shadow(0 0 6px #FFD700);
+  }
+
+  .energetic-bolts .face-content::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 18px;
+    width: 2px;
+    height: 8px;
+    background: linear-gradient(45deg, #FFA500 0%, #FFD700 50%, #FFA500 100%);
+    clip-path: polygon(40% 0%, 40% 40%, 100% 40%, 60% 100%, 60% 60%, 0% 60%);
+    filter: drop-shadow(0 0 4px #FFA500);
+  }
+
+  /* Anxious Face - Worried expression */
+  .anxious-face .face-content::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 4px;
+    height: 4px;
+    background: #DDA0DD;
+    border-radius: 50%;
+    box-shadow: 8px 0 0 #DDA0DD;
+    filter: drop-shadow(0 0 4px #DDA0DD);
+  }
+
+  .anxious-face .face-content::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    width: 12px;
+    height: 4px;
+    background: #DDA0DD;
+    border-radius: 2px;
+    filter: drop-shadow(0 0 4px #DDA0DD);
   }
 
   /* Retro terminal styling */
