@@ -4,7 +4,7 @@
 
 ## 💫 About the Project
 
-**Celestial** is a mood tracking and journaling web app built for the [CS Girlies Hackathon](https://csgirlies.devpost.com/). Designed to empower users to explore their emotional well-being, the app allows individuals to upload moods, reflect on their feelings, and access insightful analytics — all in a soft and cosmic user interface.
+**Celestial** is a mood tracking and journaling web app built for the [CS Girlies Hackathon](https://csgirlies.devpost.com/). Designed to empower users to explore their emotional well-being, the app was developed entirely on **Replit** using an **AI agent**, allowing individuals to upload *moods*, reflect on their *feelings*, and access insightful *analytics* — all in a soft and cosmic user interface." 
 
 ---
 
