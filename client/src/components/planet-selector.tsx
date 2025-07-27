@@ -33,16 +33,16 @@ const planetImages: Record<string, string> = {
   "anxious": mercurySvg,
 };
 
-// Map mood IDs to their emotion faces
+// Map mood IDs to their minimal emotion indicators
 const emotionFaces: Record<string, string> = {
-  "happy": "😊",
-  "love": "😍", 
-  "calm": "😌",
-  "sad": "😢",
-  "excited": "🤩",
-  "peaceful": "😇",
-  "energetic": "⚡",
-  "anxious": "😰",
+  "happy": ":)",
+  "love": "♥", 
+  "calm": "~",
+  "sad": ":(",
+  "excited": "!",
+  "peaceful": "°",
+  "energetic": "*",
+  "anxious": "?",
 };
 
 // Props for the PlanetSelector component
