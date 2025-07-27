@@ -39,12 +39,12 @@ export function MoodCalendar({ moods, onDateSelect }: MoodCalendarProps) {
 
   return (
     <div className="glass-panel rounded-xl p-8">
-      <h3 className="text-xl font-semibold mb-6">Your Emotional Journey</h3>
+      <h3 className="text-xl font-semibold mb-6 text-sky-200">Your Emotional Journey</h3>
       
       {/* Day Headers */}
       <div className="grid grid-cols-7 gap-2 mb-4">
         {dayNames.map(day => (
-          <div key={day} className="text-center text-sm font-medium p-2">
+          <div key={day} className="text-center text-sm font-medium p-2 text-sky-300">
             {day}
           </div>
         ))}
@@ -72,7 +72,7 @@ export function MoodCalendar({ moods, onDateSelect }: MoodCalendarProps) {
               onClick={() => onDateSelect?.(date)}
               className="p-2 text-center text-sm border border-white/10 rounded-lg relative cursor-pointer hover:bg-white/5 transition-colors"
             >
-              <span>{day}</span>
+              <span className="text-sky-200">{day}</span>
               {primaryMood && (
                 <div className={`absolute top-1 right-1 w-2 h-2 rounded-full ${moodColors[primaryMood.mood] || "bg-gray-400"}`} />
               )}
