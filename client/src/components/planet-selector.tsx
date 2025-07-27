@@ -33,16 +33,16 @@ const planetImages: Record<string, string> = {
   "anxious": mercurySvg,
 };
 
-// Map mood IDs to their CSS face types
-const emotionFaceTypes: Record<string, string> = {
-  "happy": "happy-face",
-  "love": "love-hearts", 
-  "calm": "calm-face",
-  "sad": "sad-face",
-  "excited": "excited-sparks",
-  "peaceful": "peaceful-halo",
-  "energetic": "energetic-bolts",
-  "anxious": "anxious-face",
+// Map mood IDs to their theme-matching emojis
+const emotionEmojis: Record<string, string> = {
+  "happy": "☀️", // Sun for happy
+  "love": "💖", // Pink heart for love/Venus
+  "calm": "🌊", // Ocean wave for calm/Earth
+  "sad": "💧", // Water drop for sad/Neptune
+  "excited": "🔥", // Fire for excited/Mars
+  "peaceful": "✨", // Sparkles for peaceful/Uranus
+  "energetic": "⚡", // Lightning for energetic/Jupiter
+  "anxious": "🌪️", // Tornado for anxious/Mercury
 };
 
 // Props for the PlanetSelector component
@@ -80,8 +80,8 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                     selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
                   }`}
                 />
-                <div className={`emotion-face ${emotionFaceTypes[mood.id]}`}>
-                  <div className="face-content"></div>
+                <div className="emotion-face">
+                  {emotionEmojis[mood.id]}
                 </div>
               </div>
             </Button>
@@ -167,8 +167,8 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                           selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
                         }`}
                       />
-                      <div className={`emotion-face ${emotionFaceTypes[mood.id]}`}>
-                        <div className="face-content"></div>
+                      <div className="emotion-face">
+                        {emotionEmojis[mood.id]}
                       </div>
                     </div>
                   </Button>
@@ -205,8 +205,8 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                         animationDelay: `${orbitData.animationDelay}s`
                       }}
                     />
-                    <div className={`emotion-face ${emotionFaceTypes[mood.id]}`}>
-                      <div className="face-content"></div>
+                    <div className="emotion-face">
+                      {emotionEmojis[mood.id]}
                     </div>
                   </div>
                 </Button>
