@@ -33,6 +33,18 @@ const planetImages: Record<string, string> = {
   "anxious": mercurySvg,
 };
 
+// Map mood IDs to their emotion faces
+const emotionFaces: Record<string, string> = {
+  "happy": "😊",
+  "love": "😍", 
+  "calm": "😌",
+  "sad": "😢",
+  "excited": "🤩",
+  "peaceful": "😇",
+  "energetic": "⚡",
+  "anxious": "😰",
+};
+
 // Props for the PlanetSelector component
 interface PlanetSelectorProps {
   moods: MoodOption[]; // Array of mood options to display
@@ -62,11 +74,16 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
               className="group mb-4 p-0 h-auto bg-transparent hover:bg-transparent"
               onClick={() => onSelect(mood.id)}
             >
-              <div 
-                className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} animate-planet-static group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
-                  selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
-                }`}
-              />
+              <div className="relative planet-container">
+                <div 
+                  className={`${planetSize} mx-auto rounded-full planet-hologram ${mood.className} animate-planet-static group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
+                    selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
+                  }`}
+                />
+                <div className="emotion-face">
+                  {emotionFaces[mood.id]}
+                </div>
+              </div>
             </Button>
             <h4 className="font-semibold text-pink-300 font-serif">{mood.name}</h4>
             <p className="text-xs text-pink-400 font-serif italic">{mood.description}</p>
@@ -144,11 +161,16 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                     className="group mb-2 p-0 h-auto bg-transparent hover:bg-transparent"
                     onClick={() => onSelect(mood.id)}
                   >
-                    <div 
-                      className={`${planetDisplaySize} mx-auto rounded-full planet-hologram ${mood.className} ${animationClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
-                        selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
-                      }`}
-                    />
+                    <div className="relative planet-container">
+                      <div 
+                        className={`${planetDisplaySize} mx-auto rounded-full planet-hologram ${mood.className} ${animationClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
+                          selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
+                        }`}
+                      />
+                      <div className="emotion-face">
+                        {emotionFaces[mood.id]}
+                      </div>
+                    </div>
                   </Button>
                   <h4 className="font-semibold text-pink-300 font-serif text-xs">{mood.name}</h4>
                   <p className="text-xs text-pink-400 font-serif italic">{mood.description}</p>
@@ -173,15 +195,20 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                   className="group mb-2 p-0 h-auto bg-transparent hover:bg-transparent"
                   onClick={() => onSelect(mood.id)}
                 >
-                  {/* Smaller orbital planets with staggered floating animation */}
-                  <div 
-                    className={`${planetDisplaySize} mx-auto rounded-full planet-hologram ${mood.className} ${animationClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
-                      selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
-                    }`}
-                    style={{
-                      animationDelay: `${orbitData.animationDelay}s`
-                    }}
-                  />
+                  <div className="relative planet-container">
+                    {/* Smaller orbital planets with staggered floating animation */}
+                    <div 
+                      className={`${planetDisplaySize} mx-auto rounded-full planet-hologram ${mood.className} ${animationClass} group-hover:scale-110 transition-all group-hover:animate-cyber-glow cursor-pointer ${
+                        selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
+                      }`}
+                      style={{
+                        animationDelay: `${orbitData.animationDelay}s`
+                      }}
+                    />
+                    <div className="emotion-face">
+                      {emotionFaces[mood.id]}
+                    </div>
+                  </div>
                 </Button>
                 {/* Planet labels */}
                 <h4 className="font-semibold text-pink-300 font-serif text-xs">{mood.name}</h4>
