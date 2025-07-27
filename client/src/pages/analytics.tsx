@@ -82,7 +82,7 @@ export default function Analytics() {
         {/* Mood Distribution */}
         <Card className="cyber-panel border-cyan-500/50">
           <CardContent className="p-8">
-            <h3 className="text-xl font-semibold mb-6 text-cyan-300 font-mono">&gt; EXOPLANET DISTRIBUTION</h3>
+            <h3 className="text-xl font-semibold mb-6 text-sky-200 font-mono">&gt; EXOPLANET DISTRIBUTION</h3>
             <div className="space-y-4">
               {analytics.moodDistribution.map((stat) => (
                 <div key={stat.mood} className="flex items-center justify-between">
@@ -106,7 +106,7 @@ export default function Analytics() {
         {/* Weekly Trends */}
         <Card className="cyber-panel border-cyan-500/50">
           <CardContent className="p-8">
-            <h3 className="text-xl font-semibold mb-6 text-cyan-300 font-mono">&gt; ORBITAL PATTERNS</h3>
+            <h3 className="text-xl font-semibold mb-6 text-sky-200 font-mono">&gt; ORBITAL PATTERNS</h3>
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between text-sm mb-2">
@@ -136,7 +136,7 @@ export default function Analytics() {
         {/* Mission Insights */}
         <Card className="cyber-panel border-cyan-500/50 lg:col-span-2">
           <CardContent className="p-8">
-            <h3 className="text-xl font-semibold mb-6 text-cyan-300 font-mono">&gt; MISSION INTELLIGENCE</h3>
+            <h3 className="text-xl font-semibold mb-6 text-sky-200 font-mono">&gt; MISSION INTELLIGENCE</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white/5 p-6 rounded-lg text-center">
                 <Star className="h-8 w-8 mx-auto mb-2 text-yellow-400" />
