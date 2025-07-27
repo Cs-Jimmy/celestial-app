@@ -36,11 +36,11 @@ const planetImages: Record<string, string> = {
 // Map mood IDs to their theme-matching emojis
 const emotionEmojis: Record<string, string> = {
   "happy": "☀️", // Sun for happy
-  "love": "💖", // Pink heart for love/Venus
+  "love": "💗", // Pink heart for love/Venus
   "calm": "🌊", // Ocean wave for calm/Earth
   "sad": "💧", // Water drop for sad/Neptune
-  "excited": "🔥", // Fire for excited/Mars
-  "peaceful": "✨", // Sparkles for peaceful/Uranus
+  "excited": "🚀", // Rocket for excited/Mars
+  "peaceful": "🌙", // Crescent moon for peaceful/Uranus
   "energetic": "⚡", // Lightning for energetic/Jupiter
   "anxious": "🌪️", // Tornado for anxious/Mercury
 };
