@@ -34,4 +34,9 @@
 
 - **Development Process:**  
   Entirely built with **AI-powered assistance (Claude AI)** for prototyping, code generation, and architectural decisions.
+---
+## Collaborators
 
+---
+## Demo
+https://youtu.be/SdqGiu5BsFg?si=1iU3nfChAUNF6Q8o
