@@ -80,19 +80,19 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
   const planetsWithoutSun = moods.filter(mood => mood.id !== "happy");
   const sunMood = moods.find(mood => mood.id === "happy");
   
-  // Define specific orbital positions for each planet with proper spacing
-  const solarSystemLayout: Record<string, { radius: number; angle: number; ringClass: string; animationDelay: number }> = {
-    "happy": { radius: 0, angle: 0, ringClass: "", animationDelay: 0 }, // Sun at center
-    "love": { radius: 140, angle: 0, ringClass: "orbit-ring-mercury", animationDelay: 1.5 }, // Venus (inner orbit)
-    "calm": { radius: 220, angle: 60, ringClass: "orbit-ring-venus", animationDelay: 3 }, // Earth
-    "excited": { radius: 220, angle: 180, ringClass: "orbit-ring-venus", animationDelay: 4.5 }, // Mars
-    "energetic": { radius: 220, angle: 300, ringClass: "orbit-ring-venus", animationDelay: 6 }, // Jupiter (3 planets evenly spaced)
-    "peaceful": { radius: 300, angle: 90, ringClass: "orbit-ring-earth", animationDelay: 7.5 }, // Uranus
-    "sad": { radius: 300, angle: 210, ringClass: "orbit-ring-earth", animationDelay: 9 }, // Neptune
-    "anxious": { radius: 300, angle: 330, ringClass: "orbit-ring-earth", animationDelay: 0 }, // Mercury moved to furthest orbit
+  // Define specific orbital positions for each planet with proper spacing and varied animations
+  const solarSystemLayout: Record<string, { radius: number; angle: number; ringClass: string; animationDelay: number; animationType: string }> = {
+    "happy": { radius: 0, angle: 0, ringClass: "", animationDelay: 0, animationType: "animate-sun-center" }, // Sun at center
+    "love": { radius: 140, angle: 0, ringClass: "orbit-ring-mercury", animationDelay: 1.5, animationType: "animate-planet-float-gentle" }, // Venus (inner orbit)
+    "calm": { radius: 220, angle: 60, ringClass: "orbit-ring-venus", animationDelay: 3, animationType: "animate-planet-float-orbital" }, // Earth
+    "excited": { radius: 220, angle: 180, ringClass: "orbit-ring-venus", animationDelay: 4.5, animationType: "animate-planet-float-delayed" }, // Mars
+    "energetic": { radius: 220, angle: 300, ringClass: "orbit-ring-venus", animationDelay: 6, animationType: "animate-planet-float-delayed" }, // Jupiter (3 planets evenly spaced)
+    "peaceful": { radius: 300, angle: 90, ringClass: "orbit-ring-earth", animationDelay: 7.5, animationType: "animate-planet-float-gentle" }, // Uranus
+    "sad": { radius: 300, angle: 210, ringClass: "orbit-ring-earth", animationDelay: 9, animationType: "animate-planet-float-orbital" }, // Neptune
+    "anxious": { radius: 300, angle: 330, ringClass: "orbit-ring-earth", animationDelay: 0, animationType: "animate-planet-float-delayed" }, // Mercury moved to furthest orbit
   };
   
-  const planetOrbitData: Record<string, { radius: number; angle: number; ringClass: string; animationDelay: number }> = {};
+  const planetOrbitData: Record<string, { radius: number; angle: number; ringClass: string; animationDelay: number; animationType: string }> = {};
   
   // Assign predefined positions or distribute remaining planets
   moods.forEach((mood, index) => {
@@ -102,11 +102,13 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
       // Fallback for any extra planets
       const radius = 300;
       const angle = index * (360 / moods.length);
+      const animationTypes = ["animate-planet-float-delayed", "animate-planet-float-orbital", "animate-planet-float-gentle"];
       planetOrbitData[mood.id] = { 
         radius, 
         angle, 
         ringClass: "orbit-ring-earth", 
-        animationDelay: index * 1.5 
+        animationDelay: index * 1.5,
+        animationType: animationTypes[index % animationTypes.length]
       };
     }
   });
@@ -122,9 +124,9 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
 
         {/* Planets positioned around the sun */}
         {moods.map((mood) => {
-          const orbitData = planetOrbitData[mood.id] || { radius: 0, angle: 0, ringClass: "", animationDelay: 0 };
+          const orbitData = planetOrbitData[mood.id] || { radius: 0, angle: 0, ringClass: "", animationDelay: 0, animationType: "animate-planet-float-delayed" };
           const isSun = mood.id === "happy";
-          const animationClass = isSun ? "animate-sun-center" : "animate-planet-float-delayed";
+          const animationClass = orbitData.animationType;
           
           // Sun stays larger, orbital planets are smaller for realistic scale
           const planetDisplaySize = isSun ? planetSize : (size === "large" ? "w-16 h-16" : "w-12 h-12");
