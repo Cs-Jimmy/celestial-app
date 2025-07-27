@@ -390,6 +390,87 @@ html, body {
     animation: planetFloatGentle 14s ease-in-out infinite;
   }
 
+  /* Celestial background objects */
+  .celestial-object {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .rocket {
+    width: 20px;
+    height: 6px;
+    background: linear-gradient(90deg, #4ea8de, #E4D9FF);
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(78, 168, 222, 0.6);
+  }
+
+  .meteor {
+    width: 3px;
+    height: 3px;
+    background: radial-gradient(circle, #ffa500, #ff6b35);
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255, 165, 0, 0.8);
+  }
+
+  .comet {
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #00ffff, #4ea8de);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  }
+
+  .rocket::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-right: 8px solid rgba(78, 168, 222, 0.4);
+  }
+
+  .meteor::after {
+    content: '';
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 165, 0, 0.6), transparent);
+    border-radius: 1px;
+  }
+
+  .comet::after {
+    content: '';
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.5), transparent);
+    border-radius: 1px;
+  }
+
+  .animate-rocket-diagonal {
+    animation: rocketDiagonal 25s linear infinite;
+  }
+
+  .animate-meteor-fast {
+    animation: meteorFast 8s linear infinite;
+  }
+
+  .animate-comet-curved {
+    animation: cometCurved 30s ease-in-out infinite;
+  }
+
   /* Retro terminal styling */
   .retro-terminal {
     box-shadow: 
@@ -650,6 +731,67 @@ html, body {
   }
   100% { 
     filter: hue-rotate(0deg) brightness(1);
+  }
+}
+
+/* Celestial object animations */
+@keyframes rocketDiagonal {
+  0% {
+    transform: translate(-100px, 120vh) rotate(-15deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  95% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(120vw, -100px) rotate(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes meteorFast {
+  0% {
+    transform: translate(120vw, -50px) rotate(25deg);
+    opacity: 0;
+  }
+  3% {
+    opacity: 0.9;
+  }
+  97% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-100px, 120vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cometCurved {
+  0% {
+    transform: translate(-100px, 50vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  25% {
+    transform: translate(25vw, 20vh) rotate(-5deg);
+  }
+  50% {
+    transform: translate(50vw, 30vh) rotate(-10deg);
+  }
+  75% {
+    transform: translate(75vw, 60vh) rotate(-15deg);
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(120vw, 80vh) rotate(-20deg);
+    opacity: 0;
   }
 }
 

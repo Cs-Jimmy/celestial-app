@@ -5,6 +5,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/navigation";
+import { CelestialBackground } from "@/components/celestial-background";
 import Dashboard from "@/pages/dashboard";
 import MoodTracker from "@/pages/mood-tracker";
 import MissionLog from "@/pages/mission-log";
@@ -37,6 +38,9 @@ function App() {
           <div className="starfield-distant"></div>
           {/* Animated background pattern */}
           <div className="fixed inset-0 matrix-grid animate-matrix-scroll"></div>
+          
+          {/* Animated celestial objects in background */}
+          <CelestialBackground />
           
           {/* Top navigation bar */}
           <Navigation />
