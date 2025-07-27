@@ -73,7 +73,7 @@ export default function Analytics() {
   return (
     <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-8">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 font-serif">✨ cosmic insights ✨</h2>
+        <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 font-serif">cosmic insights</h2>
         <p className="text-pink-300 font-serif italic">&gt; reading your celestial energy patterns...</p>
       </div>
 

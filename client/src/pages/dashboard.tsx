@@ -40,12 +40,12 @@ export default function Dashboard() {
     <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-8">
       {/* Hero Section */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400">WELCOME BACK, EXPLORER ✨</h2>
+        <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 font-serif">welcome back, explorer</h2>
         <p className="text-xl text-pink-300 mb-8 font-serif italic">&gt; scanning your cosmic energy signature...</p>
         
         {/* Quick Mood Check */}
         <div className="cyber-panel rounded-2xl p-8 mb-8 border border-[#4ea8de]/40">
-          <h3 className="text-2xl font-semibold mb-6 text-pink-300 font-serif italic">&gt; choose your planetary vibe ♡</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-pink-300 font-serif italic">&gt; choose your planetary vibe</h3>
           <div className="max-w-4xl mx-auto">
             <PlanetSelector
               moods={quickMoodOptions}
