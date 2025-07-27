@@ -80,9 +80,11 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                     selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
                   }`}
                 />
-                <div className="emotion-face">
-                  {emotionEmojis[mood.id]}
-                </div>
+                {isMoodTracker && (
+                  <div className="emotion-face">
+                    {emotionEmojis[mood.id]}
+                  </div>
+                )}
               </div>
             </Button>
             <h4 className="font-semibold text-pink-300 font-serif">{mood.name}</h4>
@@ -167,9 +169,11 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                           selectedMood === mood.id ? "ring-4 ring-pink-400" : ""
                         }`}
                       />
-                      <div className="emotion-face">
-                        {emotionEmojis[mood.id]}
-                      </div>
+                      {isMoodTracker && (
+                        <div className="emotion-face">
+                          {emotionEmojis[mood.id]}
+                        </div>
+                      )}
                     </div>
                   </Button>
                   <h4 className="font-semibold text-pink-300 font-serif text-xs">{mood.name}</h4>
@@ -205,9 +209,11 @@ export function PlanetSelector({ moods, selectedMood, onSelect, size = "large" }
                         animationDelay: `${orbitData.animationDelay}s`
                       }}
                     />
-                    <div className="emotion-face">
-                      {emotionEmojis[mood.id]}
-                    </div>
+                    {isMoodTracker && (
+                      <div className="emotion-face">
+                        {emotionEmojis[mood.id]}
+                      </div>
+                    )}
                   </div>
                 </Button>
                 {/* Planet labels */}
