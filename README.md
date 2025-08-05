@@ -49,8 +49,7 @@ Developed entirely on **Replit** using an **AI agent (Claude AI)**, our team dir
   Entirely built with **AI-powered assistance (Claude AI)** for prototyping, code generation, and architectural decisions.
 ---
 ![Mood Tracker](./attached_assets/Screenshot(318).png)   
-![Mood Tracker](./attached_assets/mood.png)   
-![Mood Tracker](./attached_assets/Screenshot(319).png) 
+![Mood Tracker](./attached_assets/mood.png) 
 ![Mood Tracker](./attached_assets/Screenshot(320).png) 
 ![Mood Tracker](./attached_assets/Screenshot(321).png) 
 
